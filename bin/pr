@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# invoked by .github/workflows/pr.yml
+
+# We'll be handed the list of files added/modified in a PR.
+# From that, extract the list of exercise directories, and
+# test there.
+
+if ((BASH_VERSINFO[0] < 4)); then
+    echo "[Failure] This script requires bash version 4+" >&2
+    exit 4
+fi
+shopt -s extglob
+
+declare -A seen=()
+declare -a dirs
+status=0
+
+for file; do
+    if [[ $file =~ ^exercises/(practice|concept)/[^/]+ ]]; then 
+        dir=${BASH_REMATCH[0]}
+        if [[ -z ${seen[$dir]} ]]; then
+            bin/validate_one_exercise "$dir" || status=1
+            seen["$dir"]=yes
+        fi
+    fi
+done
+
+exit $status

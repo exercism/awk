@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Validate if tests can run properly and the example implementation
+# is passing the tests for each exercise
+
+set -o errexit
+set -o nounset
+
+cd "$( dirname "${BASH_SOURCE[0]}" )/.."
+
+for exercise in exercises/*/*; do
+    bin/validate_one_exercise "$exercise"
+    echo
+done

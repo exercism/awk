@@ -1,13 +1,13 @@
 # Resources
 
-<!-- TODO: write document
+The [Gawk: Effective AWK Programming][book] book serves both as a tutorial and a reference manual.
 
-  This document should link to useful resources.
+The wikipedia [AWK page][wiki-books] has a list of books and other resources.
 
-  Feel free to link to any good resources you know, whether they
-  be websites, videos, mailing lists, etc.
+The [awk info page][so] at Stack Overflow.
 
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/resources`.
 
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+
+[book]: https://www.gnu.org/software/gawk/manual
+[wiki-books]: https://en.wikipedia.org/wiki/AWK#Books
+[so]: https://stackoverflow.com/tags/awk/info

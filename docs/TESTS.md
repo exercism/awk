@@ -1,15 +1,10 @@
 # Tests
 
-<!-- TODO: write document
+You can use the online editor on the Exercism website to solve the exercises.
+Or, download the exercises to your computer, solve them locally and then submit them to Exercism.
 
-  This document should describe everything related to running tests in the track.
+If you want to work locally, you'll need the [`bats`][bats] program.
+Please refer to the [Testing on the Bash track][test-bash] page for the installation instructions.
 
-  If your track uses skipped tests, this document can explain why thet is used and
-  how to unskip tests.
-
-  This document can also link to the testing framework documentation.
-
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/tests`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+[bats]: https://github.com/bats-core/bats-core
+[test-bash]: https://exercism.org/docs/tracks/bash/tests

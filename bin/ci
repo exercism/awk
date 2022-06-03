@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# invoked by .github/workflows/ci.yml
+
+bin/validate_exercises

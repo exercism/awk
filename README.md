@@ -1,41 +1,43 @@
-# Exercism AWK Track
+# Exercism AWK track
 
-[![configlet](https://github.com/exercism/awk/workflows/configlet/badge.svg)](https://github.com/exercism/awk/actions?query=workflow%3Aconfiglet) [![tests](https://github.com/exercism/awk/workflows/test/badge.svg)](https://github.com/exercism/awk/actions?query=workflow%3Atest)
+AWK is a fun little language, widely used for text manipulation.
+One can express a lot of functionality in very few lines of code.
 
-Exercism exercises in AWK.
+## Spelling
 
-## Testing
+The language is AWK.  
+The interpreter is `awk` or `gawk`.
 
-To test the exercises, run `./bin/test`.
-This command will iterate over all exercises and check to see if their exemplar/example implementation passes all the tests.
+## Language variant
 
-### Track linting
+We'll use [GNU awk][gawk] in this track.
+It may not be the default awk in any platform, but it's in widespread use and has lots of builtin goodies.
+Other variants:
+* mawk
+* nawk
+* ...
 
-[`configlet`](https://exercism.org/docs/building/configlet) is an Exercism-wide tool for working with tracks. You can download it by running:
+## Testing framework
 
-```shell
-$ ./bin/fetch-configlet
-```
+Since I (@glennj) have spent a lot of time building up the bash track, I'll steal some of the learnings from it.
+Testing will be done with [`bats-core`][bats]
 
-Run its [`lint` command](https://exercism.org/docs/building/configlet/lint) to verify if all exercises have all the necessary files and if config files are correct:
 
-```shell
-$ ./bin/configlet lint
+## TODO
 
-The lint command is under development.
-Please re-run this command regularly to see if your track passes the latest linting rules.
+In no particular order
 
-Basic linting finished successfully:
-- config.json exists and is valid JSON
-- config.json has these valid fields:
-    language, slug, active, blurb, version, status, online_editor, key_features, tags
-- Every concept has the required .md files
-- Every concept has a valid links.json file
-- Every concept has a valid .meta/config.json file
-- Every concept exercise has the required .md files
-- Every concept exercise has a valid .meta/config.json file
-- Every practice exercise has the required .md files
-- Every practice exercise has a valid .meta/config.json file
-- Required track docs are present
-- Required shared exercise docs are present
-```
+* awk-test-runner, largely built on bash's
+    * pick a docker image for gawk v5
+    * also needs bash v??
+* Documentation
+    * exercises/shared/.docs/help.md
+    * exercises/practice/<slug>/.meta/.docs/instructions.append.md
+        * hello-world
+* concepts
+* admin requests
+    * create exercism repos
+    * awk icon
+
+[gawk]: https://www.gnu.org/software/gawk/ 
+[bats]: https://bats-core.readthedocs.io/en/stable/ 
