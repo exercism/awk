@@ -1,0 +1,21 @@
+{
+  "blurb": "Convert a long phrase to its acronym.",
+  "authors": [
+  ],
+  "contributors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "acronym.awk"
+    ],
+    "test": [
+      "test-acronym.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}
