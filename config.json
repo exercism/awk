@@ -70,7 +70,17 @@
         "prerequisites": [],
         "difficulty": 2,
         "status": "active"
+      },
+      {
+        "uuid": "82c4b80d-a343-4eb3-af12-fb7312ec2e33",
+        "slug": "hamming",
+        "name": "Hamming",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "active"
       }
+
     ]
   },
   "concepts": [],
