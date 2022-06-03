@@ -8,24 +8,112 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "TODO: add blurb",
+  "blurb": "AWK is an interpreted programming language designed for text processing and typically used as a data extraction and reporting tool.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4,
-    "highlightjs_language": "TODO: specify highlightjs language"
+    "highlightjs_language": "awk"
+  },
+  "test_runner": {
+    "average_run_time": 2.0
   },
   "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
+    "solution": [
+      "%{kebab_slug}.sh"
+    ],
+    "test": [
+      "test-%{kebab_slug}.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ],
+    "exemplar": [
+      ".meta/exemplar.awk"
+    ]
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "uuid": "11f04035-08f4-4f57-812f-65b9c8236ebf",
+        "slug": "hello-world",
+        "name": "Hello World",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "status": "active"
+      },
+      {
+        "uuid": "f7dc669d-0441-4819-8efc-b4131a189651",
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "status": "active"
+      },
+      {
+        "uuid": "7aedb0b6-a4c6-4985-a85c-9b641f4ae047",
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "active"
+      },
+      {
+        "uuid": "5652e06f-bc63-412e-b766-91fa22a5dcd5",
+        "slug": "leap",
+        "name": "Leap",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "active"
+      }
+    ]
   },
   "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "title": "General purpose",
+      "content": "AWK is a venerable, powerful, elegant, and simple tool that everyone should know.",
+      "icon": "general-purpose"
+    },
+    {
+      "title": "Easy",
+      "content": "Extracting a column from your CSV is as simple as \"awk -F, '{print $1}' file\"",
+      "icon": "easy"
+    },
+    {
+      "title": "Powerful",
+      "content": "Replace complex grep|sed|tr|cut pipelines with a short AWK script.",
+      "icon": "powerful"
+    },
+    {
+      "title": "Do more with less",
+      "content": "Simple and flexible data structures, user-defined functions; AWK can do more than you think.",
+      "icon": "productive"
+    },
+    {
+      "title": "One-liners",
+      "content": "With just a few dozen characters, you can achieve impressive text transformations.",
+      "icon": "small"
+    },
+    {
+      "title": "Widely used",
+      "content": "Besides /bin/sh, AWK is the only other scripting language in the standard Unix environment.",
+      "icon": "widely-used"
+    }
+  ],
+  "tags": [
+    "used_for/scripts",
+    "paradigm/procedural",
+    "execution_mode/interpreted",
+    "runtime/standalone_executable",
+    "typing/weak",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows"
+  ]
 }

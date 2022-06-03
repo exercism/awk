@@ -1,13 +1,12 @@
 # Learning
 
-<!-- TODO: write document
+For a quick overview of the lanaguage, refer to the [awk info page][so] on Stack Overflow.
 
-  This document should link to learning resources.
+Some other learning resources:
 
-  Feel free to link to any good learning resources you know, whether they
-  be websites, blogs, books, videos or courses.
+* [Awk.Info](https://web.archive.org/web/20160505033644/http://awk.info/)
+* [Learn X in Y minutes: awk](https://learnxinyminutes.com/docs/awk/)
+* [Awk tutorial](https://www.grymoire.com/Unix/Awk.html)
+* [The GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/)
 
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/learning`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+[so]: https://stackoverflow.com/tags/awk/info

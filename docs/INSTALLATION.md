@@ -1,15 +1,30 @@
 # Installation
 
-<!-- TODO: write document
+## Linux
 
-  This document should describe what the student needs to install
-  to allow working on the track on their local system using the CLI.
+Varies with your distro's package manager. Typically:
+```sh
+sudo apt install gawk
+sudo yum install gawk
+# and so on
+```
 
-  You can include the installation instructions in this document, but
-  usually it is better to link to a resource with the official installation
-  instructions, to prevent the instructions from becoming outdated.
+## MacOS
 
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/installation`.
+[Homebrew][brew] is your friend:
+```sh
+brew install gawk
+```
 
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+## Windows
+
+For [WSL][wsl], see above.
+For cygwin, install the `gawk` package.
+
+## Compile from source
+
+For the brave, instructions [available in the `gawk` manual][build].
+
+
+[build]: https://www.gnu.org/software/gawk/manual/gawk.html#Installation
+[wsl]: https://docs.microsoft.com/en-us/windows/wsl/about
