@@ -1,0 +1,21 @@
+{
+  "blurb": "Determine if a number is an Armstrong number.",
+  "authors": [
+  ],
+  "contributors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "armstrong-numbers.awk"
+    ],
+    "test": [
+      "test-armstrong-numbers.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}
