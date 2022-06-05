@@ -88,6 +88,15 @@
         "prerequisites": [],
         "difficulty": 2,
         "status": "active"
+      },
+      {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "bd662ca0-99eb-4835-a67a-3dd0f5113cda",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "active"
       }
     ]
   },
