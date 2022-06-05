@@ -106,6 +106,15 @@
         "prerequisites": [],
         "difficulty": 2,
         "status": "active"
+      },
+      {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "89d0cf12-e03e-40e5-bf97-580d5cd7d78a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "active"
       }
     ]
   },
