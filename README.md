@@ -22,6 +22,11 @@ Other variants:
 Since I (@glennj) have spent a lot of time building up the bash track, I'll steal some of the learnings from it.
 Testing will be done with [`bats-core`][bats]
 
+## Support
+
+[![Join the chat at https://gitter.im/exercism/awk](https://badges.gitter.im/exercism/awk.svg)](https://gitter.im/exercism/awk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+Eventually, a `#track-awk` Slack channel.
 
 ## TODO
 
