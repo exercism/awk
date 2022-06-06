@@ -45,7 +45,7 @@ List extracted from problem-specifications repo on 2022-06-03
 | [gigasecond][gigasecond] | . |
 | [go-counting][go-counting] | . |
 | [grade-school][grade-school] | . |
-| [grains][grains] | . |
+| [grains][grains] | [implemented](https://github.com/exercism/awk/pull/16) |
 | [grep][grep]| . |
 | [hamming][hamming] | [implemented](https://github.com/exercism/awk/pull/5) |
 | [hangman][hangman] | . |
