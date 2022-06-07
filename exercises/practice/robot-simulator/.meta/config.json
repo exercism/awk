@@ -1,0 +1,20 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": [
+    "glennj"
+  ],
+  "contributors": [
+  ],
+  "files": {
+    "solution": [
+      "robot-simulator.awk"
+    ],
+    "test": [
+      "test-robot-simulator.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "source": "Inspired by an interview question at a famous company."
+}
