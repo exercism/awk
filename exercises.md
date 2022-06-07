@@ -104,7 +104,7 @@ List extracted from problem-specifications repo on 2022-06-03
 | [reverse-string][reverse-string] | . |
 | [rna-transcription][rna-transcription] | . |
 | [robot-name][robot-name] | . |
-| [robot-simulator][robot-simulator] | . |
+| [robot-simulator][robot-simulator] | [implemented](https://github.com/exercism/awk/pull/18) |
 | [roman-numerals][roman-numerals] | . |
 | [rotational-cipher][rotational-cipher] | . |
 | [run-length-encoding][run-length-encoding] | . |
