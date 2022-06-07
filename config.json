@@ -115,6 +115,15 @@
         "prerequisites": [],
         "difficulty": 3,
         "status": "active"
+      },
+      {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "e031d714-cea9-439a-a922-ff30325865ca",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "active"
       }
     ]
   },
