@@ -1,9 +1,9 @@
 {
   "blurb": "Determine if a sentence is a pangram.",
   "authors": [
+    "glennj"
   ],
   "contributors": [
-    "glennj"
   ],
   "files": {
     "solution": [

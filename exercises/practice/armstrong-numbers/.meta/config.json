@@ -1,9 +1,9 @@
 {
   "blurb": "Determine if a number is an Armstrong number.",
   "authors": [
+    "glennj"
   ],
   "contributors": [
-    "glennj"
   ],
   "files": {
     "solution": [

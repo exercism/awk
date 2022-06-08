@@ -1,9 +1,9 @@
 {
   "blurb": "Given a year, report if it is a leap year.",
   "authors": [
+    "glennj"
   ],
   "contributors": [
-    "glennj"
   ],
   "files": {
     "solution": [

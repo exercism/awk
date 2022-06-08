@@ -1,9 +1,9 @@
 {
   "blurb": "Convert a long phrase to its acronym.",
   "authors": [
+    "glennj"
   ],
   "contributors": [
-    "glennj"
   ],
   "files": {
     "solution": [
