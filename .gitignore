@@ -1,2 +1,6 @@
 bin/configlet
 bin/configlet.exe
+
+# gawk debugger files
+.gawkrc
+.gawk_history
