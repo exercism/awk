@@ -1,0 +1,20 @@
+{
+  "blurb": "Write a program that returns the earned points in a single toss of a Darts game.",
+  "authors": [
+    "IsaacG"
+  ],
+  "contributors": [
+  ],
+  "files": {
+    "solution": [
+      "darts.awk"
+    ],
+    "test": [
+      "test-darts.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
+}

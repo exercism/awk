@@ -30,7 +30,7 @@ List extracted from problem-specifications repo on 2022-06-03
 | [counter][counter] | . |
 | [crypto-square][crypto-square] | . |
 | [custom-set][custom-set] | . |
-| [darts][darts] | . |
+| [darts][darts] | [implemented](https://github.com/exercism/awk/pull/24) |
 | [diamond][diamond] | . |
 | [difference-of-squares][difference-of-squares] | . |
 | [diffie-hellman][diffie-hellman] | . |
