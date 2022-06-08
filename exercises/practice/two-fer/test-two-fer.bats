@@ -1,19 +1,6 @@
 #!/usr/bin/env bats
 load bats-extra
 
-setup() {
-    echo > empty.txt
-    echo "Alice" > one.txt
-
-    echo "John Smith" > two.txt
-    echo "Mary Ann" >> two.txt
-}
-
-teardown() {
-    rm empty.txt one.txt two.txt
-}
-
-
 @test "no file given" {
   #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
@@ -37,21 +24,21 @@ teardown() {
 
 @test "empty file given" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f two-fer.awk empty.txt
+  run gawk -f two-fer.awk <<< ""
   assert_success
   assert_output "One for you, one for me."
 }
 
 @test "a name given" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f two-fer.awk one.txt
+  run gawk -f two-fer.awk <<< "Alice"
   assert_success
   assert_output "One for Alice, one for me."
 }
 
 @test "multiple names given" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f two-fer.awk two.txt
+  run gawk -f two-fer.awk <<< "Mary Ann"
   assert_success
   assert_output "One for Mary Ann, one for me."
 }

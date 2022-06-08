@@ -1,10 +1,6 @@
 #!/usr/bin/env bats
 load bats-extra
 
-teardown() {
-    rm -f input.txt
-}
-
 @test "Missed target" {
     #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f darts.awk <<< '-9 9'
