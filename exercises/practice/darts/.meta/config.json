@@ -1,10 +1,9 @@
 {
-  "blurb": "Write a program that returns the earned points in a single toss of a Darts game.",
+  "blurb": "Write a function that returns the earned points in a single toss of a Darts game.",
   "authors": [
     "IsaacG"
   ],
-  "contributors": [
-  ],
+  "contributors": [],
   "files": {
     "solution": [
       "darts.awk"
