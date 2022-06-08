@@ -2,8 +2,6 @@
   "authors": [
     "glennj"
   ],
-  "contributors": [
-  ],
   "files": {
     "solution": [
       "two-fer.awk"
