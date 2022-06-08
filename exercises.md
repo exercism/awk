@@ -83,7 +83,7 @@ List extracted from problem-specifications repo on 2022-06-03
 | [pascals-triangle][pascals-triangle] | . |
 | [perfect-numbers][perfect-numbers] | . |
 | [phone-number][phone-number] | . |
-| [pig-latin][pig-latin] | . |
+| [pig-latin][pig-latin] | [implemented](https://github.com/exercism/awk/pull/22) |
 | [point-mutations][point-mutations] | . |
 | [poker][poker] | . |
 | [pov][pov]| . |
