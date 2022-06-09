@@ -1,9 +1,6 @@
 {
-  "blurb": "Write a robot simulator.",
   "authors": [
     "glennj"
-  ],
-  "contributors": [
   ],
   "files": {
     "solution": [
@@ -16,5 +13,6 @@
       ".meta/example.awk"
     ]
   },
+  "blurb": "Write a robot simulator.",
   "source": "Inspired by an interview question at a famous company."
 }
