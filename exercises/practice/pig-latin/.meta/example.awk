@@ -16,7 +16,7 @@ function pigify(word,    pig, m) {
 }
 
 {
-    for (i=1; i<=NF; i++)
+    for (i = 1; i <= NF; i++)
         $i = pigify($i)
     print
 }
