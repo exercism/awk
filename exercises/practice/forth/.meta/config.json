@@ -1,9 +1,6 @@
 {
-  "blurb": "Implement an evaluator for a very simple subset of Forth.",
   "authors": [
     "glennj"
-  ],
-  "contributors": [
   ],
   "files": {
     "solution": [
@@ -15,5 +12,6 @@
     "example": [
       ".meta/example.awk"
     ]
-  }
+  },
+  "blurb": "Implement an evaluator for a very simple subset of Forth."
 }
