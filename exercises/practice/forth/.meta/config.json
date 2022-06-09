@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "forth.awk"
+    ],
+    "test": [
+      "test-forth.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Implement an evaluator for a very simple subset of Forth."
+}
