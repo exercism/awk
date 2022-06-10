@@ -49,6 +49,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     - add "Closes #1234" to the PR description (where 1234 is the issue
       number from the first step: this links the PR and the issue)
     - request a review from `exercism/awk` team
+    - ensure the Github Action checks succeed!
 
 Thanks for your interest!
 
