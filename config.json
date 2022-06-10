@@ -166,6 +166,15 @@
         "status": "active"
       },
       {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "96e4449b-1341-420b-b141-a9903020c3b9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "status": "active"
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "c7d0dc7c-ac1c-43d8-97d6-27d88b773452",
