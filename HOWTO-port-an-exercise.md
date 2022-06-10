@@ -16,7 +16,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
       `x:status/claimed`, `x:type/content`
     - assign it to yourself.
 1. set `exercise=foo-bar`
-1. copy the exercises/practice/$exercise directory from the bash repo.
+1. copy the `exercises/practice/$exercise` directory from the bash repo.
 1. in the exercises/practice/$exercise directory, **delete** `${exercise/-/_}.sh`, and
    `.meta/{test.toml,version,example.sh}`
 1. rename `${exercise/-/_}.bats` to `test-$exercise.bats`
@@ -24,7 +24,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
 1. edit `.meta/config.json`
     - fix the filenames from .sh to .awk, and the test file
     - set yourself as the author, and empty the contributors list.
-1. edit `test-$exercise.awk` so the tests are AWK specific. 
+1. edit `test-$exercise.bats` so the tests are AWK specific.
     - see other exercises for the track style.
     - remember that the tests are the requirements that students use to
       create their solutions: the tests should strive to be straightforward
