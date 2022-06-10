@@ -72,6 +72,19 @@
         "status": "active"
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "abc1dd61-d677-4e7c-95a6-b9c6f797b2bd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "arrays",
+          "sorting",
+          "text_formatting"
+        ]
+      },
+      {
         "uuid": "82c4b80d-a343-4eb3-af12-fb7312ec2e33",
         "slug": "hamming",
         "name": "Hamming",
