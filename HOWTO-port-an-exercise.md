@@ -15,40 +15,57 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     - add the labels: `x:action/create`, `x:module/practice-exercise`,
       `x:status/claimed`, `x:type/content`
     - assign it to yourself.
-1. set `exercise=foo-bar`
-1. copy the `exercises/practice/$exercise` directory from the bash repo.
-1. in the exercises/practice/$exercise directory, **delete** `${exercise/-/_}.sh`, and
-   `.meta/{test.toml,version,example.sh}`
-1. rename `${exercise/-/_}.bats` to `test-$exercise.bats`
-    - note the underscore changed: the AWK track uses kebab case
-1. edit `.meta/config.json`
-    - fix the filenames from .sh to .awk, and the test file
-    - set yourself as the author, and empty the contributors list.
-1. edit `test-$exercise.bats` so the tests are AWK specific.
-    - see other exercises for the track style.
-    - remember that the tests are the requirements that students use to
-      create their solutions: the tests should strive to be straightforward
-      and self-explantory.
-1. create `$exercise.awk` so all the tests pass.
-1. move the solution to `.meta/example.awk`
-1. copy `../hamming/hamming.awk` to `$exercise.awk` -- this is the stub file
-   that students first see.
-1. copy the exercise JSON slug entry in the repo root's `config.json` from bash
-    - drop any `topics` entry
-    - use `./bin/configlet uuid` to generate a new UUID
-1. cd to the track root and:
-    ```sh
-    bin/fetch-configlet
-    bin/configlet fmt -u -e $exercise
-    bin/configlet sync -u -e $exercise
-    bin/configlet lint
-    ```
-    And make sure those all pass.
-1. commit your code and run
-    ```sh
-    bin/validate_one_exercise exercises/practice/$exercise
-    ```
-    And make sure it passes
+
+```sh
+# set the exercise you are working on:
+exercise=foo-bar
+# set the awk repo root:
+repo=~/awk/repo
+# enter the awk repo
+cd "$repo"
+# copy the exercise directory from the bash repo:
+cp -r ../bash/exercises/practice/$exercise exercises/practice
+# enter the exercise directory
+cd "exercises/practice/$exercises"
+# delete the bash solution and metadata:
+rm ${exercise/-/_}.sh .meta/{test.toml,version,example.sh}
+# rename the test file. Note the underscore changed: the AWK track uses kebab case.
+mv ${exercise/-/_}.bats test-$exercise.bats
+# edit `.meta/config.json`
+# - fix the filenames from .sh to .awk, and the test file
+# - set yourself as the author, and empty the contributors list.
+$EDITOR .meta/config.json
+# edit `test-$exercise.bats` so the tests are AWK specific.
+# - see other exercises for the track style.
+# - remember that the tests are the requirements that students use to
+#   create their solutions: the tests should strive to be straightforward
+#   and self-explantory.
+$EDITOR test-$exercise.bats
+# create `$exercise.awk` so all the tests pass.
+$EDITOR $exercise.awk
+bats test-$exercise.bats
+# move the solution to `.meta/example.awk`
+mv $exercise.awk .meta/example.awk
+# borrow a stub file from hamming -- this is what students first see.
+cp ../hamming/hamming.awk $exercise.awk
+# cd to the track root
+cd "$repo"
+# Fetch the configlet
+./bin/fetch-configlet
+# grab the exercise slug from bash, inserting a new UUID and dropping topics.
+filter='.exercises.practice[] | select(.slug == $ex) | .uuid = $uuid | del(.topics)'
+jq --arg ex "$exercise" --arg uuid "$(./bin/configlet uuid)" "$filter" ../bash/config.json
+# update the AWK config.json with that entry:
+$EDITOR config.json
+# run the configlet and make sure everything passes
+bin/configlet fmt -u -e $exercise
+bin/configlet sync -u -e $exercise
+bin/configlet lint
+# commit your code:
+git commit -am "Add new exercise: $exercise"
+# validate the exercise, making sure it passes:
+bin/validate_one_exercise exercises/practice/$exercise
+```
 1. push your branch and create a pull request in [exercism/awk][github]
     - add "Closes #1234" to the PR description (where 1234 is the issue
       number from the first step: this links the PR and the issue)
