@@ -4,7 +4,7 @@
 
 This exercise requires the output to be sorted in a particular way.  Like
 many programming languages, iterating over an associative array occurs in
-some random-looking internal hashing order of the keys. This is typically
+an implementation-dependent, seemingly random-looking order. This is typically
 not what humans want to see.  GNU awk provides some sorting features.
 
 1. `asort` -- sort a numerically indexed array based on the array _values_.
@@ -34,10 +34,10 @@ not what humans want to see.  GNU awk provides some sorting features.
     The form `n = asort(array)` sorts the named array in-place.
 
     This is most useful for numerically-indexed arrays. The process that
-    populates the `sorted` array discards the originally arrays indices:
-    the `sorted` array is indexed from 1 to `n`.
+    populates the `sorted` array discards the original array indices: the
+    `sorted` array is indexed from 1 to `n`.
 
-1. `asorti` -- sort any array based on the array _indices_.
+1. `asorti` -- sort an array based on the array _indices_.
 
     The `asorti` function populates a "destination" array containing the 
     "source" array's indices sorted.
@@ -71,7 +71,7 @@ not what humans want to see.  GNU awk provides some sorting features.
     qux 30
     ```
 
-1. `PROCINFO["sorted_in"]` -- sort any array using a sorting function.
+1. `PROCINFO["sorted_in"]` -- traverse an array in a specified order.
 
     The builtin PROCINFO array contains a lot of information about the
     running awk process. One interesting element of this array is
@@ -120,6 +120,23 @@ not what humans want to see.  GNU awk provides some sorting features.
 
     This method allows us to avoid the temporary `sorted` array and `n`
     return value. Neat and tidy.
+
+### User-defined sorting function
+
+The user-defined sorting function takes 4 parameters: the index and
+value of one array element and the index and value of another array
+element:
+```awk
+function compare(idx1, val1, idx2, val2) {...}
+```
+The return value is:
+* less than zero: `idx1` comes before `idx2`
+* greater than zero: `idx1` comes after `idx2`
+* zero: the indices have the same sorting precedence, but their relative order is undefined.
+
+In addition to `PROCINFO["sorted_in"]` for controlling `for (idx in array)`
+order, both `asort` and `asorti` can take the name of a comparison function
+as a 3rd parameter.
 
 
 
