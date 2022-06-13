@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "rectangles.awk"
+    ],
+    "test": [
+      "test-rectangles.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Count the rectangles in an ASCII diagram."
+}
