@@ -15,19 +15,20 @@ END {
     count = 0
 
     for (top_left in Vertices) {
-        delete rs
-        vertices_right_of(top_left, rs)
-        delete bs
-        vertices_below(top_left, bs)
+        vertices_right_of(top_left, vr)  # populate vr array
+        vertices_below(top_left, vb)     # populate vb array
 
-        for (top_right in rs) {
-            for (bottom_left in bs) {
+        for (top_right in vr) {
+            for (bottom_left in vb) {
                 bottom_right = coord(row(bottom_left), col(top_right))
                 if (bottom_right in Vertices &&
-                    is_rectangle(top_left, top_right, bottom_left, bottom_right))
+                    is_rectangle(top_left, bottom_right))
                         count++
             }
         }
+
+        delete vr
+        delete vb
     }
 
     print count
@@ -52,15 +53,13 @@ function vertices_below(v1, vs,    r1, c1, r2, c2, v) {
     }
 }
 
-function is_rectangle(tl, tr, bl, br,    rs, cs) {
-    rs[1] = row(tl); cs[1] = col(tl)
-    rs[2] = row(tr); cs[2] = col(tr)
-    rs[3] = row(bl); cs[3] = col(bl)
-    rs[4] = row(br); cs[4] = col(br)
-    return  is_complete_horizontal(rs[1], cs[1], cs[2]) &&
-            is_complete_horizontal(rs[3], cs[3], cs[4]) &&
-            is_complete_vertical(cs[1], rs[1], rs[3]) &&
-            is_complete_vertical(cs[2], rs[2], rs[4])
+function is_rectangle(tl, br,    r1, r2, c1, c2) {
+    r1 = row(tl); c1 = col(tl)
+    r2 = row(br); c2 = col(br)
+    return  is_complete_horizontal(r1, c1, c2) &&
+            is_complete_horizontal(r2, c1, c2) &&
+            is_complete_vertical(c1, r1, r2) &&
+            is_complete_vertical(c2, r1, r2)
 }
 
 function is_complete_horizontal(row, col1, col2,    c) {
