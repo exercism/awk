@@ -63,6 +63,14 @@
         "status": "active"
       },
       {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "e057029e-d8a7-4d70-87b8-6ebc7f961a93",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "uuid": "5652e06f-bc63-412e-b766-91fa22a5dcd5",
         "slug": "leap",
         "name": "Leap",
