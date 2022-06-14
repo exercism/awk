@@ -3,6 +3,11 @@
 AWK is a fun little language, widely used for text manipulation.
 One can express a lot of functionality in very few lines of code.
 
+[![awk intro comic][b0rk-image]][b0rk-tweet]
+
+[b0rk-tweet]: https://twitter.com/b0rk/status/1000604334026055681?s=20&t=6-hkY0dxnID7y05XvJkEsg
+[b0rk-image]: https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ?format=jpg&name=small
+
 ## Spelling
 
 The language is AWK.  
