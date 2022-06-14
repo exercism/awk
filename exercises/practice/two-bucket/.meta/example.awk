@@ -80,10 +80,6 @@ function max(a, b) {
 @namespace "Bucket"
 
 BEGIN {
-    # initialize the data variables as arrays
-    Name[0];   delete Name[0]
-    Size[0];   delete Size[0]
-    Amount[0]; delete Amount[0]
     Count = 0
 }
 
