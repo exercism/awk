@@ -191,6 +191,15 @@
         "prerequisites": [],
         "difficulty": 6,
         "status": "active"
+      },
+      {
+        "slug": "two-bucket",
+        "name": "Two Bucket",
+        "uuid": "781f61d0-40a9-4090-be43-be42d7f725fb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7,
+        "status": "active"
       }
     ]
   },
