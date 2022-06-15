@@ -192,6 +192,15 @@
         "status": "active"
       },
       {
+        "slug": "ocr-numbers",
+        "name": "Ocr Numbers",
+        "uuid": "159f502a-272a-4e93-ab63-bad0d1c8063a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "status": "active"
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "c7d0dc7c-ac1c-43d8-97d6-27d88b773452",
