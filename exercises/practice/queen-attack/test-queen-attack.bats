@@ -1,12 +1,14 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 2.3.0.0
-
 # Test creation of Queens with invalid positions
+
+# Program input: one line with 4 integers, which represents the (x, y) position of two queens.
+# i.e. white_x white_y black_x black_y
 
 @test "queen must have positive row" {
     #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # White queen at (-2, 2) and black queen at (7, 7).
     run gawk -f queen-attack.awk <<< "-2 2 7 7"
     assert_failure
     assert_output --partial "invalid"
