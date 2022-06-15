@@ -192,6 +192,15 @@
         "status": "active"
       },
       {
+        "slug": "grep",
+        "name": "Grep",
+        "uuid": "951d2a67-89f6-480f-923a-a09aeb89a13e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6,
+        "status": "active"
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "72134b12-d70c-4a52-becf-2c5483f87638",
