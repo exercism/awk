@@ -174,6 +174,15 @@
         "status": "active"
       },
       {
+        "slug": "wordy",
+        "name": "Wordy",
+        "uuid": "470c144b-4d78-4bad-8b3c-0de5af751ca9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "status": "active"
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "96e4449b-1341-420b-b141-a9903020c3b9",
