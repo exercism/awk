@@ -26,7 +26,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     # copy the exercise directory from the bash repo:
     cp -r ../bash/exercises/practice/$exercise exercises/practice
     # enter the exercise directory
-    cd "exercises/practice/$exercises"
+    cd "exercises/practice/$exercise"
     # delete the bash solution and metadata:
     rm ${exercise/-/_}.sh .meta/{test.toml,version,example.sh}
     # rename the test file. Note the underscore changed: the AWK track uses kebab case.
@@ -43,7 +43,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     $EDITOR test-$exercise.bats
     # create `$exercise.awk` so all the tests pass.
     $EDITOR $exercise.awk
-    bats test-$exercise.bats
+    BATS_RUN_SKIPPED=true bats test-$exercise.bats
     # move the solution to `.meta/example.awk`
     mv $exercise.awk .meta/example.awk
     # borrow a stub file from hamming -- this is what students first see.
@@ -62,6 +62,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     bin/configlet sync -u -e $exercise
     bin/configlet lint
     # commit your code:
+    git add exercises/practice/$exercise
     git commit -am "Add new exercise: $exercise"
     # validate the exercise, making sure it passes:
     bin/validate_one_exercise exercises/practice/$exercise
