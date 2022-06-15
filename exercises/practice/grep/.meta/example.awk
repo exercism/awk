@@ -4,24 +4,21 @@ BEGIN {
     opts["n"] = 0       # include line number
     opts["l"] = 0       # only filenames containing matches
     opts["v"] = 0       # invert matches
+    opts["x"] = 0       # whole line matching
+    opts["i"] = 0       # case insensitive
 
     n = split(flags, fs)
-    for (i = 1; i <= n; i++) {
-        switch (fs[i]) {
-            case "i":   # case insensitive
-                IGNORECASE = 1
-                break
-            case "x":   # whole line match
-                pattern = "^" pattern "$"
-                break
-            default:
-                opts[fs[i]] = 1
-        }
-    }
+    for (i = 1; i <= n; i++) opts[fs[i]] = 1
+    if (opts["i"]) IGNORECASE = 1
     count = 0
 }
 
-xor($0 ~ pattern, opts["v"]) {
+match($0, pattern, m) && opts["x"] && m[0] != $0 {
+    delete m
+}
+
+# if there was a match, the `m` array will have an index `0`
+xor((0 in m), opts["v"]) {
     count++
     if (opts["l"]) {
         print FILENAME
