@@ -170,3 +170,18 @@ INPUT
     assert_success
     assert_output "2"
 }
+
+@test "rectangles must have four sides" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f rectangles.awk <<INPUT
++-+ +-+
+| | | |
++-+-+-+
+  | |  
++-+-+-+
+| | | |
++-+ +-+
+INPUT
+    assert_success
+    assert_output "5"
+}
