@@ -16,7 +16,7 @@ This is a GNU awk extension.
 ### Namespaces
 
 We're introducing [namespaces][namespaces]. All awk variables are global
-(except for function parameters which are local to the function).  Clearly
+(except for function parameters which are local to the function):
 there is a high potential for name collisions, particularly if you're
 including third-party libraries. Namespaces are a way to partition where
 variables are stored. You'll see the [`@namespace`][d-namespace] directive
