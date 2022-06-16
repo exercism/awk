@@ -10,28 +10,24 @@ The following sections that are tagged with "(gawk)" are specifically GNU awk ex
 
 ### Include files <sup>(gawk)</sup>
 
-Notice the [`@include`][d-include] directive in the test
-file.  This instructs gawk to read and evaluate the named file.
+Notice the [`@include`][d-include] directive in the test file.  
+This instructs gawk to read and evaluate the named file.
 
 ### Namespaces <sup>(gawk)</sup>
 
-All awk variables are global
-(except for function parameters which are local to the function).
-There is a high potential for name collisions, particularly when
-third-party libraries get included. [Namespaces][namespaces] are a way to partition where
-variables are stored. Notice the [`@namespace`][d-namespace] directive
-in the exercise's files.
+All awk variables are global (except for function parameters which are local to the function).
+There is a high potential for name collisions, particularly when third-party libraries get included. 
+[Namespaces][namespaces] are a way to partition where variables are stored.
+Notice the [`@namespace`][d-namespace] directive in the exercise's files.
 
-The default namespace is named "awk". Having a default namespace allows
-the programmer to call a builtin awk function from inside a function in a
-different namespace.
+The default namespace is named "awk". 
+Having a default namespace allows the programmer to call a builtin awk function from inside a function in a different namespace.
 
 ### Dynamic function invocation <sup>(gawk)</sup>
 
-awk functions are not first-class objects: they can't get passed around like
-some other languages allow. However, the _name_ of a function can be passed as a
-string and that is used to invoke the function, using a special
-`@varname(args)` notation. An example:
+awk functions are not first-class objects: they can't get passed around like some other languages allow.
+However, a variable can hold the _name_ of a function (a string), and the function is invoked using a special `@varname(args)` notation.
+An example:
 
 ```awk
 function greet(name) {
@@ -49,33 +45,29 @@ This is described in [Indirect Function Calls][indirect].
 
 ### How function parameters are passed
 
-Array parameters are passed **by reference**. Changes to the array made in
-the function are visible in the caller.
+Array parameters are passed **by reference**.
+Changes to the array made in the function are visible in the caller.
 
 Non-array parameters are passed **by value**.
 
 For _untyped_ parameters, it depends on what the function does with them:
-- if the function initializes it as an array, then it becomes a parameter
-  passed by reference,
-- if the function initializes it as a scalar value (a number or a string),
-  then it is not a reference.
+- if the function initializes it as an array, then it becomes a parameter passed by reference,
+- if the function initializes it as a scalar value (a number or a string), then it is not a reference.
 
-Full details are in the manual in [Passing Function Arguments by Value Or by
-Reference][pass-by].
+Full details are in the manual in [Passing Function Arguments by Value Or by Reference][pass-by].
 
 #### Local variables
 
-"Pass by value" parameters is how to achieve local variables in a
-function. It is not an error to pass fewer values to a function than the
-number of listed parameters; the excess parameters are "untyped" until they
-get used. They are available to be assigned scalar values in the function
-that are not stored in the global namespace.
+Function scoped (local) variables can be created by using "pass by value" parameters.
+It is not an error to pass fewer values to a function than the number of listed parameters;
+the excess parameters are "untyped" until they get used.
+They are available to be assigned scalar values in the function that are not stored in the global namespace.
 
 - If you assign a scalar value to a parameter, that is local to the function.
 - If you assign a scalar to a variable **not** named in the parameter list, that variable is global.
 
-By convention, in the function signature the expected parameters appear first
-followed by some whitespace and then the local parameters. An example:
+By convention, in the function signature the expected parameters appear first followed by some whitespace and then the local parameters.
+An example:
 
 ```awk
 function add(a, b,    total) {
