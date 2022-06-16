@@ -20,7 +20,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     # set the exercise you are working on:
     exercise=foo-bar
     # set the awk repo root:
-    repo=~/awk/repo
+    repo=$PWD
     # enter the awk repo
     cd "$repo"
     # copy the exercise directory from the bash repo:
@@ -28,9 +28,9 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     # enter the exercise directory
     cd "exercises/practice/$exercise"
     # delete the bash solution and metadata:
-    rm ${exercise/-/_}.sh .meta/{test.toml,version,example.sh}
+    rm ${exercise/-//_}.sh .meta/{test.toml,version,example.sh}
     # rename the test file. Note the underscore changed: the AWK track uses kebab case.
-    mv ${exercise/-/_}.bats test-$exercise.bats
+    mv ${exercise/-//_}.bats test-$exercise.bats
     # edit `.meta/config.json`
     # - fix the filenames from .sh to .awk, and the test file
     # - set yourself as the author, and empty the contributors list.
@@ -62,7 +62,7 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     bin/configlet sync -u -e $exercise
     bin/configlet lint
     # commit your code:
-    git add exercises/practice/$exercise
+    git add config.json exercises/practice/$exercise
     git commit -am "Add new exercise: $exercise"
     # validate the exercise, making sure it passes:
     bin/validate_one_exercise exercises/practice/$exercise
