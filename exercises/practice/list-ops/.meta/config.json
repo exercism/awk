@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "list-ops.awk"
+    ],
+    "test": [
+      "test-list-ops.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ],
+    "editor": [
+      "array-utils.awk"
+    ]
+  },
+  "blurb": "Implement basic list operations."
+}
