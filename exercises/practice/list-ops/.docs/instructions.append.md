@@ -52,13 +52,13 @@ This is described in [Indirect Function Calls][indirect].
 Array parameters are passed **by reference**. Changes to the array made in
 the function are visible in the caller.
 
-Non-array parameters a passed **by value**.
+Non-array parameters are passed **by value**.
 
 For _untyped_ parameters, it depends on what the function does with them:
 - if the function initializes it as an array, then it becomes a parameter
   passed by reference,
-- if the function initializes it as a scalar, then that parameter is handled
-  as "passed by value", and it does not materialize in the caller.
+- if the function initializes it as a scalar value (a number or a string),
+  then it is not a reference.
 
 Full details are in the manual in [Passing Function Arguments by Value Or by
 Reference][pass-by].
@@ -71,11 +71,11 @@ number of listed parameters; the excess parameters are "untyped" until they
 get used. They are available to be assigned scalar values in the function
 that are not stored in the global namespace.
 
-* If you assign a scalar value to a parameter, that is local to the function.
-* If you assign a scalar to a variable not named in the parameter list, that variable is global.
+- If you assign a scalar value to a parameter, that is local to the function.
+- If you assign a scalar to a variable **not** named in the parameter list, that variable is global.
 
-By convention, in the function signature local parameters are separated from the expected parameters
-by whitespace.
+By convention, in the function signature the expected parameters appear first
+followed by some whitespace and then the local parameters. An example:
 
 ```awk
 function add(a, b,    total) {
