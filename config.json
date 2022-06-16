@@ -219,6 +219,15 @@
         "status": "active"
       },
       {
+        "slug": "list-ops",
+        "name": "List Operations",
+        "uuid": "3997cfa6-9014-4573-90c3-27efe7926bcc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8,
+        "status": "active"
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "781f61d0-40a9-4090-be43-be42d7f725fb",
