@@ -13,7 +13,7 @@ function append(list, list_or_elem,    i) {
 }
 
 function Push(list, element) {
-    list[length(list)+1] = element
+    list[length(list) + 1] = element
 }
 
 # Concatenate is flattening an array of arrays one level
