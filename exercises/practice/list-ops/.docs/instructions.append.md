@@ -4,16 +4,16 @@
 
 There are several interesting new concepts we're seeing in this exercise.
 
-### Include files
+The following sections that tagged with "(gawk)" are specifically GNU awk extensions.
+
+### Include files <sup>(gawk)</sup>
 
 This is the first exercise we've seen where the solution we're writing is
 not a "main" script. We're writing a library to be included into other awk
 programs.  You'll see the [`@include`][d-include] directive in the test
 file.  This is analagous to the shell's `source` (aka `.`) command.
 
-This is a GNU awk extension.
-
-### Namespaces
+### Namespaces <sup>(gawk)</sup>
 
 We're introducing [namespaces][namespaces]. All awk variables are global
 (except for function parameters which are local to the function):
@@ -22,9 +22,7 @@ including third-party libraries. Namespaces are a way to partition where
 variables are stored. You'll see the [`@namespace`][d-namespace] directive
 in the exercise's files.
 
-This is a GNU awk extension.
-
-### Dynamic function invocation
+### Dynamic function invocation <sup>(gawk)</sup>
 
 awk functions are not first-class objects: they can't get passed around like
 other languages allow. However, you can pass the _name_ of a function as a
@@ -44,8 +42,6 @@ BEGIN {
 ```
 This is described in [Indirect Function Calls][indirect].
 
-This is a GNU awk extension.
-
 ### How function parameters are passed
 
 Array parameters are passed **by reference**. Changes to the array made in
@@ -61,8 +57,6 @@ For _untyped_ parameters, it depends on what the function does with them:
 
 Full details are in the manual in [Passing Function Arguments by Value Or by
 Reference][pass-by].
-
-This is AWK functionality, not specific to GNU awk.
 
 #### Local variables
 
