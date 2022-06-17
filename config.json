@@ -63,6 +63,14 @@
         "status": "active"
       },
       {
+        "slug": "rna-transcription",
+        "name": "Rna Transcription",
+        "uuid": "7924936f-d8c1-4487-ba61-e1024d8f2999",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "d5ea1ab0-3420-4b1c-a482-03563e7dd200",
