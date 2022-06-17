@@ -79,6 +79,14 @@
         "difficulty": 4
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "beb92b14-a0db-4749-bb0d-9a791dc5ba0a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "e057029e-d8a7-4d70-87b8-6ebc7f961a93",
