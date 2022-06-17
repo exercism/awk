@@ -337,6 +337,14 @@
         "status": "active"
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "77790996-7c28-4a57-8f9e-58f0fe80f682",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "781f61d0-40a9-4090-be43-be42d7f725fb",
