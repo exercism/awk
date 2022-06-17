@@ -205,6 +205,15 @@
         "status": "active"
       },
       {
+        "slug": "gigasecond",
+        "name": "Gigasecond",
+        "uuid": "6a6aca53-2dd8-4673-9f72-893eeaadd368",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "active"
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "e031d714-cea9-439a-a922-ff30325865ca",
