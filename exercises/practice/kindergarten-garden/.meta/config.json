@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "kindergarten-garden.awk"
+    ],
+    "test": [
+      "test-kindergarten-garden.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
+  "source": "Random musings during airplane trip.",
+  "source_url": "http://jumpstartlab.com"
+}

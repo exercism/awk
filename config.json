@@ -268,6 +268,15 @@
         "status": "active"
       },
       {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "a556b380-1535-49e3-8299-b3a1ba31a2c7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "status": "active"
+      },
+      {
         "slug": "ocr-numbers",
         "name": "Ocr Numbers",
         "uuid": "159f502a-272a-4e93-ab63-bad0d1c8063a",
