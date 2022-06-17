@@ -214,6 +214,14 @@
         "status": "active"
       },
       {
+        "slug": "sum-of-multiples",
+        "name": "Sum Of Multiples",
+        "uuid": "e5f9a484-33c0-4670-93f6-2f5250a311ea",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "e031d714-cea9-439a-a922-ff30325865ca",
