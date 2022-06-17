@@ -111,6 +111,14 @@
         "status": "active"
       },
       {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "5daaa0c2-92c1-4f45-946d-a4dcdf199ed6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "6f6587a1-1d10-422d-9335-3c3d3e2781b7",
