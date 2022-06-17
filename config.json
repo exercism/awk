@@ -135,6 +135,14 @@
         "difficulty": 3
       },
       {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "f6ef6096-3a35-49fc-828e-67c52f55405d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "6f6587a1-1d10-422d-9335-3c3d3e2781b7",
