@@ -9,6 +9,20 @@ bats test-hello-world.bats
 `bats` will need to be installed.
 See the [Testing on the Bash track][bash] page for instructions to install `bats` for your system.
 
+### bats is implemented in bash
+
+The bats file is a bash script, with some special functions recognized by the `bats` command.
+You'll see some tests that look like
+```sh
+gawk -f some-exercise.awk <<< "some,input,here"
+```
+That `<<<` syntax is a bash [Here String][here-string].
+It sends the string on the right-hand side into the standard input of the program on the left-hand side.
+It is ([approximately][so]) the same as
+```sh
+echo "some,input,here" | gawk -f some-exercise.awk
+```
+
 ## Help for assert functions
 
 The tests use functions from the [bats-assert][bats-assert] library.
@@ -45,3 +59,5 @@ bats
 
 [bash]: https://exercism.org/docs/tracks/bash/tests
 [bats-assert]: https://github.com/bats-core/bats-assert
+[here-string]: https://www.gnu.org/software/bash/manual/bash.html#Here-Strings
+[so]: https://unix.stackexchange.com/a/80372/4667
