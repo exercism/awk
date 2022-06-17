@@ -219,6 +219,14 @@
         "status": "active"
       },
       {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "7005dc56-fc42-4a81-b20d-071a335e7ead",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "72134b12-d70c-4a52-becf-2c5483f87638",
