@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "IsaacG"
+  ],
+  "files": {
+    "solution": [
+      "nth-prime.awk"
+    ],
+    "test": [
+      "test-nth-prime.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=7"
+}

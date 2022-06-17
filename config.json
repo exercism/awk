@@ -311,6 +311,14 @@
         "difficulty": 1
       },
       {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "060af821-ebad-42bc-97e7-1a3a323e9291",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "72134b12-d70c-4a52-becf-2c5483f87638",
