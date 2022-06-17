@@ -28,9 +28,9 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     # enter the exercise directory
     cd "exercises/practice/$exercise"
     # delete the bash solution and metadata:
-    rm ${exercise/-//_}.sh .meta/{test.toml,version,example.sh}
+    rm ${exercise//-/_}.sh .meta/{test.toml,version,example.sh}
     # rename the test file. Note the underscore changed: the AWK track uses kebab case.
-    mv ${exercise/-//_}.bats test-$exercise.bats
+    mv ${exercise//-/_}.bats test-$exercise.bats
     # edit `.meta/config.json`
     # - fix the filenames from .sh to .awk, and the test file
     # - set yourself as the author, and empty the contributors list.
