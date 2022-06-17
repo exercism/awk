@@ -80,6 +80,15 @@
         "status": "active"
       },
       {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "737a4894-1974-494c-abe5-4987876a1c59",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "active"
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "abc1dd61-d677-4e7c-95a6-b9c6f797b2bd",
