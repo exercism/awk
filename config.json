@@ -147,6 +147,15 @@
         "status": "active"
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "96dd7555-e04c-4556-85c5-6a9504f7e76d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "active"
+      },
+      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "5605e2ff-89a2-4902-91f0-7fe4c6245327",
