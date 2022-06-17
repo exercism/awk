@@ -145,6 +145,14 @@
         "status": "active"
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "35f27523-28c9-4d4b-a841-5a52c06d8cef",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "b23bff47-2641-4d89-8258-d83d9dc2d520",
