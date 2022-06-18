@@ -257,6 +257,14 @@
         "status": "active"
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "90ebe67c-7002-405a-9010-bad2ad6826c7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "series",
         "name": "Series",
         "uuid": "4eb7c7e5-eb62-48cf-98f7-d80485e9418f",
