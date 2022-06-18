@@ -299,6 +299,14 @@
         "status": "active"
       },
       {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "7a167d4a-7637-49ea-b5fc-6abc5f73a218",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "96e4449b-1341-420b-b141-a9903020c3b9",
