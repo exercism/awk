@@ -247,6 +247,14 @@
         "status": "active"
       },
       {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "acecc828-f7c8-4b10-a045-dc4712e6da06",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "9d4fcf0c-29e9-46bc-a390-5179a8db8039",
