@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "say.awk"
+    ],
+    "test": [
+      "test-say.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Given a number from 0 to 999,999,999,999, spell out that number in English.",
+  "source": "A variation on JavaRanch CattleDrive, exercise 4a",
+  "source_url": "http://www.javaranch.com/say.jsp"
+}
