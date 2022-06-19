@@ -160,6 +160,14 @@
         "status": "active"
       },
       {
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "eca1e89c-ab53-4499-9c90-0cf004226315",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "bd662ca0-99eb-4835-a67a-3dd0f5113cda",
