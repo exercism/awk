@@ -367,6 +367,14 @@
         "status": "active"
       },
       {
+        "slug": "say",
+        "name": "Say",
+        "uuid": "fb8f97d9-9e1e-4b9d-a234-0c2b6b3f459e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "grep",
         "name": "Grep",
         "uuid": "951d2a67-89f6-480f-923a-a09aeb89a13e",
