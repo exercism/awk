@@ -1,4 +1,7 @@
 #!/usr/bin/env gawk -f
+#
+# A translation of this lovely recursive javascript solution
+# https://exercism.org/tracks/javascript/exercises/say/solutions/515ab00bc90f46b0bde3732d9317a46b
 
 BEGIN {
     small[0] = "zero";   small[10] = "ten"
