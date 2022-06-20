@@ -7,22 +7,28 @@ BEGIN {
         print(2)
         exit(0)
     }
+
+    primes[1] = 2
     count = 1
     candidate = 1
+
     while (count < n) {
-        candidate += 2
-        is_prime = 1
-        for (i in primes) {
-            if (candidate % i == 0) {
-                is_prime = 0
-                break
+        while (1) {
+            candidate += 2
+            is_prime = 1
+            i = 1
+            while (primes[i] <= sqrt(candidate)) {
+                if (candidate % primes[i] == 0) {
+                    is_prime = 0
+                    break
+                }
+                i++
             }
+            if (is_prime) break
         }
-        if (is_prime) {
-            primes[candidate] = 1
-            count++
-        }
+        primes[++count] = candidate
     }
-    print candidate
+
+    print primes[n]
 }
 

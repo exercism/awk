@@ -31,7 +31,7 @@ load bats-extra
 
 @test "big prime" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f nth-prime.awk -v n=10001 -M
+    run gawk -f nth-prime.awk -v n=10001
     assert_success
     assert_output "104743"
 }
