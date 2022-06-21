@@ -34,6 +34,41 @@
   },
   "exercises": {
     "concept": [],
+    "foregone-comments": [
+      "Some of the reasons to forego exercises:",
+      "- specific data structures (trees, linked lists, etc)",
+      "    - these are _possible_ but not practical",
+      "- very object-oriented",
+      "- threading/concurrency",
+      "- refactoring exercises (un-forego if you're willing to write them)",
+      "See https://github.com/exercism/awk/issues/105"
+    ],
+    "foregone": [
+      "bank-account",
+      "binary-search-tree",
+      "custom-set",
+      "dnd-character",
+      "flatten-array",
+      "hangman",
+      "ledger",
+      "lens-person",
+      "linked-list",
+      "markdown",
+      "micro-blog",
+      "parallel-letter-frequency",
+      "passio",
+      "pov",
+      "react",
+      "resistor-color",
+      "satellite",
+      "sgf-parsing",
+      "simple-linked-list",
+      "square-root",
+      "strain",
+      "tree-building",
+      "zebra-puzzle",
+      "zipper"
+    ],
     "practice": [
       {
         "uuid": "11f04035-08f4-4f57-812f-65b9c8236ebf",
