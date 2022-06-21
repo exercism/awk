@@ -2,6 +2,9 @@
   "authors": [
     "IsaacG"
   ],
+  "contributors": [
+    "glennj"
+  ],
   "files": {
     "solution": [
       "nth-prime.awk"
