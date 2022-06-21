@@ -2,7 +2,7 @@
 load bats-extra
 
 @test 'lowercase letter' {
-    #[[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'a'
 
     assert_success
@@ -10,7 +10,7 @@ load bats-extra
 }
 
 @test 'uppercase letter' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'A'
 
     assert_success
@@ -18,7 +18,7 @@ load bats-extra
 }
 
 @test 'valuable letter' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'f'
 
     assert_success
@@ -26,7 +26,7 @@ load bats-extra
 }
 
 @test 'short word' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'at'
 
     assert_success
@@ -34,7 +34,7 @@ load bats-extra
 }
 
 @test 'short, valuable word' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'zoo'
 
     assert_success
@@ -42,7 +42,7 @@ load bats-extra
 }
 
 @test 'medium word' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'street'
 
     assert_success
@@ -50,7 +50,7 @@ load bats-extra
 }
 
 @test 'medium, valuable word' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'quirky'
 
     assert_success
@@ -58,7 +58,7 @@ load bats-extra
 }
 
 @test 'long, mixed-case word' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'OxyphenButazone'
 
     assert_success
@@ -66,7 +66,7 @@ load bats-extra
 }
 
 @test 'english-like word' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'pinata'
 
     assert_success
@@ -74,7 +74,7 @@ load bats-extra
 }
 
 @test 'empty input' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< ''
 
     assert_success
@@ -82,7 +82,7 @@ load bats-extra
 }
 
 @test 'entire alphabet available' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'abcdefghijklmnopqrstuvwxyz'
 
     assert_success
@@ -90,7 +90,7 @@ load bats-extra
 }
 
 @test 'bonus: blank tile counts as zero' {
-    [[ $BATS_RUN_SKIPPED == 'true' ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f scrabble-score.awk <<< 'abcdefghijklmnop rstuvwxyz'
 
     assert_success

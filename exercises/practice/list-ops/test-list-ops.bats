@@ -4,7 +4,7 @@ load bats-extra
 ## append entries to a list and return the new list
 
 @test "append empty lists" {
-    #[[ $BATS_RUN_SKIPPED == true ]] || skip
+    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"   # this file is provided
         @include "list-ops.awk"     # this file you write
@@ -24,7 +24,7 @@ load bats-extra
 }
 
 @test "append list to empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -48,7 +48,7 @@ load bats-extra
 }
 
 @test "append empty list to list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -72,7 +72,7 @@ load bats-extra
 }
 
 @test "append non-empty lists" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -98,7 +98,7 @@ load bats-extra
 }
 
 @test "append scalar value to empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -117,7 +117,7 @@ load bats-extra
 }
 
 @test "append scalar value to non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -141,7 +141,7 @@ load bats-extra
 ## concatenate a list of lists
 
 @test "concatenate an empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -161,7 +161,7 @@ load bats-extra
 }
 
 @test "concatenate a list of lists" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -196,7 +196,7 @@ load bats-extra
 ## filter list returning only values that satisfy the filter function
 
 @test "filter empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -219,7 +219,7 @@ load bats-extra
 }
 
 @test "filter non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -252,7 +252,7 @@ load bats-extra
 ## transformed by the mapping function
 
 @test "map empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -276,7 +276,7 @@ load bats-extra
 }
 
 @test "map non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -306,7 +306,7 @@ load bats-extra
 ## folds (reduces) the given list from the left with a function
 
 @test "foldl empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -329,7 +329,7 @@ load bats-extra
 }
 
 @test "foldl direction independent function applied to non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -352,7 +352,7 @@ load bats-extra
 }
 
 @test "foldl direction dependent function applied to non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -377,7 +377,7 @@ load bats-extra
 
 # track-specific test
 @test "foldl not just numbers" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -403,7 +403,7 @@ load bats-extra
 # Note the order of the arguments to the given functions!
 
 @test "foldr empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -426,7 +426,7 @@ load bats-extra
 }
 
 @test "foldr direction independent function applied to non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -449,7 +449,7 @@ load bats-extra
 }
 
 @test "foldr direction dependent function applied to non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -474,7 +474,7 @@ load bats-extra
 
 # track-specific test
 @test "foldr not just numbers" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -499,7 +499,7 @@ load bats-extra
 ## reverse the elements of the list
 
 @test "reverse empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"
@@ -519,7 +519,7 @@ load bats-extra
 }
 
 @test "reverse non-empty list" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
         @include "list-ops.awk"

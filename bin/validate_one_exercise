@@ -25,6 +25,13 @@ tests=$(jq -r '.files.test[0]' "$config")
 solution=$(jq -r '.files.example[0]' "$config")
 [[ -f ${solution} ]] || die "Missing solution file for $exercise"
 
+if [[ $exercise != "hello-world" ]]; then
+    num_skip_comments=$(
+        grep -cP '^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$' "$tests"
+    )
+    [[ $num_skip_comments -eq 1 ]] || die "There should be exactly one commented skip directive in $tests"
+fi
+
 echo "Processing $exercise"
 
 cleanup() {

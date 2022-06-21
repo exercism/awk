@@ -9,21 +9,21 @@ load bats-extra
 }
 
 @test "no columns" {
-    ## [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f rectangles.awk <<< ""
     assert_success
     assert_output "0"
 }
 
 @test "no rectangles" {
-    ## [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f rectangles.awk <<< " "
     assert_success
     assert_output "0"
 }
 
 @test "one rectangle" {
-    ## [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f rectangles.awk <<INPUT
 +-+
 | |

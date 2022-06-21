@@ -9,7 +9,7 @@ load bats-extra
 }
 
 @test "addition" {
-    ## [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f wordy.awk <<< "What is 1 plus 1?"
     assert_success
     assert_output "2"
