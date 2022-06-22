@@ -1,5 +1,8 @@
 #!/usr/bin/env gawk -f
 
+# These variables are initialized on the command line (using '-v'):
+# - num
+
 BEGIN {
     result = ""
     if (num % 3 == 0) result = result "Pling"

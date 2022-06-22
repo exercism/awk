@@ -1,5 +1,8 @@
 #!/usr/bin/env gawk -f
 
+# These variables are initialized on the command line (using '-v'):
+# - name
+
 BEGIN {
     split("Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry", names)
 

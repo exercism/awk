@@ -1,5 +1,8 @@
 #!/usr/bin/env gawk -f
 
+# These variables are initialized on the command line (using '-v'):
+# - key
+
 BEGIN {
     PROCINFO["sorted_in"] = "@val_str_asc"
     lower_key = tolower(key)

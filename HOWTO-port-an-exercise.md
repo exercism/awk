@@ -67,6 +67,8 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     # validate the exercise, making sure it passes:
     bin/validate_one_exercise exercises/practice/$exercise
     ```
+1. If your tests use `gawk -v var=value`, then add some comments to the stub
+   file listing the variable names. Check other exercises that do this.
 1. push your branch and create a pull request in [exercism/awk][github]
     - add "Closes #1234" to the PR description (where 1234 is the issue
       number from the first step: this links the PR and the issue)

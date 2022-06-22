@@ -1,3 +1,6 @@
+# These variables are initialized on the command line (using '-v'):
+# - type
+
 {
     # A triangle must have non-zero size.
     perimeter = $1 + $2 + $3

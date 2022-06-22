@@ -1,3 +1,6 @@
+# These variables are initialized on the command line (using '-v'):
+# - n
+
 BEGIN {
     if (n < 1) {
         print("invalid input")

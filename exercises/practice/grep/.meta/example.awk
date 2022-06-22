@@ -1,5 +1,9 @@
 #!/usr/bin/env gawk -f
 
+# These variables are initialized on the command line (using '-v'):
+# - flags
+# - pattern
+
 BEGIN {
     opts["n"] = 0       # include line number
     opts["l"] = 0       # only filenames containing matches
