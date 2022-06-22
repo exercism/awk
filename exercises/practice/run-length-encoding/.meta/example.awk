@@ -1,5 +1,8 @@
 #!/usr/bin/env gawk -f
 
+# These variables are initialized on the command line (using '-v'):
+# - type
+
 BEGIN {
     switch (type) {
         case "encode":

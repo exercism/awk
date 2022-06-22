@@ -1,3 +1,6 @@
+# These variables are initialized on the command line (using '-v'):
+# - limit
+
 {
     # Find all multiples of each input, from multiple to limit.
     for (i = 1; i <= NF; i++)

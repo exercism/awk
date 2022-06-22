@@ -1,5 +1,10 @@
 #!/usr/bin/env gawk -f
 
+# These variables are initialized on the command line (using '-v'):
+# - x
+# - y
+# - dir
+
 BEGIN {
     OK = 0
     FAIL = 1
