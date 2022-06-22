@@ -25,14 +25,15 @@ tests=$(jq -r '.files.test[0]' "$config")
 solution=$(jq -r '.files.example[0]' "$config")
 [[ -f ${solution} ]] || die "Missing solution file for $exercise"
 
-if [[ $exercise != "hello-world" ]]; then
-    num_skip_comments=$(
-        grep -cP '^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$' "$tests"
-    )
-    [[ $num_skip_comments -eq 1 ]] || die "There should be exactly one commented skip directive in $tests"
+# hello-world has no skips
+if [[ ${exercise} != "hello-world" ]]; then
+    # a PCRE: the `\Q...\E` defines a literal segment
+    skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
+    num_skip_comments=$(grep -cP "${skip_re}" "${tests}")
+    (( num_skip_comments == 1 )) || die "There should be exactly one commented skip directive in ${tests}"
 fi
 
-echo "Processing $exercise"
+echo "Processing ${exercise}"
 
 cleanup() {
     git checkout "${stub}"
