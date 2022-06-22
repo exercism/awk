@@ -12,7 +12,7 @@ load bats-extra
 }
 
 @test "encode single characters only are encoded without count" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=encode <<< "XYZ"
     assert_success
@@ -20,7 +20,7 @@ load bats-extra
 }
 
 @test "encode string with no single characters" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=encode <<< "AABBBCCCC"
     assert_success
@@ -28,7 +28,7 @@ load bats-extra
 }
 
 @test "encode single characters mixed with repeated characters" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=encode <<< "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
     assert_success
@@ -36,7 +36,7 @@ load bats-extra
 }
 
 @test "encode multiple whitespace mixed in string" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=encode <<< "  hsqq qww  "
     assert_success
@@ -44,7 +44,7 @@ load bats-extra
 }
 
 @test "encode lowercase characters" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=encode <<< "aabbbcccc"
     assert_success
@@ -54,7 +54,7 @@ load bats-extra
 # run-length decode a string
 
 @test "decode empty string" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=decode <<< ""
     assert_success
@@ -62,7 +62,7 @@ load bats-extra
 }
 
 @test "single characters only" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     
     run gawk -f run-length-encoding.awk -v type=decode <<< "XYZ"
     assert_success
