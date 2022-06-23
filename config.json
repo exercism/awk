@@ -298,6 +298,14 @@
         "difficulty": 3
       },
       {
+        "slug": "grade-school",
+        "name": "Grade School",
+        "uuid": "35b9cd7c-8f80-4728-844a-6f9f4e403706",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "9d4fcf0c-29e9-46bc-a390-5179a8db8039",
