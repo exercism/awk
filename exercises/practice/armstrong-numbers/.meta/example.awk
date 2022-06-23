@@ -1,7 +1,7 @@
 #!/usr/bin/env gawk -f
 
 # These variables are initialized on the command line (using '-v'):
-# - direction
+# - num
 
 function is_armstrong(n,    m, len, sum) {
     m = n
