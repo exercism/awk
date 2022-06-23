@@ -10,23 +10,22 @@ BEGIN {
 }
 
 !($1 in directory) {
-    count++
     directory[$1] = $2
 }
 
 END {
-    if (count)
-        print count, "student(s) added"
-
     switch (action) {
         case "roster":
             for (name in directory)
-                print name
+                out = out "," name
+            print substr(out, 2)
             break
+
         case "grade":
             for (name in directory)
                 if (directory[name] == grade)
-                    print name
+                    out = out "," name
+            print substr(out, 2)
             break
     }
 }

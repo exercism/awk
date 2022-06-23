@@ -17,13 +17,8 @@ load bats-extra
 Aimee,2
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-1 student(s) added
-Aimee
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Aimee"
 }
 
 @test "Multiple students in the same grade are added to the roster" {
@@ -35,15 +30,8 @@ James,2
 Paul,2
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Blair
-James
-Paul
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Blair,James,Paul"
 }
 
 
@@ -57,15 +45,8 @@ James,2
 Paul,2
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Blair
-James
-Paul
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Blair,James,Paul"
 }
 
 @test "Students in multiple grades are added to the roster" {
@@ -76,14 +57,8 @@ Chelsea,3
 Logan,7
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-2 student(s) added
-Chelsea
-Logan
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Chelsea,Logan"
 }
 
 @test "Student not added to multiple grades in the roster" {
@@ -96,15 +71,8 @@ James,3
 Paul,2
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Blair
-James
-Paul
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Blair,James,Paul"
 }
 
 @test "Students are sorted by grades in the roster" {
@@ -116,15 +84,8 @@ Peter,2
 Anna,1
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Anna
-Peter
-Jim
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Anna,Peter,Jim"
 }
 
 @test "Students are sorted by name in the roster" {
@@ -136,15 +97,8 @@ Zoe,2
 Alex,2
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Alex
-Peter
-Zoe
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Alex,Peter,Zoe"
 }
 
 @test "Students are sorted by grades and then by name in the roster" {
@@ -160,19 +114,8 @@ Jim,3
 Charlie,1
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-7 student(s) added
-Anna
-Barb
-Charlie
-Alex
-Peter
-Zoe
-Jim
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Anna,Barb,Charlie,Alex,Peter,Zoe,Jim"
 }
 
 @test "Grade is empty if no students in the roster" {
@@ -194,12 +137,8 @@ Alex,2
 Jim,3
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-4 student(s) added
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output ""
 }
 
 @test "Student not added to same grade more than once" {
@@ -212,15 +151,8 @@ James,2
 Paul,2
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Blair
-James
-Paul
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Blair,James,Paul"
 }
 
 @test "Student not added to multiple grades" {
@@ -233,14 +165,8 @@ James,3
 Paul,3
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Blair
-James
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Blair,James"
 }
 
 @test "Student not added to other grade for multiple grades" {
@@ -253,13 +179,8 @@ James,3
 Paul,3
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Paul
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Paul"
 }
 
 @test "Students are sorted by name in a grade" {
@@ -271,12 +192,6 @@ Bradley,5
 Jeff,1
 END_INPUT
 
-    expected=$(cat << END_EXPECTED
-3 student(s) added
-Bradley
-Franklin
-END_EXPECTED
-    )
     assert_success
-    assert_output "$expected"
+    assert_output "Bradley,Franklin"
 }
