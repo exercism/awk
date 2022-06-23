@@ -452,6 +452,14 @@
         "status": "active"
       },
       {
+        "slug": "variable-length-quantity",
+        "name": "Variable Length Quantity",
+        "uuid": "89b587da-64f6-4b8c-b1a7-4efe361bf283",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "list-ops",
         "name": "List Operations",
         "uuid": "3997cfa6-9014-4573-90c3-27efe7926bcc",
