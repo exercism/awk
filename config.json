@@ -366,6 +366,14 @@
         "difficulty": 5
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "1d9bd927-83c8-483d-aa4c-2070e17368b6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "96e4449b-1341-420b-b141-a9903020c3b9",
