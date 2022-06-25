@@ -374,6 +374,14 @@
         "difficulty": 5
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "1d9bd927-83c8-483d-aa4c-2070e17368b6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+    },
+    {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "b5c559e7-a7b9-4eac-a54c-6fdb830fc61c",
