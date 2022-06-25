@@ -307,6 +307,14 @@
         "status": "active"
       },
       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "4d8259e4-0ac2-440e-b739-46e6141f6989",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "3b87d707-756f-42c0-914a-54aa7a01e73e",
