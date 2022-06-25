@@ -1,5 +1,12 @@
 #!/usr/bin/env gawk -f
 
+BEGIN {
+    # the scores will be in a numerically indexed array to maintain
+    # the insertion order.
+    # This controls the sorting for the "personal top 3" action:
+    PROCINFO["sorted_in"] = "@val_num_desc"
+}
+
 $0 == "list" {
     for (i = 1; i <= n; i++)
         print scores[i]
@@ -10,18 +17,15 @@ $0 == "latest" {
     next
 }
 $0 == "personalBest" {
-    print max + 0
+    print max
     next
 }
 $0 == "personalTopThree" {
-    sorted_in = PROCINFO["sorted_in"]
-    PROCINFO["sorted_in"] = "@val_num_desc"
     count = 0
     for (i in scores) {
         print scores[i]
         if (++count == 3) break
     }
-    PROCINFO["sorted_in"] = sorted_in
     next
 }
 max == "" || max < $0 {
