@@ -357,6 +357,14 @@
         "status": "active"
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "b413e95c-14c1-47d0-bff0-b0d20f496504",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "run-length-encoding",
         "name": "Run Length Encoding",
         "uuid": "60cb3524-dddb-4768-9919-39849e7875ac",
