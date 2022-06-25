@@ -374,6 +374,14 @@
         "difficulty": 5
       },
       {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "b5c559e7-a7b9-4eac-a54c-6fdb830fc61c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "96e4449b-1341-420b-b141-a9903020c3b9",
