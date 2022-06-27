@@ -169,6 +169,14 @@
         ]
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "ec8b3e3c-163e-4db8-ba68-aacd39f3805e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "uuid": "82c4b80d-a343-4eb3-af12-fb7312ec2e33",
         "slug": "hamming",
         "name": "Hamming",
