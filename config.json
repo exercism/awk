@@ -98,6 +98,14 @@
         "status": "active"
       },
       {
+        "slug": "etl",
+        "name": "Etl",
+        "uuid": "5c95b013-1a93-4bb1-bd19-589fbd95d7ce",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "7924936f-d8c1-4487-ba61-e1024d8f2999",

@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "etl.awk"
+    ],
+    "test": [
+      "test-etl.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
+  "source": "The Jumpstart Lab team",
+  "source_url": "http://jumpstartlab.com"
+}
