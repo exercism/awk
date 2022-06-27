@@ -32,7 +32,7 @@ function foldl(list, funcname, initial) {
 }
 
 # Right-fold the list using the function and the initial value.
-function foldr (list, funcname, iniitial) {
+function foldr (list, funcname, initial) {
     print "Implement me" > "/dev/stderr"
     exit 1
 }
