@@ -9,7 +9,7 @@ load bats-extra
 }
 
 @test "2 is two I's" {
-    ##[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f roman-numerals.awk <<< 2
     assert_success
     assert_output "II"
