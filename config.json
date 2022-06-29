@@ -306,6 +306,14 @@
         "difficulty": 3
       },
       {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "32a4d03b-ff55-4802-85a5-556b9eb0799f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "35b9cd7c-8f80-4728-844a-6f9f4e403706",
