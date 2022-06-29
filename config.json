@@ -465,14 +465,14 @@
         "difficulty": 6,
         "status": "active"
       },
-     {
-        "slug": "knapsack",
-        "name": "Knapsack",
-        "uuid": "de8bf24d-eb09-49b4-b9f4-a5f44032c487",
+      {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "b0978e56-9506-4289-a5f6-88190f77ecac",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 8
-     },
+        "difficulty": 6
+      },
       {
         "slug": "say",
         "name": "Say",
@@ -522,6 +522,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "de8bf24d-eb09-49b4-b9f4-a5f44032c487",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
       },
       {
         "slug": "list-ops",
