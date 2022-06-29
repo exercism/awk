@@ -5,9 +5,6 @@ One can express a lot of functionality in very few lines of code.
 
 [![awk intro comic][b0rk-image]][b0rk-tweet]
 
-[b0rk-tweet]: https://twitter.com/b0rk/status/1000604334026055681?s=20&t=6-hkY0dxnID7y05XvJkEsg
-[b0rk-image]: https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ?format=jpg&name=small
-
 ## Spelling
 
 The language is AWK.  
@@ -33,21 +30,8 @@ Testing will be done with [`bats-core`][bats]
 
 Eventually, a `#track-awk` Slack channel.
 
-## TODO
 
-In no particular order
-
-* awk-test-runner, largely built on bash's
-    * pick a docker image for gawk v5
-    * also needs bash v??
-* Documentation
-    * exercises/shared/.docs/help.md
-    * exercises/practice/<slug>/.meta/.docs/instructions.append.md
-        * hello-world
-* concepts
-* admin requests
-    * create exercism repos
-    * awk icon
-
+[b0rk-tweet]: https://twitter.com/b0rk/status/1000604334026055681?s=20&t=6-hkY0dxnID7y05XvJkEsg
+[b0rk-image]: https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ?format=jpg&name=small
 [gawk]: https://www.gnu.org/software/gawk/ 
 [bats]: https://bats-core.readthedocs.io/en/stable/ 
