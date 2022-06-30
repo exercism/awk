@@ -1,8 +1,8 @@
 # placeholder
 
-Refer to the [`matrix` exercise instructions][ex-matrix] to refresh on some interesting GNU awk language features.
-
 ## New AWK concepts
+
+Refer to the [`matrix` exercise instructions][ex-matrix] to refresh on some interesting GNU awk language features.
 
 ### Dynamic function invocation
 
