@@ -372,6 +372,14 @@
         "difficulty": 2
       },
       {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "209264a6-b655-42f1-9fa0-7931bf96357c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "470c144b-4d78-4bad-8b3c-0de5af751ca9",
