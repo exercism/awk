@@ -9,6 +9,9 @@
 # As user-added comments (using the # character) will be removed when this file
 # is regenerated, comments can be added via a `comment` key.
 
+[9049fdfd-53a7-4480-a390-375203837d09]
+description = "Test grepping a single file -> One file, one match, no flags"
+
 [76519cce-98e3-46cd-b287-aac31b1d77d6]
 description = "Test grepping a single file -> One file, one match, print line numbers flag"
 
@@ -68,6 +71,9 @@ description = "Test grepping multiples files at once -> Multiple files, several 
 
 [77b2eb07-2921-4ea0-8971-7636b44f5d29]
 description = "Test grepping multiples files at once -> Multiple files, one match, match entire lines flag"
+
+[e53a2842-55bb-4078-9bb5-04ac38929989]
+description = "Test grepping multiples files at once -> Multiple files, one match, multiple flags"
 
 [9c4f7f9a-a555-4e32-bb06-4b8f8869b2cb]
 description = "Test grepping multiples files at once -> Multiple files, no matches, various flags"
