@@ -33,6 +33,8 @@ Another common implementation is `mawk`, which is based on a bytecode interprete
 `mawk` is very fast.
 `mawk` is the default `/usr/bin/awk` shipped on many Linux distros.
 
+### GNU awk
+
 This track will use `gawk`, GNU's awk implementation.
 `gawk` may not have the raw speed of `mawk`, but it is very feature-packed, well documented, and has some handy command-line options.
 
