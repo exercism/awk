@@ -3,7 +3,7 @@
 # What awk do I have?
 
 The Exercism AWK track uses `gawk`, GNU's AWK.
-You may already have it, let's see: execute this command
+You may already have it; to check, execute this command
 ```sh
 awk --version
 ```
@@ -11,7 +11,7 @@ awk --version
 If that returns:
 
 * something like `GNU Awk 5.1.0 ...`
-    - You've already got GNU awk, you can carry on with the exercises.
+    - You already have GNU awk and can carry on with the exercises.
 
 * something like `awk version 20200816`
     - This is is the "one true awk" implementation.
@@ -19,7 +19,7 @@ If that returns:
     - Read below for installation instructions.
 
 * the error `awk: not an option: --version`
-    - You have `mawk` probably.
+    - You probably have `mawk`.
     - Confirm with: `awk -W version` which may return `mawk 1.3.4 20200120`.
     - mawk is a very good and fast awk implementation, but it doesn't have some of the gawk-specific features we'll use in the track.
     - Read below for installation instructions.
@@ -45,7 +45,7 @@ You may need to use `sudo` to execute the appropriate command.
 
 ## MacOS
 
-[Homebrew][brew] is your friend: follow the link to install it and then
+[Homebrew][brew] is your friend. Follow the link to install it and then run:
 ```sh
 brew install gawk
 ```
