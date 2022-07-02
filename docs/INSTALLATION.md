@@ -14,8 +14,8 @@ If that returns:
     - You already have GNU awk and can carry on with the exercises.
 
 * something like `awk version 20200816`
-    - This is is the "one true awk" implementation.
-    - This is what ships with MacOS.
+    - This is `nawk`, also known as BWK awk (after Brian Kernighan) or "one true awk".
+    - This is what ships with MacOS and BSD systems.
     - Read below for installation instructions.
 
 * the error `awk: not an option: --version`
