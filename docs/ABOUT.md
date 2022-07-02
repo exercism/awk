@@ -1,7 +1,7 @@
 # About
 
 `awk` is an interpreted programming language designed for text processing and typically used as a data extraction and reporting tool.
-It is a standard feature of most Unix-like operating systems.
+It is a standard feature of most Unix-like operating systems, and has a [POSIX specification][posix].
 
 An `awk` programming paradigm can be said to be "data driven":
 an `awk` program reads lines (or other units of text), and looks for matches of _patterns_.
@@ -33,6 +33,8 @@ Another common implementation is `mawk`, which is based on a bytecode interprete
 `mawk` is very fast.
 `mawk` is the default `/usr/bin/awk` shipped on many Linux distros.
 
+### GNU awk
+
 This track will use `gawk`, GNU's awk implementation.
 `gawk` may not have the raw speed of `mawk`, but it is very feature-packed, well documented, and has some handy command-line options.
 
@@ -43,5 +45,6 @@ This track will use `gawk`, GNU's awk implementation.
 
 
 
+[posix]: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html
 [wiki]: https://en.wikipedia.org/wiki/AWK
 [so]: https://stackoverflow.com/tags/awk/info
