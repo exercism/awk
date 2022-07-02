@@ -1,6 +1,6 @@
 # Installation
 
-# What awk do I have?
+## What awk do I have?
 
 The Exercism AWK track uses `gawk`, GNU's AWK.
 You may already have it; to check, execute this command
@@ -32,7 +32,7 @@ If that returns:
     - Then either your PATH is messed up or you just don't have awk installed.
     - Read below for installation instructions.
 
-## Linux
+### Linux
 
 Varies with your distro's package manager. Typically:
 ```sh
@@ -43,23 +43,23 @@ apk add gawk
 ```
 You may need to use `sudo` to execute the appropriate command.
 
-## MacOS
+### MacOS
 
 [Homebrew][brew] is your friend. Follow the link to install it and then run:
 ```sh
 brew install gawk
 ```
 
-## Windows
+### Windows
 
 For [WSL][wsl], see instructions for Linux above.
 For cygwin, install the `gawk` package.
 
-## Compile from source
+### Compile from source
 
 For the brave, instructions [available in the `gawk` manual][build].
 
-# Need more help?
+## Need more help?
 
 Places to look for help for AWK questions:
 
