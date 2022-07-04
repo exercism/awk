@@ -46,6 +46,7 @@
     "foregone": [
       "bank-account",
       "binary-search-tree",
+      "circular-buffer",
       "custom-set",
       "dnd-character",
       "flatten-array",
