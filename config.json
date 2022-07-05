@@ -1,7 +1,7 @@
 {
   "language": "AWK",
   "slug": "awk",
-  "active": false,
+  "active": true,
   "status": {
     "concept_exercises": false,
     "test_runner": true,
