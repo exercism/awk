@@ -14,24 +14,21 @@ The interpreter is `awk` or `gawk`.
 
 We'll use [GNU awk][gawk] in this track.
 It may not be the default awk in any platform, but it's in widespread use and has lots of builtin goodies.
-Other variants:
-* mawk
-* nawk
-* ...
 
 ## Testing framework
 
 Since I (@glennj) have spent a lot of time building up the bash track, I'll steal some of the learnings from it.
-Testing will be done with [`bats-core`][bats]
+
+* Testing will be done with [`bats-core`][bats]
+* [awk-test-runner][test-runner] was taken from the bash-test-runner.
 
 ## Support
 
 [![Join the chat at https://gitter.im/exercism/awk](https://badges.gitter.im/exercism/awk.svg)](https://gitter.im/exercism/awk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-Eventually, a `#track-awk` Slack channel.
 
 
 [b0rk-tweet]: https://twitter.com/b0rk/status/1000604334026055681?s=20&t=6-hkY0dxnID7y05XvJkEsg
 [b0rk-image]: https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ?format=jpg&name=small
 [gawk]: https://www.gnu.org/software/gawk/ 
 [bats]: https://bats-core.readthedocs.io/en/stable/ 
+[test-runner]: https://github.com/exercism/awk-test-runner
