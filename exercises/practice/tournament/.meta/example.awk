@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 function add_team(team) {
     if (! (team in teams) )
         teams[team] = 0

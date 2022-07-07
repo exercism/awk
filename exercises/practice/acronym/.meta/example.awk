@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     # field separator is whitespace or hyphen
     FS = "[[:blank:]-]+"

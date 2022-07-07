@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-#
 # Algorithm taken from Wikipedia:
 # https://en.wikipedia.org/wiki/Knapsack_problem
 # 

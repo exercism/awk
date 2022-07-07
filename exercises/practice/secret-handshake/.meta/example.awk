@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     action[++n] = "wink"
     action[++n] = "double blink"

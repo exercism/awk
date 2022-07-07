@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     FS = ""     # each char is a separate field
 }

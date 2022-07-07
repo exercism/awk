@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 @include "assert"
 
 BEGIN { FS = "," }

@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     dec["M"] = 1000; dec["CM"] = 900; dec["D"] = 500; dec["CD"] = 400
     dec["C"] = 100 ; dec["XC"] = 90 ; dec["L"] = 50 ; dec["XL"] = 40

@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 # read the input into memory
 {
     n = split($0, chars, "")

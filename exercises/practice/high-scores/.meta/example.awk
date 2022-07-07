@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     # the scores will be in a numerically indexed array to maintain
     # the insertion order.

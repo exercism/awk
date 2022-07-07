@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-#
 # A translation of this lovely recursive javascript solution
 # https://exercism.org/tracks/javascript/exercises/say/solutions/515ab00bc90f46b0bde3732d9317a46b
 

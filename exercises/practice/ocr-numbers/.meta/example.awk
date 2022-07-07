@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     digit[" _ | ||_|"] = "0"
     digit["     |  |"] = "1"

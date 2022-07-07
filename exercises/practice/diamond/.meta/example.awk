@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 @load "ordchr"
 @include "join"
 

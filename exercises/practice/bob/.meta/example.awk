@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 function rtrim(s) {
     return gensub(/[[:space:]]+$/, "", 1, s)
 }

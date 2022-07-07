@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 $1 == "total" {
     # This needs the `-M` option for arbitrary precision arithmetic.
     print ((2 ^ 64) - 1)

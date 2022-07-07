@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGIN {
     tile["A"]=1; tile["E"]=1; tile["I"]=1; tile["O"]=1; tile["U"]=1
     tile["L"]=1; tile["N"]=1; tile["R"]=1; tile["S"]=1; tile["T"]=1
