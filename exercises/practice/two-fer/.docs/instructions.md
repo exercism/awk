@@ -24,3 +24,5 @@ Here are some examples:
 |Bob     |One for Bob, one for me.
 |        |One for you, one for me.
 |Zaphod  |One for Zaphod, one for me.
+
+If your code receives multiple lines, possibly from multiple files, it should only return a single line for the last name in the last file.
