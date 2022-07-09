@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 {
     gsub(/"/, "")
     n = split($0, items, /[:,][[:blank:]]*/)

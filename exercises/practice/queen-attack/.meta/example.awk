@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 function abs(val) {
     return (val > 0) ? val : -val
 }

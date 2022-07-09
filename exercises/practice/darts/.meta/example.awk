@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 {
     distance = sqrt($1 ^ 2 + $2 ^ 2)
     if (distance <= 1) { print 10 }

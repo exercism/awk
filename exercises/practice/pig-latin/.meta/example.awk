@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 function pigify(word,    pig, m) {
     if (word ~ /^([aeiou]|xr|yt)/)                 # apple, xray, ytria
         pig = word

@@ -38,6 +38,17 @@ Another common implementation is `mawk`, which is based on a bytecode interprete
 This track will use `gawk`, GNU's awk implementation.
 `gawk` may not have the raw speed of `mawk`, but it is very feature-packed, well documented, and has some handy command-line options.
 
+### Shebang
+
+Depending on the platform, awk scripts can be executed by adding a [shebang][shebang] line to the top of the file.
+One most systems, one of the following two shebangs ought to work.
+However, since there is no one shebang which works for all systems, we have choosen to omit shebangs.
+
+```bash
+#!/usr/bin/env -S gawk -f
+#!/usr/bin/gawk -f
+```
+
 ## Further reading
 
 * [AWK on Wikipedia][wiki]
@@ -48,3 +59,4 @@ This track will use `gawk`, GNU's awk implementation.
 [posix]: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html
 [wiki]: https://en.wikipedia.org/wiki/AWK
 [so]: https://stackoverflow.com/tags/awk/info
+[shebang]: https://en.wikipedia.org/wiki/Shebang_(Unix)

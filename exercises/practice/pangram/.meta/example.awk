@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 function is_pangram(str,      letters, letter, chars, n, i) {
     n = split(str, chars, "")
     for (i = 1; i <= n; i++)

@@ -1,5 +1,3 @@
-#!/usr/bin/env gawk -f
-
 BEGINFILE {
     delete stack
     s = 0
