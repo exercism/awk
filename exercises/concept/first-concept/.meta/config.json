@@ -1,0 +1,12 @@
+{
+    "authors": [],
+    "contributors": [],
+    "blurb": "...",
+    "files": {
+        "solution": ["first-concept.awk"],
+        "test": ["test-first-concept.awk"],
+        "exemplar": [".meta/exemplar.awk"]
+    },
+    "source": "...",
+    "source_url": "..."
+}

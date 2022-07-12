@@ -33,7 +33,18 @@
     ]
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "slug": "first-concept",
+        "name": "My First Concept",
+        "uuid": -1,
+        "concepts": [
+          "fundamentals"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      }
+    ],
     "foregone-comments": [
       "Some of the reasons to forego exercises:",
       "- specific data structures (trees, linked lists, etc)",
@@ -545,7 +556,13 @@
       }
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "slug": "fundamentals",
+      "name": "Fundamentals",
+      "uuid": "-1"
+    }
+  ],
   "key_features": [
     {
       "title": "General purpose",
