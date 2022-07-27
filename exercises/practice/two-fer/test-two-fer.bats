@@ -4,13 +4,10 @@ load bats-extra
 setup() {
     echo > empty.txt
     echo "Alice" > one.txt
-
-    echo "John Smith" > two.txt
-    echo "Mary Ann" >> two.txt
 }
 
 teardown() {
-    rm empty.txt one.txt two.txt
+    rm empty.txt one.txt
 }
 
 
@@ -47,11 +44,4 @@ teardown() {
   run gawk -f two-fer.awk one.txt
   assert_success
   assert_output "One for Alice, one for me."
-}
-
-@test "multiple names given" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f two-fer.awk two.txt
-  assert_success
-  assert_output "One for Mary Ann, one for me."
 }
