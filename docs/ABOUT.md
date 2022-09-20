@@ -41,7 +41,7 @@ This track will use `gawk`, GNU's awk implementation.
 ### Shebang
 
 Depending on the platform, awk scripts can be executed by adding a [shebang][shebang] line to the top of the file.
-One most systems, one of the following two shebangs ought to work.
+On most systems, one of the following two shebangs ought to work.
 However, since there is no one shebang which works for all systems, we have choosen to omit shebangs.
 
 ```bash
