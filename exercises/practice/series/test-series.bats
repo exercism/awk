@@ -59,6 +59,14 @@ load bats-extra
     assert_output --partial "$expected"
 }
 
+@test "slice length is way too large" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected="invalid length"
+    run gawk -f series.awk -v len=42 <<< 12345
+    assert_failure
+    assert_output --partial "$expected"
+}
+
 @test "slice length cannot be zero" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     expected="invalid length"
