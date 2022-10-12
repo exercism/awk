@@ -1,17 +1,15 @@
 # These variables are initialized on the command line (using '-v'):
 # - num
 
-function is_armstrong(n,    m, len, sum) {
-    m = n
-    len = length(n)
-    sum = 0
-    while (n > 0) {
-        sum += (n % 10) ^ len
-        n = int(n / 10)
+function is_armstrong(num,    len, sum) {
+    len = split(num, digits, "")
+    for (i=1; i <= len; i++) {
+        sum += digits[i] ^ len
     }
-    return sum == m
+    return sum == num
 }
 
 BEGIN {
     print is_armstrong(num) ? "true" : "false"
 }
+
