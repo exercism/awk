@@ -149,3 +149,12 @@ END_INPUT
     assert_line "three: 1"
     assert_equal "${#lines[@]}" 3
 }
+
+@test "quotation for word with apostrophe" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f word-count.awk <<< "can, can't, 'can't'"
+    assert_success
+    assert_line "can: 1"
+    assert_line "can't: 2"
+    assert_equal "${#lines[@]}" 2
+}
