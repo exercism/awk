@@ -24,9 +24,9 @@ Since I (@glennj) have spent a lot of time building up the bash track, I'll stea
 
 ## Support
 
-[![Join the chat at https://gitter.im/exercism/awk](https://badges.gitter.im/exercism/awk.svg)](https://gitter.im/exercism/awk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Get help on the [Exercism forum][forum].
 
-
+[forum]: https://forum.exercism.org/
 [b0rk-tweet]: https://twitter.com/b0rk/status/1000604334026055681?s=20&t=6-hkY0dxnID7y05XvJkEsg
 [b0rk-image]: https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ?format=jpg&name=small
 [gawk]: https://www.gnu.org/software/gawk/ 
