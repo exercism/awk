@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "ari.awk"
+    ],
+    "test": [
+      "test-ari.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Calculate the automated readability index for the text.",
+  "source": "Automated readability index",
+  "source_url": "https://en.wikipedia.org/wiki/Automated_readability_index"
+}
