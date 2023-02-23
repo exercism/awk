@@ -9,7 +9,7 @@ Calculate the number of sentences of words and characters in the text to estimat
 
 The ARI formula is as follows:
 
-$$ARI = 4.71 { ( characters \over words ) }$$
+$$ARI = 4.71 ( { characters \over words }) + 0.5 $$
 
 Your task is to calculate the exact number of sentences, words and symbols in the text. 
 The program should print the first three sentences of text. 
