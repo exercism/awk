@@ -55,9 +55,9 @@ teardown() {
 
     assert_success
     assert_line --index 0 "The text is:"
-    assert_line --index 1 "Exercism is an online, open-source, free..."
-    assert_line --index 2 "Software developer Katrina Owen created ..."
-    assert_line --index 3 "The platform was developed as an interna..."
+    assert_line --index 1 "Exercism is an online, open-source, free coding pl..."
+    assert_line --index 2 "Software developer Katrina Owen created Exercism w..."
+    assert_line --index 3 "The platform was developed as an internal tool to ..."
     assert_line --index 4 "..."
     assert_line --index 5 "Words: 113"
     assert_line --index 6 "Sentences: 5"
@@ -73,9 +73,9 @@ teardown() {
 
     assert_success
     assert_line --index 0 "The text is:"
-    assert_line --index 1 "ARI was designed for military use in 196..."
-    assert_line --index 2 "It was for real-time monitoring of reada..."
-    assert_line --index 3 "It offered an automated counting method"
+    assert_line --index 1 "ARI was designed for military use in 1967."
+    assert_line --index 2 "It was for real-time monitoring of readability on ..."
+    assert_line --index 3 "It offered an automated counting method."
     assert_line --index 4 "..."
     assert_line --index 5 "Words: 34"
     assert_line --index 6 "Sentences: 5"
@@ -91,9 +91,9 @@ teardown() {
 
     assert_success
     assert_line --index 0 "The text is:"
-    assert_line --partial --index 1 "Billy always listens to his mother"
-    assert_line --partial --index 2 "He always does what she says"
-    assert_line --partial --index 3 "If his mother says, \"Brush your teeth,\" ..."
+    assert_line --partial --index 1 "Billy always listens to his mother."
+    assert_line --partial --index 2 "He always does what she says."
+    assert_line --partial --index 3 "If his mother says, \"Brush your teeth,\" Billy brus..."
     assert_line --index 4 "..."
     assert_line --index 5 "Words: 108"
     assert_line --index 6 "Sentences: 13"
