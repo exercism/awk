@@ -1,3 +1,5 @@
+#!/usr/bin/env gawk -f
+
 BEGIN {
     CONVFMT = "%.0f"
     OFMT = "%.2f"
@@ -7,10 +9,12 @@ BEGIN {
     print "The text is:"
 }
 NR < 4 {
-    if (length($0) > 40)
-        print substr($0, 1, 40) "..."
+    gsub(/[[:space:]]+/, " ")
+
+    if (length($0) > 50)
+        print substr($0, 1, 50) "..."
     else
-        print
+        print $0 gensub(/[[:space:]]+$/, "", 1, RT)
 }
 NR == 4 {
     print "..."
