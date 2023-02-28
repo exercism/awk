@@ -4,12 +4,12 @@ As we grow up, we can understand more and more complex texts. But how is the lev
 In this exercise, you will write a program which will determine how difficult a text is to read
 and what age it is best suited for.
 
-For a formula for calculating the complexity, we will use 
-[Automated readability index (ARI)][wiki] 
-developed in 1967 year. The ARI assesses the U.S. grade level required to read 
-a piece of text. In some ways, it is similar to other formulas. Its difference 
-is rather than counting syllables, it counts characters. The more characters, 
-the harder the word. It also counts sentences. This sets it apart from some 
+We will use the
+[Automated readability index (ARI)][wiki] formula for calculating the text complexity.
+The ARI was developed in 1967 and assesses the U.S. grade level required to read 
+a piece of text. In some ways, it is similar to other formulas. Its main difference 
+is rather than counting syllables, it counts characters. The more characters per word, 
+the harder the word. It also counts the number of words per sentences. This sets it apart from some 
 other formulas.
 
 ## Text Preview
