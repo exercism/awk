@@ -18,18 +18,18 @@ Your program should display the first three sentences of the text, but no more t
 
 Suppose the text starts with the following lines:
 
-> Billy always listens to his mother. He always does what
-> she says. If his mother says, "Brush your teeth," Billy
-> brushes his teeth. If his mother says, "Go to bed," Billy
-> goes to bed...
+> ARI was designed for military use in 1967. It was for real-time 
+> monitoring of readability on typewriters. It offered an automated 
+> counting method. It has similar results to other frameworks.
+> This validates its accuracy.
 
 Then the program should print:
 
 ```text
 The text is:
-Billy always listens to his mother.
-He always does what she says.
-If his mother says, "Brush your teeth," Billy brus...
+ARI was designed for military use in 1967.
+It was for real-time monitoring of readability on ...
+It offered an automated counting method.
 ...
 ```
 
