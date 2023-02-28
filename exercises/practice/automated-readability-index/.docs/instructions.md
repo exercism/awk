@@ -14,9 +14,7 @@ other formulas.
 
 ## Text Preview
 
-Your program should display the first three sentences of the text. If the sentence 
-is longer than 50 characters, truncate the sentence and add an ellipsis at the end. 
-Put an ellipsis on the fourth line if the text is more than three sentences.
+Your program should display the first three sentences of the text, but no more than 50 characters. If the first three sentences exceed 50 characters, truncate them and add an ellipsis at the end. Otherwise, if the text is more than three sentences, put an ellipsis on the fourth line.
 
 Suppose the text starts with the following lines:
 
