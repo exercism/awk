@@ -51,7 +51,7 @@ teardown() {
 @test "Exercism is an online, open-source, free coding platform" {
 #    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
-    run gawk -f ari.awk exercism.txt
+    run gawk -f automated-readability-index.awk exercism.txt
 
     assert_success
     assert_line --index 0 "The text is:"
@@ -69,7 +69,7 @@ teardown() {
 @test "ARI was designed for military use in 1967" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
-    run gawk -f ari.awk ari.txt
+    run gawk -f automated-readability-index.awk ari.txt
 
     assert_success
     assert_line --index 0 "The text is:"
@@ -87,7 +87,7 @@ teardown() {
 @test "Billy always listens to his mother" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
-    run gawk -f ari.awk billy.txt
+    run gawk -f automated-readability-index.awk billy.txt
 
     assert_success
     assert_line --index 0 "The text is:"

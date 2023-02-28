@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "ari.awk"
+      "automated-readability-index.awk"
     ],
     "test": [
-      "test-ari.bats"
+      "test-automated-readability-index.bats"
     ],
     "example": [
       ".meta/example.awk"
