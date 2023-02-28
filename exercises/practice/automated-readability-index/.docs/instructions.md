@@ -95,7 +95,7 @@ It has similar results to other frameworks.
 This validates its accuracy.
 ```
 
-if we run our program by specifying this file, the result will be as follows:
+If we run our program using this input, the result should be as follows:
 
 ```text
 The text is:
