@@ -66,7 +66,7 @@ the level of its complexity using the following formula:
 Score = 4.71 ( { characters \over words }) + 0.5 ({words \over sentences}) - 21.43
 ```
 
-The program should calculate and print score as well as approximate age needed to comprehend the text.
+The program should calculate and print the score and the approximate age needed to comprehend the text.
 
 | Score | Age	  | Grade Level     |
 |-------|-------|-----------------|
