@@ -96,7 +96,7 @@ It has similar results to other frameworks.
 This validates its accuracy.
 ```
 
-If we were to call `gawk -f ari.awk ari.txt`, the result should be:
+if we run our program by specifying this file, the result will be as follows:
 
 ```text
 The text is:
