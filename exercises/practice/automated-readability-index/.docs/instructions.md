@@ -1,9 +1,8 @@
 # Instructions
 
-As we grow up, we can understand more and more complex texts. But how to assess 
-the level of complexity of a given text, and how to teach the computer to do so? 
-In this exercise, you will write a program determining how difficult a text is 
-and for what age it is best suited.
+As we grow up, we can understand more and more complex texts. But how is the level of complexity of a given text assessed, and how can we make programs which do that? 
+In this exercise, you will write a program which will determine how difficult a text is to read
+and what age it is best suited for.
 
 For a formula for calculating the complexity, we will use 
 [Automated readability index (ARI)][wiki] 
