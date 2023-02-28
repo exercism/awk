@@ -16,7 +16,7 @@ other formulas.
 
 Your program should display the first three sentences of the text, but no more than 50 characters. If the first three sentences exceed 50 characters, truncate them and add an ellipsis at the end. Otherwise, if the text is more than three sentences, put an ellipsis on the fourth line.
 
-Suppose the text starts with the following lines:
+Suppose there is a file named "ari.txt" with the following contents:
 
 > ARI was designed for military use in 1967. It was for real-time 
 > monitoring of readability on typewriters. It offered an automated 
@@ -64,7 +64,7 @@ the level of its complexity using the following formula:
 Score = 4.71 ( { characters \over words }) + 0.5 ({words \over sentences}) - 21.43
 ```
 
-The program should calculate and print the score and the approximate age needed to comprehend the text.
+The program should calculate and print the score and the approximate age needed to comprehend the text. 
 
 | Score | Age	  | Grade Level     |
 |-------|-------|-----------------|
@@ -83,17 +83,10 @@ The program should calculate and print the score and the approximate age needed 
 | 13    | 17-18 | Twelfth Grade   |
 | 14    | 18-22 | College student |
 
-As an example, suppose there is a file named "ari.txt" with the following contents:
-
-```text
-ARI was designed for military use in 1967.
-It was for real-time monitoring of readability on typewriters.
-It offered an automated counting method.
-It has similar results to other frameworks.
-This validates its accuracy.
-```
-
-If we run our program using this input, the result should be as follows:
+Please note that the Score must be printed with two significant digits after 
+the decimal point, but when used as a table index, you must round this value 
+to the nearest whole number but not more than 14. Below is a sample output of 
+the program:
 
 ```text
 The text is:
