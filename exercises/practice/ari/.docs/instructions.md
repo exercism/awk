@@ -1,14 +1,23 @@
 # Instructions
 
-As we grow up, we can understand more and more complex texts. But how to assess the level of complexity of a given text, and how to teach the computer to do so? In this exercise, you will write a program determining how difficult a text is and for what age it is best suited.
+As we grow up, we can understand more and more complex texts. But how to assess 
+the level of complexity of a given text, and how to teach the computer to do so? 
+In this exercise, you will write a program determining how difficult a text is 
+and for what age it is best suited.
 
-For a formula for calculating the complexity, we will use [Automated readability index (ARI)](https://en.wikipedia.org/wiki/Automated_readability_index) developed in 1967 year. The ARI assesses the U.S. grade level required to read a piece of text. In some ways, it is similar to other formulas. Its difference is rather than counting syllables, it counts characters. The more characters, the harder the word. It also counts sentences. This sets it apart from some other formulas.
+For a formula for calculating the complexity, we will use 
+[Automated readability index (ARI)][wiki] 
+developed in 1967 year. The ARI assesses the U.S. grade level required to read 
+a piece of text. In some ways, it is similar to other formulas. Its difference 
+is rather than counting syllables, it counts characters. The more characters, 
+the harder the word. It also counts sentences. This sets it apart from some 
+other formulas.
 
 ## Text Preview
 
-Your program should display the first three sentences of the text. If the sentence is longer than 50 characters,
-truncate the sentence and add an ellipsis at the end. Put an ellipsis on the fourth line if the text is more than three
-sentences.
+Your program should display the first three sentences of the text. If the sentence 
+is longer than 50 characters, truncate the sentence and add an ellipsis at the end. 
+Put an ellipsis on the fourth line if the text is more than three sentences.
 
 Suppose the text starts with the following lines:
 
@@ -29,10 +38,13 @@ If his mother says, "Brush your teeth," Billy brus...
 
 ## Text Statistics
 
-The program should calculate and print the exact number of sentences, words and characters in the text. The sentences
-can end with a full stop, an exclamation mark, and a question mark. The last sentence can be with or without a
-punctuation mark at the end. Spaces separate words in a sentence; we count all non-blank characters, including
-punctuation marks. Print the statistics after the text preview, separating them with an empty line, as in the example:
+The program should calculate and print the exact number of sentences, words 
+and characters in the text. The sentences can end with a full stop, 
+an exclamation mark, and a question mark. The last sentence can be with or 
+without a punctuation mark at the end. Spaces separate words in a sentence; 
+we count all non-blank characters, including punctuation marks. Print 
+the statistics after the text preview, separating them with an empty line, 
+as in the example:
 
 ```text
 The text is:
@@ -48,7 +60,8 @@ Characters: 186
 
 ## Automated readability index
 
-Knowing the main characteristics of the text, we can calculate the level of its complexity using the following formula:
+Knowing the main characteristics of the text, we can calculate 
+the level of its complexity using the following formula:
 
 ```math
 Score = 4.71 ( { characters \over words }) + 0.5 ({words \over sentences}) - 21.43
@@ -98,5 +111,5 @@ Characters: 186
 The score is: 7.74
 This text should be understood by 12-13 year-olds.
 ```
-
+[wiki]: https://en.wikipedia.org/wiki/Automated_readability_index
 [ARI]: https://readable.com/readability/automated-readability-index/
