@@ -67,7 +67,7 @@ teardown() {
 }
 
 @test "ARI was designed for military use in 1967" {
-#    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
     run gawk -f ari.awk ari.txt
 
@@ -85,7 +85,7 @@ teardown() {
 }
 
 @test "Billy always listens to his mother" {
-#    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
     run gawk -f ari.awk billy.txt
 
