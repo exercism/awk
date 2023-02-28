@@ -1,20 +1,26 @@
 # Instructions
 
-As we grow up, we can understand more and more complex texts. But how is the level of complexity of a given text assessed, and how can we make programs which do that? 
-In this exercise, you will write a program which will determine how difficult a text is to read
-and what age it is best suited for.
+As we grow up, we can understand more and more complex texts. 
+But how is the level of complexity of a given text assessed, 
+and how can we make programs which do that? In this exercise, 
+you will write a program which will determine how difficult a 
+text is to read and what age it is best suited for.
 
-We will use the
-[Automated readability index (ARI)][wiki] formula for calculating the text complexity.
-The ARI was developed in 1967 and assesses the U.S. grade level required to read 
-a piece of text. In some ways, it is similar to other formulas. Its main difference 
-is rather than counting syllables, it counts characters. The more characters per word, 
-the harder the word. It also counts the number of words per sentences. This sets it apart from some 
-other formulas.
+We will use the [Automated readability index (ARI)][wiki] formula 
+for calculating the text complexity. The ARI was developed in 1967 
+and assesses the U.S. grade level required to read a piece of text. 
+In some ways, it is similar to other formulas. Its main difference 
+is rather than counting syllables, it counts characters. The more 
+characters per word, the harder the word. It also counts the number 
+of words per sentences. This sets it apart from some other formulas.
 
 ## Text Preview
 
-Your program should display the first three sentences of the text, but no more than 50 characters. If the first three sentences exceed 50 characters, truncate them and add an ellipsis at the end. Otherwise, if the text is more than three sentences, put an ellipsis on the fourth line.
+Your program should display the first three sentences of the text, 
+but no more than 50 characters. If the first three sentences exceed 
+50 characters, truncate them and add an ellipsis at the end. Otherwise, 
+if the text is more than three sentences, put an ellipsis on the 
+fourth line.
 
 Suppose there is a file named "ari.txt" with the following contents:
 
@@ -37,10 +43,12 @@ It offered an automated counting method.
 
 The program should calculate and print the number of sentences, words 
 and characters in the text. Sentences can end with a full stop, 
-an exclamation mark, or a question mark. The last sentence may end with or 
-without a punctuation mark. Spaces separate words in a sentence. 
-When counting the number of characters per word, count all non-blank characters, including punctuation marks. Print 
-the statistics after the text preview, separated by an empty line.
+an exclamation mark, or a question mark. The last sentence may end with 
+or without a punctuation mark. Spaces separate words in a sentence. 
+When counting the number of characters per word, count all non-blank 
+characters, including punctuation marks. Print the statistics after 
+the text preview, separated by an empty line.
+
 Here is an example output:
 
 ```text
