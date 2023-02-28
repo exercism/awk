@@ -40,7 +40,7 @@ and characters in the text. Sentences can end with a full stop,
 an exclamation mark, or a question mark. The last sentence may end with or 
 without a punctuation mark. Spaces separate words in a sentence. 
 When counting the number of characters per word, count all non-blank characters, including punctuation marks. Print 
-the statistics after the text preview, separating them with an empty line.
+the statistics after the text preview, separated by an empty line.
 Here is an example output:
 
 ```text
