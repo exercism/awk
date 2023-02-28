@@ -59,7 +59,7 @@ Characters: 186
 
 ## Automated readability index
 
-Knowing the main characteristics of the text, we can calculate 
+Given these details about the text, we can calculate 
 the level of its complexity using the following formula:
 
 ```math
