@@ -35,13 +35,13 @@ If his mother says, "Brush your teeth," Billy brus...
 
 ## Text Statistics
 
-The program should calculate and print the exact number of sentences, words 
+The program should calculate and print the number of sentences, words 
 and characters in the text. The sentences can end with a full stop, 
-an exclamation mark, and a question mark. The last sentence can be with or 
-without a punctuation mark at the end. Spaces separate words in a sentence; 
-we count all non-blank characters, including punctuation marks. Print 
-the statistics after the text preview, separating them with an empty line, 
-as in the example:
+an exclamation mark, or a question mark. The last sentence may end with or 
+without a punctuation mark. Spaces separate words in a sentence. 
+When counting the number of characters per word, count all non-blank characters, including punctuation marks. Print 
+the statistics after the text preview, separating them with an empty line.
+Here is an example output:
 
 ```text
 The text is:
