@@ -89,7 +89,7 @@ The program should calculate and print the score and the approximate age needed 
 | 14    | 18-22 | College student |
 
 The score should be printed with two significant digits after 
-the decimal point. When used used to find the age or grade level, the score should be rounded
+the decimal point. When used to find the age or grade level, the score should be rounded
 to the nearest whole number and capped at 14. Below is a sample output of 
 the program:
 
