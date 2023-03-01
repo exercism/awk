@@ -67,7 +67,7 @@ Characters: 186
 Given these details about the text, we can calculate 
 the level of its complexity using the following formula:
 
-Score = 4.71 * chars / words + 0.5 * words / sentences - 21.43
+score = 4.71 * chars / words + 0.5 * words / sentences - 21.43
 
 The program should calculate and print the score and the approximate age needed to comprehend the text. 
 
