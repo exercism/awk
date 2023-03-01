@@ -68,9 +68,7 @@ Characters: 186
 Given these details about the text, we can calculate 
 the level of its complexity using the following formula:
 
-```math
-Score = 4.71 ( { characters \over words }) + 0.5 ({words \over sentences}) - 21.43
-```
+Score = 4.71 * chars / words + 0.5 * words / sentences - 21.43
 
 The program should calculate and print the score and the approximate age needed to comprehend the text. 
 
@@ -106,7 +104,7 @@ It offered an automated counting method.
 Words: 34
 Sentences: 5
 Characters: 186
-The score is: 7.74
+Score: 7.74
 This text should be understood by 12-13 year-olds.
 ```
 [wiki]: https://en.wikipedia.org/wiki/Automated_readability_index
