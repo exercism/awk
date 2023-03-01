@@ -89,9 +89,9 @@ The program should calculate and print the score and the approximate age needed 
 | 13    | 17-18 | Twelfth Grade   |
 | 14    | 18-22 | College student |
 
-Please note that the Score must be printed with two significant digits after 
-the decimal point, but when used as a table index, you must round this value 
-to the nearest whole number but not more than 14. Below is a sample output of 
+The score should be printed with two significant digits after 
+the decimal point. When used used to find the age or grade level, the score should be rounded
+to the nearest whole number and capped at 14. Below is a sample output of 
 the program:
 
 ```text
