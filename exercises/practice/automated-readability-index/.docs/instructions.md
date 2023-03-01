@@ -7,7 +7,7 @@ you will write a program which will determine how difficult a
 text is to read and what age it is best suited for.
 
 We will use the [Automated readability index (ARI)][wiki] formula 
-for calculating the text complexity. The ARI was developed in 1967 
+for calculating text complexity. The ARI was developed in 1967 
 and assesses the U.S. grade level required to read a piece of text. 
 It does this by measuring the complexity of words and sentences. 
 Complexity is measured as characters per word and words per sentence. 
