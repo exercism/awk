@@ -8,11 +8,10 @@ text is to read and what age it is best suited for.
 
 We will use the [Automated readability index (ARI)][wiki] formula 
 for calculating the text complexity. The ARI was developed in 1967 
-and assesses the U.S. grade level required to read a piece of text.
-Its main difference from other formulas is rather than counting 
-syllables, it counts characters. The more characters per word, 
-the harder the word. It also counts the number of words per sentences. 
-This sets it apart from some other formulas.
+and assesses the U.S. grade level required to read a piece of text. 
+It does this by measuring the complexity of words and sentences. 
+Complexity is measured as characters per word and words per sentence. 
+A higher value is more complex.
 
 ## Text Preview
 
