@@ -62,7 +62,7 @@ teardown() {
     assert_line --index 5 "Words: 113"
     assert_line --index 6 "Sentences: 5"
     assert_line --index 7 "Characters: 618"
-    assert_line --index 8 "The score is: 15.63"
+    assert_line --index 8 "Score: 15.63"
     assert_line --index 9 "This text should be understood by 18-22 year-olds."
 }
 
@@ -80,7 +80,7 @@ teardown() {
     assert_line --index 5 "Words: 34"
     assert_line --index 6 "Sentences: 5"
     assert_line --index 7 "Characters: 186"
-    assert_line --index 8 "The score is: 7.74"
+    assert_line --index 8 "Score: 7.74"
     assert_line --index 9 "This text should be understood by 12-13 year-olds."
 }
 
@@ -98,6 +98,6 @@ teardown() {
     assert_line --index 5 "Words: 108"
     assert_line --index 6 "Sentences: 13"
     assert_line --index 7 "Characters: 442"
-    assert_line --index 8 "The score is: 2.00"
+    assert_line --index 8 "Score: 2.00"
     assert_line --index 9 "This text should be understood by 6-7 year-olds."
 }

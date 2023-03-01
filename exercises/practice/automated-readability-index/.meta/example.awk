@@ -38,7 +38,7 @@ function print_stats() {
     print "Words:", Words
     print "Sentences:", Sentences
     print "Characters:", Characters
-    print "The score is:", Score
+    print "Score:", Score
     if (Score > 14) ARI = 14
     else ARI = ""Score
     print "This text should be understood by", Ages[ARI], "year-olds."
