@@ -534,6 +534,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "automated-readability-index",
+        "name": "Automated readability index",
+        "uuid": "ccf7118a-f2b7-47ca-b7a1-18e830daca2f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       }
     ]
   },
