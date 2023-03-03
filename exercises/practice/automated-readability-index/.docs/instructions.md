@@ -15,11 +15,9 @@ A higher value is more complex.
 
 ## Text Preview
 
-Your program should display the first three sentences of the text, 
-but no more than 50 characters. If the first three sentences exceed 
-50 characters, truncate them and add an ellipsis at the end. Otherwise, 
-if the text is more than three sentences, put an ellipsis on the 
-fourth line.
+Your program should display the first three sentences of the text, but no more than 50 characters for each sentence.
+If any sentence exceeds 50 characters, print only the first 50 characters followed by an ellipsis (`...`).
+If the text contains more than three sentences, output only an ellipsis as the fourth line.
 
 Suppose there is a file named "ari.txt" with the following contents:
 
