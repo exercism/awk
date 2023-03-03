@@ -19,7 +19,7 @@ Your program should display the first three sentences of the text, but no more t
 If any sentence exceeds 50 characters, print only the first 50 characters followed by an ellipsis (`...`).
 If the text contains more than three sentences, output only an ellipsis as the fourth line.
 
-Suppose there is a file named "ari.txt" with the following contents:
+Suppose there is a file named "ari.txt" with the following contents (this text will be used for all examples below):
 
 > ARI was designed for military use in 1967. It was for real-time 
 > monitoring of readability on typewriters. It offered an automated 
