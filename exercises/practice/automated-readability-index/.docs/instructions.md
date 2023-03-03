@@ -40,8 +40,8 @@ It offered an automated counting method.
 
 The program should calculate and print the number of characters, words
 and sentences in the text. Sentences can end with a full stop, 
-an exclamation mark, or a question mark. The last sentence may end with 
-or without a punctuation mark. Whitespaces separate words in a sentence. 
+an exclamation mark, or a question mark. 
+Whitespaces separate words in a sentence. 
 When counting the number of characters per word, count all non-blank 
 characters, including punctuation marks. Print the statistics after 
 the text preview, separated by an empty line.
