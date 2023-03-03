@@ -48,15 +48,9 @@ When counting the number of characters per word, count all non-blank
 characters, including punctuation marks. Print the statistics after 
 the text preview, separated by an empty line.
 
-Here is an example output:
+Here is an example output for just the text statistics part:
 
 ```text
-The text is:
-ARI was designed for military use in 1967.
-It was for real-time monitoring of readability on ...
-It offered an automated counting method.
-...
-
 Words: 34
 Sentences: 5
 Characters: 186
