@@ -1,6 +1,6 @@
 # Learning
 
-For a quick overview of the lanaguage, refer to the [awk info page][so] on Stack Overflow.
+For a quick overview of the language, refer to the [awk info page][so] on Stack Overflow.
 
 Some other learning resources:
 
