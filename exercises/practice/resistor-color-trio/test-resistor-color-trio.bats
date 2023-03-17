@@ -45,9 +45,9 @@ load bats-extra
 
 @test "Blue and violet and grey" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f resistor-color-trio.awk <<< "blue violet grey"
+    run gawk -f resistor-color-trio.awk <<< "blue violet blue"
     assert_success
-    assert_output "6700 megaohms"
+    assert_output "67 megaohms"
 }
 
 @test "Minimum possible value" {
