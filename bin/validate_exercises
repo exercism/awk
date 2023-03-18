@@ -8,7 +8,15 @@ set -o nounset
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
-for exercise in exercises/*/*; do
+while read -r exercise; do
     bin/validate_one_exercise "$exercise"
     echo
-done
+done < <(
+    jq -r '
+        .exercises  as $exs 
+        | ["concept","practice"][] 
+        | . as $type 
+        | $exs[$type][] 
+        | "exercises/\($type)/\(.slug)"
+    ' config.json
+)
