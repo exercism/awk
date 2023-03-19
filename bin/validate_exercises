@@ -8,7 +8,8 @@ set -o nounset
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
-mapfile -t exercises < <(
+declare -A exercises
+while read -r exercise; do exercises["$exercise"]=1; done < <(
     jq -r '
         .exercises  as $exs 
         | ["concept","practice"][] 
@@ -18,18 +19,29 @@ mapfile -t exercises < <(
     ' config.json
 )
 
-for exercise in "${exercises[@]}"; do
-    bin/validate_one_exercise "$exercise"
+warnings=0
+errors=0
+shopt -s nullglob
+
+for exercise in exercises/{concept,practice}/*; do
+    if [[ -v exercises[$exercise] ]]; then
+        unset "exercises[$exercise]"
+    else
+        echo "*** WARNING: $exercise does not appear in config.json!" >&2
+        ((++warnings))
+    fi
+
+    bin/validate_one_exercise "$exercise" || ((++errors))
     echo
 done
-    bin/validate_one_exercise "$exercise"
-    echo
-done < <(
-    jq -r '
-        .exercises  as $exs 
-        | ["concept","practice"][] 
-        | . as $type 
-        | $exs[$type][] 
-        | "exercises/\($type)/\(.slug)"
-    ' config.json
-)
+
+for exercise in "${!exercises[@]}"; do
+    echo "*** WARNING: $exercise is in config.json but does not exist in the repo!" >&2
+    ((++warnings))
+done
+
+echo "Testing finished"
+if (( warnings + errors > 0 )); then
+    printf "\t%d warnings\n\t%d errors\n" "$warnings" "$errors"
+    exit 1
+fi

@@ -8,6 +8,11 @@ set -o nounset
 
 die() { echo "$*" >&2; exit 1; }
 
+# check prerequisites
+command -v jq    >/dev/null      || die "This script requires jq: please install it."
+command -v bats  >/dev/null      || die "This script requires bats-core: please install it."
+grep -P 1 <<< 1  >/dev/null 2>&1 || die "This script uses GNU grep: please install it."
+
 cd "$1" || die "Cannot cd to $1"
 
 config=./.meta/config.json
@@ -32,6 +37,7 @@ readarray -t editor_files < <(jq -r '.files.editor[]?' "$config")
 # neither do concept exercises
 if [[ ${exercise} != "hello-world" ]] && [[ $PWD != */exercises/concept/* ]]; then
     # a PCRE: the `\Q...\E` defines a literal segment
+    # shellcheck disable=SC2016 
     skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
     num_skip_comments=$(grep -cP "${skip_re}" "${tests}") || :
     (( num_skip_comments == 1 )) || die "There should be exactly one commented skip directive in ${tests}"
@@ -40,7 +46,7 @@ fi
 echo "Processing ${exercise}"
 
 cleanup() {
-    rm -rf "$dir"
+    rm -r "$dir"
 }
 trap cleanup EXIT
 
