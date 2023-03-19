@@ -11,7 +11,7 @@ die() { echo "$*" >&2; exit 1; }
 # check prerequisites
 command -v jq    >/dev/null      || die "This script requires jq: please install it."
 command -v bats  >/dev/null      || die "This script requires bats-core: please install it."
-grep -P 1 <<< 1  >/dev/null 2>&1 || die "This script uses GNU grep: please install it."
+grep -P 1 <<< 1  >/dev/null 2>&1 || die "This script requires GNU grep: please install it."
 
 cd "$1" || die "Cannot cd to $1"
 
