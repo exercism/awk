@@ -105,7 +105,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "7924936f-d8c1-4487-ba61-e1024d8f2999",
         "practices": [],
         "prerequisites": [],
@@ -193,7 +193,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "5c95b013-1a93-4bb1-bd19-589fbd95d7ce",
         "practices": [],
         "prerequisites": [],
@@ -289,7 +289,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "e5f9a484-33c0-4670-93f6-2f5250a311ea",
         "practices": [],
         "prerequisites": [],
@@ -425,7 +425,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "60cb3524-dddb-4768-9919-39849e7875ac",
         "practices": [],
         "prerequisites": [],
@@ -441,7 +441,7 @@
       },
       {
         "slug": "ocr-numbers",
-        "name": "Ocr Numbers",
+        "name": "OCR Numbers",
         "uuid": "159f502a-272a-4e93-ab63-bad0d1c8063a",
         "practices": [],
         "prerequisites": [],
@@ -521,7 +521,7 @@
       },
       {
         "slug": "list-ops",
-        "name": "List Operations",
+        "name": "List Ops",
         "uuid": "3997cfa6-9014-4573-90c3-27efe7926bcc",
         "practices": [],
         "prerequisites": [],
