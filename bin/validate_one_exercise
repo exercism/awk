@@ -8,6 +8,11 @@ set -o nounset
 
 die() { echo "$*" >&2; exit 1; }
 
+# check prerequisites
+command -v jq    >/dev/null      || die "This script requires jq: please install it."
+command -v bats  >/dev/null      || die "This script requires bats-core: please install it."
+grep -P 1 <<< 1  >/dev/null 2>&1 || die "This script requires GNU grep: please install it."
+
 cd "$1" || die "Cannot cd to $1"
 
 config=./.meta/config.json
@@ -22,26 +27,35 @@ stub=$(jq -r '.files.solution[0]' "$config")
 tests=$(jq -r '.files.test[0]' "$config")
 [[ -f ${tests} ]] || die "Missing tests file for $exercise"
 
-solution=$(jq -r '.files.example[0]' "$config")
+solution=$(jq -r '.files.example[0] // .files.exemplar[0]' "$config")
 [[ -f ${solution} ]] || die "Missing solution file for $exercise"
 
+# this is usually empty but might have multiple files in it
+readarray -t editor_files < <(jq -r '.files.editor[]?' "$config")
+
 # hello-world has no skips
-if [[ ${exercise} != "hello-world" ]]; then
+# neither do concept exercises
+if [[ ${exercise} != "hello-world" ]] && [[ $PWD != */exercises/concept/* ]]; then
     # a PCRE: the `\Q...\E` defines a literal segment
+    # shellcheck disable=SC2016 
     skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
-    num_skip_comments=$(grep -cP "${skip_re}" "${tests}")
+    num_skip_comments=$(grep -cP "${skip_re}" "${tests}") || :
     (( num_skip_comments == 1 )) || die "There should be exactly one commented skip directive in ${tests}"
 fi
 
 echo "Processing ${exercise}"
 
 cleanup() {
-    git checkout "${stub}"
+    rm -r "$dir"
 }
 trap cleanup EXIT
 
 # Create implementation file from example
-cp "${solution}" "${stub}"
+dir=$(mktemp -d)
+cp "${solution}" "${dir}/${stub}"
+cp "${tests}" "${dir}/${tests}"
+cp bats-extra.bash "${editor_files[@]}" "${dir}"
 
 # Run the tests
+cd "${dir}"
 BATS_RUN_SKIPPED=true bats "${tests}"
