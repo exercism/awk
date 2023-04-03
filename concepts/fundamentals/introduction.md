@@ -90,7 +90,7 @@ Since AWK is a text-processing language, truth values are extended to strings.
 
 Comments start with the `#` character and extend to the end of the line.
 
-## Some examples
+## Examples
 
 On Unix-like systems `/etc/passwd` contains information about users. 
 Each user is described on a separate line, with fields separated by colons.
