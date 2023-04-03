@@ -76,7 +76,7 @@ These variables are automatically set by AWK during execution of the program.
 ## Truthiness
 
 AWK was developed at Bell Labs, where C was invented. 
-AWK uses the same concept of truthiness as C, where
+AWK uses the same concept of truthiness as C:
 
 - the number `0` is false
 - any other number is true
