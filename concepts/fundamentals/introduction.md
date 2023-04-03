@@ -4,7 +4,7 @@ We'll refer to the _language_ as **AWK** and to the _executable_ that interprets
 
 ## Patterns and Actions
 
-An AWK program is structured in **pattern-action pairs**
+An AWK program is composed of **pattern-action pairs**
 
 ```awk
 pattern1 { action1 }
@@ -20,47 +20,53 @@ The enclosing braces are required.
 
 If the result of the pattern is _true_, then the corresponding action is evaluated.
 
-### Omit the pattern
+## Records and Fields
+
+AWK parses the input as a series of **records**.
+Each record is split into zero or more **fields**.
+
+The default behaviour is to 
+
+- split the input into records using newline as the "record separator", so each _line_ is a record.
+- split the record into fields using whitespace as the "field separator", so each _word_ is a field.
+
+## Patterns and Actions, continued
 
 The pattern can be omitted, in which case the action is evaluated _for every input record_.
-In other words, an "empty" pattern is implicitly _true_.
 
-### Omit the action
-
-The action can be omitted, in which case the default action is to **print** the current record.
+The action can be omitted, in which case the default action is to print the current record.
 
 ### Special patterns
 
-Two special pattern that are often used are
+There are two special patterns that are often used.
 
 - `BEGIN` will evaluate the associated action before any input is consumed.
 - `END` will evaluate the associated action after all input is consumed.
 
-## Records and Fields
-
-AWK splits the input into **records** and **fields**.
-The default behaviour is to 
-
-- split the input into records using **newline** as the "record separator", so each _line_ is a record.
-- split the record into fields using **whitespace** as the "field separator", so each _word_ is a field.
-
-You can supply your own input record separator with the `RS` variable.
-You can supply your own input field separator with the `FS` variable.
-Set these variables in the `BEGIN` block.
-
-### Field variables
+## Field variables
 
 You refer to fields as `$1`, `$2`, `$3`, etc.
 
 The current record is `$0`.
 
-### Other common variables
+Here are some other frequently used builtin variables.
 
-- **`NF`** stores the _number of fields_ in the current record.
-- **`$NF`** is the _value of the last field_.
-- **`NR`** stores the _current record number_.
+### Builtin variables that control input parsing
+
+- `RS` is the input record separator. As mentioned, its default value is a newline.
+- `FS` is the input field separator. 
+
+These variable are often set in the `BEGIN` action block.
+
+### Builtin variables that convey information 
+
+These variables are automatically set by AWK during execution of the program.
+
+- `NF` stores the number of fields in the current record.
+- `$NF` is the value of the last field.
+- `NR` stores the current record number.
   - when multiple input files are being processed, `NR` will hold the total number of records processed so far.
-- **`FNR`** stores the _record number_ of the _current input file_
+- `FNR` stores the current record number of the current input file
   - a common AWK idiom is
     ```awk
     NR == FNR {action}
@@ -72,67 +78,39 @@ The current record is `$0`.
 AWK was developed at Bell Labs, where C was invented. 
 AWK uses the same concept of truthiness as C, where
 
-- the number `0` is **false**
-- _any other number_ is **true**
+- the number `0` is false
+- any other number is true
 
-Since AWK is a text-processing language, truth values are extended to _strings_
+Since AWK is a text-processing language, truth values are extended to strings.
 
-- an empty string `""` is **false**
-- _any non-empty string_ is **true**
-
-~~~~exercism/caution
-The number `0` is **false**.<br>
-The non-empty string `"0"` is **true**!
-
-We'll get more into AWK data types in subsequent concepts.
-~~~~
+- an empty string `""` is false
+- any non-empty string is true
 
 ## Comments
 
-The `#` character starts a comment.
+Comments start with the `#` character and extend to the end of the line.
 
 ## Some examples
 
-Here are some awk programs that produce the same results as other common Unix commands.
+On Unix-like systems `/etc/passwd` contains information about users. 
+Each user is described on a separate line, with fields separated by colons.
 
-1. Display a file
+To list the usernames
 
-    ```sh
-    cat file.txt
+```sh
+awk '
+    BEGIN { FS = ":" }
+    { print $1 }
+' /etc/passwd
+```
 
-    awk '1' file.txt
-    ```
+Notice that the `{print $1}` action has no pattern, so it is executed for every record.
 
-2. Search for patterns in a file
+If we want to limit the output to only users who use bash as their login shell, we can do
 
-    ```sh
-    grep 'foo.*bar' file.txt
-
-    awk '/foo.*bar/' file.txt
-    ```
-
-3. Display only a few lines at the start of a file
-
-    ```sh
-    head -n 20 file.txt
-
-    awk '
-        1
-        NR == 20 {exit}
-    ' file.txt
-    ```
-
-4. Replace text in a file
-
-    ```sh
-    sed 's/foo/bar/' file.txt
-
-    awk '{sub(/foo/, "bar")};1' file.txt
-    # or more readably
-    awk '
-        {
-            sub(/foo/, "bar")
-            print
-        }
-    ' file.txt
-    ```
+```sh
+awk '
+    BEGIN { FS = ":" }
+    $7 == "/bin/bash" { print $1 }
+' /etc/passwd
+```
