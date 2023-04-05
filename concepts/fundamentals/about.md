@@ -13,7 +13,7 @@ pattern2 { action2 }
 ```
 
 A **pattern** can be a regular expression pattern to match against the input.
-But it can also be any expression that results in a true/false value.
+It can also be any expression that results in a true/false value.
 
 An **action** is one or more AWK commands.
 The enclosing braces are required.
@@ -49,11 +49,18 @@ You refer to fields as `$1`, `$2`, `$3`, etc.
 
 The current record is `$0`.
 
+~~~~exercism/caution
+To be explicit, these are not strictly "variables".
+The `$` can be considered as an _operator_ that gets the value of the given field number.
+We will dig deeper into this in later concepts.
+~~~~
+
 Here are some other frequently used builtin variables.
 
 ### Builtin variables that control input parsing
 
-- `RS` is the input record separator. As mentioned, its default value is a newline.
+- `RS` is the input record separator.
+  As mentioned, its default value is a newline.
 - `FS` is the input field separator.
 
 These variable are often set in the `BEGIN` action block.
@@ -63,28 +70,35 @@ These variable are often set in the `BEGIN` action block.
 These variables are automatically set by AWK during execution of the program.
 
 - `NF` stores the number of fields in the current record.
-- `$NF` is the value of the last field.
+  - To get the value of the last field, use `$NF`.
 - `NR` stores the current record number.
-  - when multiple input files are being processed, `NR` will hold the total number of records processed so far.
-- `FNR` stores the current record number of the current input file
-  - a common AWK idiom is
+  - When multiple input files are being processed, `NR` will hold the total number of records processed so far.
+- `FNR` stores the current record number of the current input file.
+  - To illustrate the difference between NR and FNR, here is a common AWK idiom.
     ```awk
     NR == FNR {action}
     ```
-    This means "if the record number equals the record number of the current file", which is only true for records in the _first input file_.
+    This means "if the accumulated record number equals the record number of the current file."
+    This can only true for records in the _first input file_.
 
 ## Truthiness
 
-AWK was developed at Bell Labs, where C was invented.
 AWK uses the same concept of truthiness as C:
 
-- the number `0` is false
-- any other number is true
+- The number `0` is false.
+- Any other number is true.
 
 Since AWK is a text-processing language, truth values are extended to strings.
 
-- an empty string `""` is false
-- any non-empty string is true
+- An empty string `""` is false.
+- Any non-empty string is true.
+
+~~~~exercism/note
+> AWK uses the same concept of truthiness as C
+
+AWK originated at Bell Labs in the 1970s, in the same environment where C was invented.
+C had a large influence on AWK's syntax.
+~~~~
 
 ~~~~exercism/caution
 One oddity to watch out for
