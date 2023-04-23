@@ -32,12 +32,19 @@
       ".meta/exemplar.awk"
     ]
   },
+  "concepts": [
+    {
+      "slug": "fundamentals",
+      "name": "Fundamentals",
+      "uuid": "0273ca8a-a928-405d-a0ac-ec98d9012c56"
+    }
+  ],
   "exercises": {
     "concept": [
       {
-        "slug": "first-concept",
-        "name": "My First Concept",
-        "uuid": -1,
+        "slug": "fundamentals",
+        "name": "Fundamentals",
+        "uuid": "c2dd3536-e624-49c8-bb63-a211c889b673",
         "concepts": [
           "fundamentals"
         ],
@@ -556,13 +563,6 @@
       }
     ]
   },
-  "concepts": [
-    {
-      "slug": "fundamentals",
-      "name": "Fundamentals",
-      "uuid": "-1"
-    }
-  ],
   "key_features": [
     {
       "title": "General purpose",

@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "fundamentals.sh"
+    ],
+    "test": [
+      "test-fundamentals.bats"
+    ],
+    "exemplar": [
+      ".meta/exemplar.sh"
+    ],
+    "editor": [
+      "passwd"
+    ]
+  },
+  "blurb": "Introduction to fundamental AWK concepts",
+  "source": "ChatGPT conversation"
+}
