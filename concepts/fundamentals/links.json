@@ -1,0 +1,14 @@
+[
+  {
+    "description": "The AWK language",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Getting-Started.html#Getting-Started"
+  },
+  {
+    "description": "How Input Is Split into Records",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Records.html"
+  },
+  {
+    "description": "Truth Values",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Truth-Values.html"
+  }
+]
