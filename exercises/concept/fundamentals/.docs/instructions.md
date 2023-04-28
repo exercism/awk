@@ -47,6 +47,30 @@ The system administrators continued to manage the /etc/passwd file, keeping it u
 
 Now, it's your turn to be a system administrator like Alex.
 
+~~~~exercism/note
+Here is some additional AWK syntax you'll need to solve this exercise.
+
+* Boolean operators are similar to other languages:
+
+    | operation | example            |
+    | --------- | ------------------ |
+    | AND       | `expr1 && expr2`   |
+    | OR        | `expr1 \|\| expr2` |
+    | NOT       | `! expr`           |
+
+* Calling a function has familiar syntax:
+
+    ```awk
+    function greet(name) {
+        print "Hello", name
+    }
+    BEGIN {
+        greet("Mary")   # prints "Hello Mary"
+    }
+    ```
+
+~~~~
+
 ## 1. List the usernames
 
 Write an awk program to print the first colon-separated field for every line in the passwd file.
@@ -63,4 +87,4 @@ Print the records of the input file with **invalid** home directories.
 
 ## 4. Print the valid users who use bash
 
-Print the records where the home directory is valie **and** the login shell is `bash`.
+Print the records where the home directory is valid **and** the login shell is `bash`.
