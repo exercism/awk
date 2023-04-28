@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Numeric and String Constants",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Scalar-Constants.html"
+  },
+  {
+    "description": "Numeric Functions",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Numeric-Functions.html"
+  },
+  {
+    "description": "String-Manipulation Functions",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html"
+  },
+  {
+    "description": "Getting Type Information",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Type-Functions.html"
+  },
+  {
+    "description": "Conversion of Strings and Numbers",
+    "url": "https://www.gnu.org/software/gawk/manual/html_node/Conversion.html"
+  }
+]
