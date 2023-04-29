@@ -16,6 +16,19 @@ You can use the [standard arithmetic operators][ops-arith] `+`, `-`, `*`, `/`, `
 The exponentiation operator is `^` (it is specified by POSIX) although `**` can also be used.
 There are some [builtin numeric functions][funcs-numeric], including trigonometric functions, random number generation, and `int(x)` to truncate a number to the nearest integer between _x_ and zero.
 
+There are no bitwise _operators_. 
+gawk implements them as functions.
+The arguments must be non-negative numbers.
+
+| function            | operation                                      |
+| ------------------- | ---------------------------------------------- |
+| `and(a, b [, ...])` | bitwise AND of the arguments                   |
+| `or(a, b [, ...])`  | bitwise OR of the arguments                    |
+| `xor(a, b [, ...])` | bitwise XOR of the arguments                   |
+| `lshift(v, count)`  | the value of _v_ left shifted by _count_ bits  |
+| `rshift(v, count)`  | the value of _v_ right shifted by _count_ bits |
+| `compl(v, count)`   | bitwise complement of _v_                      |
+
 ## Strings
 
 AWK strings are sequences of characters.
