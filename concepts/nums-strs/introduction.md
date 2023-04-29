@@ -1,24 +1,24 @@
 # Introduction
 
-AWK is a very small language and it just has a basic set of data types.
+AWK is a very small language and only has a few basic data types.
 In this lession we'll go over numbers and strings.
 
 ## Numbers
 
-Numbers in AWK are implemented double-precision floating point numbers.
-There is no distinction between integers and floats.
+Numbers in AWK are implemented as double-precision floating point numbers.
+There is no distinction between integers, floats and doubles.
 
 AWK understands octal number constants (starting with `0`) and hexadecimal number constants (starting with `0x` or `0X`).
 
 ### Numeric operations
 
 You can use the standard arithmetic operators `+`, `-`, `*`, `/`, `%`.
-Both `^` and `**` can be used for exponentiation, but because `^` is specified by POSIX it is preferred.
+The exponentiation operator is `^`.
 There are some builtin numeric functions, including trigonometric functions, random number generation, and `int(x)` to truncate a number to the nearest integer between _x_ and zero.
 
 ## Strings
 
-AWK strings are composed of ASCII bytes.
+AWK strings are sequences of characters.
 Specify a string constant using double quotes.
 
 ### String operations
@@ -34,6 +34,11 @@ BEGIN {
 }
 # => HelloWorld
 ```
+
+~~~~exercism/note
+`print` is a **statement** not a function.
+`print` does not require parentheses.
+~~~~
 
 AWK has a wealth of string manipulation functions.
 We will be introduced to them in depth as we proceed through the track.

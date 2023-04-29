@@ -1,25 +1,37 @@
 # Introduction
 
-AWK is a very small language and it just has a basic set of data types.
+AWK is a very small language and only has a few basic data types.
 In this lession we'll go over numbers and strings.
 
 ## Numbers
 
-Numbers in AWK are implemented double-precision floating point numbers.
-There is no distinction between integers and floats.
+Numbers in AWK are implemented as double-precision floating point numbers.
+There is no distinction between integers, floats and doubles.
 
 AWK understands octal number constants (starting with `0`) and hexadecimal number constants (starting with `0x` or `0X`).
 
 ### Numeric operations
 
 You can use the [standard arithmetic operators][ops-arith] `+`, `-`, `*`, `/`, `%`.
-Both `^` and `**` can be used for exponentiation, but because `^` is specified by POSIX it is preferred.
+The exponentiation operator is `^` (it is specified by POSIX) although `**` can also be used.
 There are some [builtin numeric functions][funcs-numeric], including trigonometric functions, random number generation, and `int(x)` to truncate a number to the nearest integer between _x_ and zero.
 
 ## Strings
 
-AWK strings are composed of ASCII bytes.
+AWK strings are sequences of characters.
 Specify a string constant using double quotes.
+
+~~~~exercism/caution
+GNU awk allows Unicode characters in strings: other awk implementations may not.
+Comparing `gawk` versus `mawk`, another popular AWK:
+
+```sh
+$ echo "Hi friend 😀!" | gawk '{print length($3)}'
+2
+$ echo "Hi friend 😀!" | mawk '{print length($3)}'
+5
+```
+~~~~
 
 ### String operations
 
@@ -34,6 +46,11 @@ BEGIN {
 }
 # => HelloWorld
 ```
+
+~~~~exercism/note
+`print` is a **statement** not a function.
+`print` does not require parentheses.
+~~~~
 
 AWK has a wealth of [string manipulation functions][funcs-string].
 We will be introduced to them in depth as we proceed through the track.
@@ -68,10 +85,15 @@ The [`typeof(var)` function][func-typeof] returns the type as a string.
 ```awk
 BEGIN {
     x = "42"
-    print typeof(x)     # => "string"
-    x += 1
-    print typeof(x)     # => "number"
+    print x, typeof(x)
+    x = x + 1           # type conversion
+    print x, typeof(x)
 }
+```
+outputs
+```none
+42 string
+43 number
 ```
 
 
