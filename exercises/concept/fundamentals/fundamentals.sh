@@ -1,8 +1,10 @@
 #!/bin/sh
 
 # You will implement this exercise with a shell script that contains some awk commands.
-#
 # In subsequent exercises, the solution file will contains only awk code.
+#
+# You have 4 tasks to solve.
+# Replace the `{exit}` action with awk code to solve the task.
 
 ## task 1
 awk '{exit}' ./passwd
@@ -20,6 +22,7 @@ awk '
     function startsWith(text, prefix) {
         return text ~ "^"prefix
     }
+
     {exit}
 ' ./passwd
 
@@ -28,5 +31,6 @@ awk '
     function startsWith(text, prefix) {
         return text ~ "^"prefix
     }
+
     {exit}
 ' ./passwd
