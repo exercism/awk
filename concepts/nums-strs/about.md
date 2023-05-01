@@ -48,7 +48,7 @@ $ echo "Hi friend 😀!" | mawk '{print length($3)}'
 
 ### String operations
 
-There is only one string operations: concatenation.
+There is only one string operation: concatenation.
 Concatenation does not have a special operator;
 simply placing two strings next to each other concatenates them:
 
