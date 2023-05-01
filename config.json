@@ -37,6 +37,11 @@
       "slug": "fundamentals",
       "name": "Fundamentals",
       "uuid": "0273ca8a-a928-405d-a0ac-ec98d9012c56"
+    },
+    {
+      "slug": "nums-strs",
+      "name": "Numbers and Strings",
+      "uuid": "57b9bd0d-bc66-4f44-8dd9-4cdc63419306"
     }
   ],
   "exercises": {
