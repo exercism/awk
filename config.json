@@ -55,6 +55,18 @@
         ],
         "prerequisites": [],
         "status": "wip"
+      },
+      {
+        "slug": "simple-report",
+        "name": "Simple Report",
+        "uuid": "76968bde-3bca-4cfe-b280-2d0b0db3df12",
+        "concepts": [
+          "nums-strs"
+        ],
+        "prerequisites": [
+          "fundamentals"
+        ],
+        "status": "wip"
       }
     ],
     "foregone-comments": [
