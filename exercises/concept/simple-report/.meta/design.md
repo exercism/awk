@@ -2,12 +2,12 @@
 
 ## Goal
 
-Describe numbers and strings in AWK, and operations on numbers and strings.
+Describe numbers and strings in AWK, and perform operations on numbers and strings.
 
 ## Learning objectives
 
 - number data type
-- number operators
+- arithmetic operators
 - string data type
 - string operators
 

@@ -2,6 +2,9 @@
   "authors": [
     "glennj"
   ],
+  "contributors": [
+    "IsaacG"
+  ],
   "files": {
     "solution": [
       "simple-report.awk"

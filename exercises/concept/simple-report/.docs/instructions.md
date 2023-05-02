@@ -1,7 +1,9 @@
 # Instructions
 
-You are helping a friend generate a report from some readings he has taken in the corners of his garden.
-Unfortunately your friend has stored the data in a strange format in a CSV file: he has stored 2-digit numbers in two columns:
+You are helping a friend generate a report from readings he has taken in different corners of his garden.
+Unfortunately, your friend has stored the data in a strange format.
+Each reading is a set of comma separated fields.
+However, he has stored two-digit numbers across two columns.
 
 | field number | meaning |
 | --- | --- |
@@ -24,7 +26,7 @@ Your task is find the average of the two readings and output the results of each
 #<id>, <label> = <average>
 ```
 
-The output for the sample row should be:
+Since the average of 42 and 54 is 48, the output for the sample row should be:
 
 ```none
 #101, house = 48
