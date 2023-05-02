@@ -3,7 +3,7 @@ load bats-extra
 
 @test "List the usernames" {
     ## task 1
-    run bash fundamentals.sh
+    run bash basics.sh
 
     assert_success
     assert_line --index 0 "root"
@@ -17,7 +17,7 @@ load bats-extra
 
 @test "Print the line numbers" {
     ## task 2
-    run bash fundamentals.sh
+    run bash basics.sh
 
     assert_success
     assert_line --index 7 "1"
@@ -31,7 +31,7 @@ load bats-extra
 
 @test "Print records with invalid home directories" {
     ## task 3
-    run bash fundamentals.sh
+    run bash basics.sh
 
     assert_success
     assert_line --index 14 "susan:x:1004:1004:Susan Johnson:/invalid/home:/bin/bash"
@@ -40,7 +40,7 @@ load bats-extra
 
 @test "Print the valid users who use bash" {
     ## task 4
-    run bash fundamentals.sh
+    run bash basics.sh
 
     assert_success
     assert_line --index 16 "root:x:0:0:root:/root:/bin/bash"
