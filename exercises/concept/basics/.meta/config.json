@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "fundamentals.sh"
+      "basics.sh"
     ],
     "test": [
-      "test-fundamentals.bats"
+      "test-basics.bats"
     ],
     "exemplar": [
       ".meta/exemplar.sh"

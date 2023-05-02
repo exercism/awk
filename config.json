@@ -47,8 +47,8 @@
   "exercises": {
     "concept": [
       {
-        "slug": "fundamentals",
-        "name": "Fundamentals",
+        "slug": "basics",
+        "name": "Basics",
         "uuid": "c2dd3536-e624-49c8-bb63-a211c889b673",
         "concepts": [
           "fundamentals"
