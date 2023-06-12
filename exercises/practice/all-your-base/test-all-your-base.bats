@@ -124,7 +124,7 @@ load bats-extra
 
 @test 'output base is one' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f all-your-base.awk -v ibase=2 1 <<< "1 0 1 0 1 -v obase=0"
+    run gawk -f all-your-base.awk -v ibase=2 -v obase=1 <<< "1 0 1 0 1 0"
     assert_failure
     assert_output    # there is _some_ output
 }
