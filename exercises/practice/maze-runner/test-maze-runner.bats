@@ -1,8 +1,8 @@
 #!/usr/bin/env bats
 
 @test "maze-runner.awk produces expected output" {
-  # Input maze
-  read -r -d '' input <<'EOF'
+# Input maze
+maze=$(cat << EOF
 ────┬─────────┬─────────┬───────┬───┐
 ⇨   │         │         │       │   │
 ┌─┐ └─┐ ┌─┐ │ └─┐ ──┬── │ ──┐ │ │ ──┘
@@ -17,9 +17,9 @@
 │               │   │       │   │   │
 └───────────────┴───┴───────┴───┴───┘
 EOF
+)
 
-  # Expected output
-  read -r -d '' expected_output <<'EOF'
+expected_output=$(cat << EOF
 ────┬─────────┬─────────┬───────┬───┐
 ⇨⋅⋅⋅│      ⋅⋅⋅│         │    ⋅⋅⋅│   │
 ┌─┐⋅└─┐ ┌─┐⋅│⋅└─┐ ──┬── │ ──┐⋅│⋅│ ──┘
@@ -34,8 +34,9 @@ EOF
 │    ⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅│⋅⋅⋅│  ⋅⋅⋅⋅⋅│⋅⋅⋅│⋅⋅⋅│
 └───────────────┴───┴───────┴───┴───┘
 EOF
+)
 
   # Run the script and compare the output to the expected output
-  result="$(echo "$input" | gawk -f maze-runner.awk)"
+  result="$(echo "$maze" | gawk -f maze-runner.awk)"
   [ "$result" == "$expected_output" ]
 }
