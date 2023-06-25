@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "maze-runner.awk"
+    ],
+    "test": [
+      "test-maze-runner.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Bob is a lackadaisical teenager with a thing for tackling mazes but often finds himself stuck and disheartened. ",
+  "source": "Inspired by the 'Maze Runner' exercise in Hyperskill's Java Core Track.",
+  "source_url": "https://hyperskill.org/projects/47?category=2&track=15"
+}
