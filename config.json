@@ -42,6 +42,11 @@
       "slug": "nums-strs",
       "name": "Numbers and Strings",
       "uuid": "57b9bd0d-bc66-4f44-8dd9-4cdc63419306"
+    },
+    {
+      "slug": "patterns",
+      "name": "More about Patterns",
+      "uuid": "63f31456-2111-4e6b-b518-1b9c73eb2a6e"
     }
   ],
   "exercises": {
