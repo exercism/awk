@@ -73,7 +73,7 @@ These variables are automatically set by AWK during execution of the program.
     NR == FNR {action}
     ```
     This means "if the accumulated record number equals the record number of the current file."
-    This can only true for records in the _first input file_.
+    This can only be true for records in the _first input file_.
 
 ## Truthiness
 
