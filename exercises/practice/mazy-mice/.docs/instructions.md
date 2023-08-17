@@ -1,8 +1,3 @@
-## Introduction
-
-Meet Mickey and Minerva, two clever mice who love to navigate their way through a maze to find cheese. 
-They enjoy a good challenge, but with only their tiny mouse brains, they prefer if there's only one correct path to the cheese.
-
 ## Instructions
 
 Your task is to generate the perfect mazes for Mickey and Minerva — those with only one solution and no isolated sections. 
