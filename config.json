@@ -577,6 +577,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
+      },
+      {
+        "slug": "mazy-mice",
+        "name": "Mazy Mice",
+        "uuid": "a1e388fe-9c4b-4a02-b922-423dce834cb0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
       }
     ]
   },
