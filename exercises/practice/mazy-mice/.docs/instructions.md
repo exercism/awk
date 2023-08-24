@@ -6,7 +6,7 @@ Here's what you need to know:
 - The maze is rectangular, with the outer borders roughly forming a rectangle.
 - The maze has square cells and orthogonal passages intersecting at right angles.
 - The program should accept two parameters: rows and columns. The maze should be between 5 and 100 cells in size.
-- Consider the maze walls by using the formula 2x+1 for the actual width and height, where x is rows or columns.
+- A maze which is x columns wide and y rows high should be 2x + 1 characters wide and 2y + 1 characters high.
 - If no seed is provided, generate a random maze. If a seed is provided multiple times, the resulting maze should be the same each time.
 - Use [box-drawing][Box-drawing] characters to draw walls, and an arrow symbol (⇨) for the entrance on the left and exit on the right.
 
