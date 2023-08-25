@@ -443,6 +443,14 @@
         "difficulty": 4
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "327cb0d1-398b-4354-a15b-22cd53a05b4d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "abc1dd61-d677-4e7c-95a6-b9c6f797b2bd",
