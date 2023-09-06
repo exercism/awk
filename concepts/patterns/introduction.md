@@ -59,9 +59,9 @@ AWK gives you a whole programming language without sacrificing succinctness.
 
 We'll get more into GNU AWK's regular expression flavour in a further concept.
 
-## Arithmetic expressions
+## Expressions
 
-Arithmetic expressions can be used as patterns.
+AWK expressions (arithmetic or logical or ...) can be used as patterns.
 
 To extract all users with UID 1000 or above:
 
@@ -69,7 +69,9 @@ To extract all users with UID 1000 or above:
 awk -F: '$3 >= 1000' /etc/passwd
 ```
 
-Recall that zero is a false value and all other numbers are true.
+Recall that zero is a false value and all other numbers are true;
+and the empty string is a false value and all other strings are true.
+Any expression that evaluates to a number or a string can be used as a pattern.
 
 ## Functions
 
