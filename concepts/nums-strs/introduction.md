@@ -62,4 +62,5 @@ Some examples are:
 
 * `"2.5"` converts to the number `2.5`;
 * `"1e3"` converts to the number `1000` (scientific notation);
-* `456abc` converts to the number `456` (because `a` is not a "numeral").
+* `"456abc"` converts to the number `456` (because `a` is not a "numeral", conversion stops there).
+* `"abc789"` converts to the number `0` (there are no numbers at the **start** of the string).
