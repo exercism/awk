@@ -32,7 +32,7 @@ Use the `~` regex-matching operator to match a particular field.
 This operator takes a string as the left-hand operand and a regular expression as the right-hand operand.
 A regular expression literal is enclosed in `/` slashes.
 
-To find the user in the passed file who log in with bash:
+To find the users in the passwd file who log in with bash:
 
 ```sh
 awk -F: '$7 ~ /bash/ {print $1}' /etc/passwd
@@ -40,8 +40,8 @@ awk -F: '$7 ~ /bash/ {print $1}' /etc/passwd
 
 `!~` is the "regex does **not** match" operator.
 
-If you want to match a regex against the whole current record, there's a shorthand syntax for it:
-the `$0 ~ /regex` expression can be simply expressed as:
+To match a regex against the current record, you can do `$0 ~ /regex/`.
+This is so common there is a shorthand: you can drop the `$0` and `~` and simply write `/regex/`
 
 ```sh
 awk '/regex/' data.txt
@@ -57,7 +57,7 @@ grep 'regex' data.txt
 AWK gives you a whole programming language without sacrificing succinctness.
 ~~~~
 
-We'll get more into GNU AWK's regular expression flavour in a further concept.
+We'll get more into GNU AWK's regular expression flavor in a further concept.
 
 ## Expressions
 
