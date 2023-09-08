@@ -41,7 +41,7 @@ awk -F: '$7 ~ /bash/ {print $1}' /etc/passwd
 `!~` is the "regex does **not** match" operator.
 
 To match a regex against the current record, you can do `$0 ~ /regex/`.
-This is so common there is a shorthand: you can drop the `$0` and `~` and simply write `/regex/`
+This is so common there is a shorthand: you can drop the `$0` and `~` and simply write `/regex/`.
 
 ```sh
 awk '/regex/' data.txt
