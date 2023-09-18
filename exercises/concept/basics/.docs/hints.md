@@ -11,7 +11,7 @@ For all of these tasks, you'll need the `print` command:
 
 ## 2. Print the line numbers
 
-* Use the [built-in variable `NR`][var-vr] to get the line number.
+* Use the [built-in variable `NR`][var-nr] to get the line number.
 
 ## 3. Print records with invalid home directories.
 
