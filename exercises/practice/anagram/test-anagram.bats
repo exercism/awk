@@ -147,9 +147,7 @@ WORD_LIST
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
     run gawk -f anagram.awk -v key=go <<WORD_LIST
-go
-Go
-GO
+go Go GO
 WORD_LIST
 
     assert_success
