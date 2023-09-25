@@ -1,5 +1,6 @@
 BEGIN {
     Gigasecond = 1000000000
+    UTC = 1
 }
     
 /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ {
@@ -10,7 +11,7 @@ BEGIN {
 /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$/ {
     # https://www.gnu.org/software/gawk/manual/html_node/Time-Functions.html
     datespec = gensub(/[-T:]/, " ", "g")
-    epoch = mktime(datespec, 1)
+    epoch = mktime(datespec, UTC)
     if (epoch != -1)
-        print strftime("%FT%T", Gigasecond + epoch, 1)
+        print strftime("%FT%T", Gigasecond + epoch, UTC)
 }
