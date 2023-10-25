@@ -392,6 +392,14 @@
         "difficulty": 3
       },
       {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "dda0696c-5e5c-4881-ac3d-476182216278",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "d5ea1ab0-3420-4b1c-a482-03563e7dd200",
@@ -451,6 +459,14 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "327cb0d1-398b-4354-a15b-22cd53a05b4d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "automated-readability-index",
+        "name": "Automated readability index",
+        "uuid": "ccf7118a-f2b7-47ca-b7a1-18e830daca2f",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
@@ -582,14 +598,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "automated-readability-index",
-        "name": "Automated readability index",
-        "uuid": "ccf7118a-f2b7-47ca-b7a1-18e830daca2f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
       },
       {
         "slug": "mazy-mice",
