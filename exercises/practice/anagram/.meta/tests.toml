@@ -43,7 +43,7 @@ description = "detects anagrams using case-insensitive subject"
 [f367325c-78ec-411c-be76-e79047f4bd54]
 description = "detects anagrams using case-insensitive possible matches"
 
-[7cc195ad-e3c7-44ee-9fd2-d3c344806a2c]
+[630abb71-a94e-4715-8395-179ec1df9f91]
 description = "does not detect an anagram if the original word is repeated"
 include = false
 
