@@ -143,7 +143,7 @@ WORD_LIST
     assert_equal ${#lines[@]} 1
 }
 
-@test "does not detect a anagram if the original word is repeated" {
+@test "does not detect an anagram if the original word is repeated" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
 
     run gawk -f anagram.awk -v key=go <<WORD_LIST
