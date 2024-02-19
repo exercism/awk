@@ -240,6 +240,14 @@
         "difficulty": 2
       },
       {
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "c426d0d0-d783-445f-a6fb-1b48840dea13",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "beb92b14-a0db-4749-bb0d-9a791dc5ba0a",
