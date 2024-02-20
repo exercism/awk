@@ -475,6 +475,22 @@
         "difficulty": 5
       },
       {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "8a786a15-f947-4ec1-b012-feb53718bd4a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "4eeb2ef9-3c0f-4018-a627-e21b35af6bdb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "b0978e56-9506-4289-a5f6-88190f77ecac",
@@ -561,14 +577,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "meetup",
-        "name": "Meetup",
-        "uuid": "8a786a15-f947-4ec1-b012-feb53718bd4a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
       }
     ],
     "foregone": [
