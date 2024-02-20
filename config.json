@@ -20,7 +20,7 @@
   },
   "files": {
     "solution": [
-      "%{kebab_slug}.sh"
+      "%{kebab_slug}.awk"
     ],
     "test": [
       "test-%{kebab_slug}.bats"
@@ -32,23 +32,6 @@
       ".meta/exemplar.awk"
     ]
   },
-  "concepts": [
-    {
-      "slug": "fundamentals",
-      "name": "Fundamentals",
-      "uuid": "0273ca8a-a928-405d-a0ac-ec98d9012c56"
-    },
-    {
-      "slug": "nums-strs",
-      "name": "Numbers and Strings",
-      "uuid": "57b9bd0d-bc66-4f44-8dd9-4cdc63419306"
-    },
-    {
-      "slug": "patterns",
-      "name": "More about Patterns",
-      "uuid": "63f31456-2111-4e6b-b518-1b9c73eb2a6e"
-    }
-  ],
   "exercises": {
     "concept": [
       {
@@ -74,55 +57,19 @@
         "status": "wip"
       }
     ],
-    "foregone-comments": [
-      "Some of the reasons to forego exercises:",
-      "- specific data structures (trees, linked lists, etc)",
-      "    - these are _possible_ but not practical",
-      "- very object-oriented",
-      "- threading/concurrency",
-      "- refactoring exercises (un-forego if you're willing to write them)",
-      "See https://github.com/exercism/awk/issues/105"
-    ],
-    "foregone": [
-      "bank-account",
-      "binary-search-tree",
-      "circular-buffer",
-      "custom-set",
-      "dnd-character",
-      "flatten-array",
-      "hangman",
-      "ledger",
-      "lens-person",
-      "linked-list",
-      "markdown",
-      "micro-blog",
-      "parallel-letter-frequency",
-      "paasio",
-      "pov",
-      "react",
-      "resistor-color",
-      "satellite",
-      "sgf-parsing",
-      "simple-linked-list",
-      "square-root",
-      "strain",
-      "tree-building",
-      "zebra-puzzle",
-      "zipper"
-    ],
     "practice": [
       {
-        "uuid": "11f04035-08f4-4f57-812f-65b9c8236ebf",
         "slug": "hello-world",
         "name": "Hello World",
+        "uuid": "11f04035-08f4-4f57-812f-65b9c8236ebf",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
       },
       {
-        "uuid": "f7dc669d-0441-4819-8efc-b4131a189651",
         "slug": "two-fer",
         "name": "Two Fer",
+        "uuid": "f7dc669d-0441-4819-8efc-b4131a189651",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -136,9 +83,9 @@
         "difficulty": 1
       },
       {
-        "uuid": "7aedb0b6-a4c6-4985-a85c-9b641f4ae047",
         "slug": "raindrops",
         "name": "Raindrops",
+        "uuid": "7aedb0b6-a4c6-4985-a85c-9b641f4ae047",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -152,9 +99,9 @@
         "difficulty": 2
       },
       {
-        "uuid": "5652e06f-bc63-412e-b766-91fa22a5dcd5",
         "slug": "leap",
         "name": "Leap",
+        "uuid": "5652e06f-bc63-412e-b766-91fa22a5dcd5",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -168,9 +115,9 @@
         "difficulty": 2
       },
       {
-        "uuid": "82c4b80d-a343-4eb3-af12-fb7312ec2e33",
         "slug": "hamming",
         "name": "Hamming",
+        "uuid": "82c4b80d-a343-4eb3-af12-fb7312ec2e33",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -614,9 +561,61 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "8a786a15-f947-4ec1-b012-feb53718bd4a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
+    ],
+    "foregone": [
+      "bank-account",
+      "binary-search-tree",
+      "circular-buffer",
+      "custom-set",
+      "dnd-character",
+      "flatten-array",
+      "hangman",
+      "ledger",
+      "lens-person",
+      "linked-list",
+      "markdown",
+      "micro-blog",
+      "parallel-letter-frequency",
+      "paasio",
+      "pov",
+      "react",
+      "resistor-color",
+      "satellite",
+      "sgf-parsing",
+      "simple-linked-list",
+      "square-root",
+      "strain",
+      "tree-building",
+      "zebra-puzzle",
+      "zipper"
     ]
   },
+  "concepts": [
+    {
+      "uuid": "0273ca8a-a928-405d-a0ac-ec98d9012c56",
+      "slug": "fundamentals",
+      "name": "Fundamentals"
+    },
+    {
+      "uuid": "57b9bd0d-bc66-4f44-8dd9-4cdc63419306",
+      "slug": "nums-strs",
+      "name": "Numbers and Strings"
+    },
+    {
+      "uuid": "63f31456-2111-4e6b-b518-1b9c73eb2a6e",
+      "slug": "patterns",
+      "name": "More about Patterns"
+    }
+  ],
   "key_features": [
     {
       "title": "General purpose",
@@ -650,13 +649,13 @@
     }
   ],
   "tags": [
-    "used_for/scripts",
-    "paradigm/procedural",
     "execution_mode/interpreted",
-    "runtime/standalone_executable",
-    "typing/weak",
+    "paradigm/procedural",
     "platform/linux",
     "platform/mac",
-    "platform/windows"
+    "platform/windows",
+    "runtime/standalone_executable",
+    "typing/weak",
+    "used_for/scripts"
   ]
 }
