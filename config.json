@@ -115,6 +115,14 @@
         "difficulty": 2
       },
       {
+        "slug": "difference-of-squares",
+        "name": "Difference of Squares",
+        "uuid": "80b1d1c7-eec2-4ac6-a152-0e9356ad730a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "82c4b80d-a343-4eb3-af12-fb7312ec2e33",
