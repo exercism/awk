@@ -88,6 +88,16 @@ END_INPUT
     assert_output "4 4 4 5 5 5"
 }
 
+@test "a greedy approach is not optimal" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f change.awk <<END_INPUT
+1 10 11
+20
+END_INPUT
+    assert_success
+    assert_output "10 10"
+}
+
 @test "no coins make 0 change" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f change.awk <<END_INPUT
