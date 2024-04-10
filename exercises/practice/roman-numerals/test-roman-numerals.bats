@@ -185,3 +185,10 @@ load bats-extra
     assert_success
     assert_output "MDCLXVI"
 }
+
+@test "3888 is MMMDCCCLXXXVIII" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f roman-numerals.awk <<< 3888
+    assert_success
+    assert_output "MMMDCCCLXXXVIII"
+}
