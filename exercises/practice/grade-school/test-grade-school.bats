@@ -106,16 +106,16 @@ END_INPUT
 
     run gawk -f grade-school.awk -v action=roster << END_INPUT
 Peter,2
-Anna,10
-Barb,AB
+Anna,1
+Barb,1
 Zoe,2
 Alex,2
-Jim,3
+Jim,10
 Charlie,1
 END_INPUT
 
     assert_success
-    assert_output "Charlie,Alex,Peter,Zoe,Jim,Anna,Barb"
+    assert_output "Anna,Barb,Charlie,Alex,Peter,Zoe,Jim"
 }
 
 @test "Grade is empty if no students in the roster" {
