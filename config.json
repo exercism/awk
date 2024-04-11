@@ -16,7 +16,7 @@
     "highlightjs_language": "awk"
   },
   "test_runner": {
-    "average_run_time": 2.0
+    "average_run_time": 2
   },
   "files": {
     "solution": [
@@ -315,6 +315,14 @@
         "difficulty": 3
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "bf5b0d3a-5a72-479c-94d6-da4f900e5a2c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "35b9cd7c-8f80-4728-844a-6f9f4e403706",
@@ -585,14 +593,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "bottle-song",
-        "name": "Bottle Song",
-        "uuid": "bf5b0d3a-5a72-479c-94d6-da4f900e5a2c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
       }
     ],
     "foregone": [
