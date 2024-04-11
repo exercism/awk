@@ -16,7 +16,7 @@
     "highlightjs_language": "awk"
   },
   "test_runner": {
-    "average_run_time": 2
+    "average_run_time": 2.0
   },
   "files": {
     "solution": [
@@ -585,6 +585,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "bf5b0d3a-5a72-479c-94d6-da4f900e5a2c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       }
     ],
     "foregone": [
