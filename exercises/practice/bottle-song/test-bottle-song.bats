@@ -2,6 +2,7 @@
 load bats-extra
 
 @test 'first_generic_verse' {
+    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=10 -v takeDown=1
 
     expected="Ten green bottles hanging on the wall,
@@ -14,6 +15,7 @@ There'll be nine green bottles hanging on the wall."
 }
 
 @test 'last_generic_verse' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=3 -v takeDown=1
 
     expected="Three green bottles hanging on the wall,
@@ -26,6 +28,7 @@ There'll be two green bottles hanging on the wall."
 }
 
 @test 'verse_with_2_bottles' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=2 -v takeDown=1
 
     expected="Two green bottles hanging on the wall,
@@ -38,6 +41,7 @@ There'll be one green bottle hanging on the wall."
 }
 
 @test 'verse_with_1_bottle' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=1 -v takeDown=1
 
     expected="One green bottle hanging on the wall,
@@ -50,6 +54,7 @@ There'll be no green bottles hanging on the wall."
 }
 
 @test 'first_two_verses' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=10 -v takeDown=2
 
     expected="Ten green bottles hanging on the wall,
@@ -67,6 +72,7 @@ There'll be eight green bottles hanging on the wall."
 }
 
 @test 'last_three_verses' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=3 -v takeDown=3
 
     expected="Three green bottles hanging on the wall,
@@ -89,6 +95,7 @@ There'll be no green bottles hanging on the wall."
 }
 
 @test 'all_verses' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=10 -v takeDown=10
 
     expected="Ten green bottles hanging on the wall,
