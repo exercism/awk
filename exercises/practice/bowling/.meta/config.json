@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "bowling.awk"
+    ],
+    "test": [
+      "test-bowling.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Score a bowling game.",
+  "source": "The Bowling Game Kata from UncleBob",
+  "source_url": "https://web.archive.org/web/20221001111000/http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
+}

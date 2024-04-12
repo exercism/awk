@@ -419,6 +419,14 @@
         "difficulty": 4
       },
       {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "150341a9-ac79-4486-86aa-1f6ee3dc5ee3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "a556b380-1535-49e3-8299-b3a1ba31a2c7",
