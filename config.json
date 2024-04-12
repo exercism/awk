@@ -379,6 +379,14 @@
         "difficulty": 4
       },
       {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "0fc0f916-e9f5-4bb5-b4b5-340f13067d30",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "ec8b3e3c-163e-4db8-ba68-aacd39f3805e",
