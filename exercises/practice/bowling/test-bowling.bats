@@ -163,8 +163,8 @@ load bats-extra
 
 @test "an unstarted game cannot be scored" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f bowling.awk <<< ""
-
+    run gawk -f bowling.awk <<EOF
+EOF
     assert_failure
     assert_output "Score cannot be taken until the end of the game"
 }
@@ -202,18 +202,21 @@ load bats-extra
 }
 
 @test "bonus roll for a spare in the last frame must be rolled before score can be calculated" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3"
     assert_failure
     assert_output "Score cannot be taken until the end of the game"
 }
 
 @test "cannot roll after bonus roll for spare" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3 2 2"
     assert_failure
     assert_output "Cannot roll after game is over"
 }
 
 @test "cannot roll after bonus rolls for strike" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 3 2 2"
     assert_failure
     assert_output "Cannot roll after game is over"
