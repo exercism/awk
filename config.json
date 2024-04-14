@@ -203,6 +203,14 @@
         "difficulty": 2
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "3467ee94-4209-425b-b39d-9703b4eec9e4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "beb92b14-a0db-4749-bb0d-9a791dc5ba0a",
