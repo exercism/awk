@@ -70,14 +70,14 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=10 -v obase=2 <<< "0"
     assert_success
-    assert_output "0" # 0 is 0 in any base
+    assert_output "0"
 }
 
 @test 'multiple zeroes' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=10 -v obase=2 <<< "0 0 0"
     assert_success
-    assert_output "0"  # 0 is 0 in any base
+    assert_output "0"
 }
 
 @test 'leading zeros' {
