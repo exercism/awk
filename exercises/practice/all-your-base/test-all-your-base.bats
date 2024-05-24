@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 2.3.0.0
+# local version: 2.3.0.1
 
 @test 'single bit to one decimal' {
     #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -70,14 +70,14 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=10 -v obase=2 <<< "0"
     assert_success
-    assert_output ""
+    assert_output "0"
 }
 
 @test 'multiple zeroes' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=10 -v obase=2 <<< "0 0 0"
     assert_success
-    assert_output ""
+    assert_output "0"
 }
 
 @test 'leading zeros' {

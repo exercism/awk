@@ -21,7 +21,10 @@ BEGIN {
         base = ibase ^ (NF - i)
         val += $i * base
     }
-    
+
+    # Handle default for no looping (0 value) or no entry (empty in empty out)
+    if (val == 0 && NF > 0) parts[0] = 0
+
     # Convert from decimal to obase words.
     i = 0
     while (val) {
