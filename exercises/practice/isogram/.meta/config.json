@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "SimaDovakin"
+  ],
+  "files": {
+    "solution": [
+      "isogram.awk"
+    ],
+    "test": [
+      "test-isogram.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Determine if a word or phrase is an isogram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Isogram"
+}
