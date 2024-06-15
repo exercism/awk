@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "pascals-triangle.awk"
+    ],
+    "test": [
+      "test-pascals-triangle.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Compute Pascal's triangle up to a given number of rows.",
+  "source": "Pascal's Triangle at Wolfram Math World",
+  "source_url": "https://www.wolframalpha.com/input/?i=Pascal%27s+triangle"
+}
