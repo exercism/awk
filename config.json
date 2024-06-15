@@ -475,6 +475,14 @@
         "difficulty": 4
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "d4162bc2-7644-4e76-8455-d2badc41f54e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "abc1dd61-d677-4e7c-95a6-b9c6f797b2bd",
