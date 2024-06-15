@@ -371,6 +371,14 @@
         "difficulty": 3
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascal's Triangle",
+        "uuid": "20e94baf-b776-4ac1-a195-3857c8c0e747",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "b5c559e7-a7b9-4eac-a54c-6fdb830fc61c",
@@ -470,6 +478,14 @@
         "slug": "automated-readability-index",
         "name": "Automated readability index",
         "uuid": "ccf7118a-f2b7-47ca-b7a1-18e830daca2f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "d4162bc2-7644-4e76-8455-d2badc41f54e",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
