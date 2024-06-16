@@ -395,6 +395,14 @@
         "difficulty": 3
       },
       {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "6147eab6-9e1d-432f-894c-5236677b2bea",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "d5ea1ab0-3420-4b1c-a482-03563e7dd200",
