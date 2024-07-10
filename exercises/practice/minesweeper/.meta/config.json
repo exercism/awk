@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "minesweeper.awk"
+    ],
+    "test": [
+      "test-minesweeper.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Add the numbers to a minesweeper board."
+}
