@@ -19,59 +19,75 @@ load bats-extra
 
 @test "no mines" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 ...
 ...
 ...
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+...
+...
+...
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "..."
-    assert_line --index 1 "..."
-    assert_line --index 2 "..."
+    assert_output "$expected"
 }
 
 @test "minefield with only mines" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 ***
 ***
 ***
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+***
+***
+***
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "***"
-    assert_line --index 1 "***"
-    assert_line --index 2 "***"
+    assert_output "$expected"
 }
 
 @test "mine surrounded by spaces" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 ...
 .*.
 ...
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+111
+1*1
+111
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "111"
-    assert_line --index 1 "1*1"
-    assert_line --index 2 "111"
+    assert_output "$expected"
 }
 
 @test "space surrounded by mines" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 ***
 *.*
 ***
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+***
+*8*
+***
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "***"
-    assert_line --index 1 "*8*"
-    assert_line --index 2 "***"
+    assert_output "$expected"
 }
 
 @test "horizontal line" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 .*.*.
 END_INPUT
     assert_success
@@ -80,7 +96,7 @@ END_INPUT
 
 @test "horizontal line, mines at edges" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 *...*
 END_INPUT
     assert_success
@@ -89,58 +105,70 @@ END_INPUT
 
 @test "vertical line" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 .
 *
 .
 *
 .
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+1
+*
+2
+*
+1
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "1"
-    assert_line --index 1 "*"
-    assert_line --index 2 "2"
-    assert_line --index 3 "*"
-    assert_line --index 4 "1"
+    assert_output "$expected"
 }
 
 @test "vertical line, mines at edges" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 *
 .
 .
 .
 *
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+*
+1
+.
+1
+*
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "*"
-    assert_line --index 1 "1"
-    assert_line --index 2 "."
-    assert_line --index 3 "1"
-    assert_line --index 4 "*"
+    assert_output "$expected"
 }
 
 @test "cross" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 ..*..
 ..*..
 *****
 ..*..
 ..*..
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+.2*2.
+25*52
+*****
+25*52
+.2*2.
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 ".2*2."
-    assert_line --index 1 "25*52"
-    assert_line --index 2 "*****"
-    assert_line --index 3 "25*52"
-    assert_line --index 4 ".2*2."
+    assert_output "$expected"
 }
 
 @test "large minefield" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk << END_INPUT
+    run gawk -f minesweeper.awk << 'END_INPUT'
 .*..*.
 ..*...
 ....*.
@@ -148,11 +176,15 @@ END_INPUT
 .*..*.
 ......
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+1*22*1
+12*322
+.123*2
+112*4*
+1*22*2
+111111
+END_EXPECTED
+)
     assert_success
-    assert_line --index 0 "1*22*1"
-    assert_line --index 1 "12*322"
-    assert_line --index 2 ".123*2"
-    assert_line --index 3 "112*4*"
-    assert_line --index 4 "1*22*2"
-    assert_line --index 5 "111111"
+    assert_output "$expected"
 }
