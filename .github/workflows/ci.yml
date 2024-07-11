@@ -9,7 +9,7 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
@@ -17,6 +17,8 @@ jobs:
 
       - name: Install software
         run: sudo apt update && sudo apt -y install gawk bats
+        # bats v1.10.0 -- https://launchpad.net/ubuntu/noble/+source/bats
+        # gawk v5.2.1  -- https://launchpad.net/ubuntu/noble/+source/gawk
 
       - name: Run tests for all exercises
         run: bash bin/ci
