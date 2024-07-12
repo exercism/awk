@@ -507,6 +507,14 @@
         "difficulty": 4
       },
       {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "0a2e7c25-5dec-4f80-9b4c-7256019d9ad0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "abc1dd61-d677-4e7c-95a6-b9c6f797b2bd",
