@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "rabestro"
+  ],
   "files": {
     "solution": [
       "poker.awk"
