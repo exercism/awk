@@ -201,3 +201,173 @@ END_INPUT
     assert_success
     assert_output "4D AH 3S 2D 5C"
 }
+
+@test "aces cannot be in the middle of a straight (Q K A 2 3)" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+2C 3D 7H 5H 2S
+QS KH AC 2D 3S
+END_INPUT
+    assert_success
+    assert_output "2C 3D 7H 5H 2S"
+}
+
+@test "both hands with a straight, tie goes to highest ranked card" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4S 6C 7S 8D 5H
+5S 7H 8S 9D 6H
+END_INPUT
+    assert_success
+    assert_output "5S 7H 8S 9D 6H"
+}
+
+@test "even though an ace is usually high, a 5-high straight is the lowest-scoring straight" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+2H 3C 4D 5D 6H
+4S AH 3S 2D 5H
+END_INPUT
+    assert_success
+    assert_output "2H 3C 4D 5D 6H"
+}
+
+@test "flush beats a straight" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4C 6H 7D 8D 5H
+2S 4S 5S 6S 7S
+END_INPUT
+    assert_success
+    assert_output "2S 4S 5S 6S 7S"
+}
+
+@test "both hands have a flush, tie goes to high card, down to the last one if necessary" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4H 7H 8H 9H 6H
+2S 4S 5S 6S 7S
+END_INPUT
+    assert_success
+    assert_output "4H 7H 8H 9H 6H"
+}
+
+@test "full house beats a flush" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+3H 6H 7H 8H 5H
+4S 5H 4C 5D 4H
+END_INPUT
+    assert_success
+    assert_output "4S 5H 4C 5D 4H"
+}
+
+@test "both hands have a full house, tie goes to highest-ranked triplet" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4H 4S 4D 9S 9D
+5H 5S 5D 8S 8D
+END_INPUT
+    assert_success
+    assert_output "5H 5S 5D 8S 8D"
+}
+
+@test "with multiple decks, both hands have a full house with the same triplet, tie goes to the pair" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+5H 5S 5D 9S 9D
+5H 5S 5D 8S 8D
+END_INPUT
+    assert_success
+    assert_output "5H 5S 5D 9S 9D"
+}
+
+@test "four of a kind beats a full house" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4S 5H 4D 5D 4H
+3S 3H 2S 3D 3C
+END_INPUT
+    assert_success
+    assert_output "3S 3H 2S 3D 3C"
+}
+
+@test "both hands have four of a kind, tie goes to high quad" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+2S 2H 2C 8D 2D
+4S 5H 5S 5D 5C
+END_INPUT
+    assert_success
+    assert_output "4S 5H 5S 5D 5C"
+}
+
+@test "with multiple decks, both hands with identical four of a kind, tie determined by kicker" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+3S 3H 2S 3D 3C
+3S 3H 4S 3D 3C
+END_INPUT
+    assert_success
+    assert_output "3S 3H 4S 3D 3C"
+}
+
+@test "straight flush beats four of a kind" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4S 5H 5S 5D 5C
+7S 8S 9S 6S 10S
+END_INPUT
+    assert_success
+    assert_output "7S 8S 9S 6S 10S"
+}
+
+@test "aces can end a straight flush (10 J Q K A)" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+KC AH AS AD AC
+10C JC QC KC AC
+END_INPUT
+    assert_success
+    assert_output "10C JC QC KC AC"
+}
+
+@test "aces can start a straight flush (A 2 3 4 5)" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+KS AH AS AD AC
+4H AH 3H 2H 5H
+END_INPUT
+    assert_success
+    assert_output "4H AH 3H 2H 5H"
+}
+
+@test "aces cannot be in the middle of a straight flush (Q K A 2 3)" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+2C AC QC 10C KC
+QH KH AH 2H 3H
+END_INPUT
+    assert_success
+    assert_output "2C AC QC 10C KC"
+}
+
+@test "both hands have a straight flush, tie goes to highest-ranked card" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+4H 6H 7H 8H 5H
+5S 7S 8S 9S 6S
+END_INPUT
+    assert_success
+    assert_output "5S 7S 8S 9S 6S"
+}
+
+@test "even though an ace is usually high, a 5-high straight flush is the lowest-scoring straight flush" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f poker.awk <<END_INPUT
+2H 3H 4H 5H 6H
+4D AD 3D 2D 5D
+END_INPUT
+    assert_success
+    assert_output "2H 3H 4H 5H 6H"
+}
