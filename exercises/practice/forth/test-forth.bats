@@ -48,6 +48,15 @@ END
     assert_output --partial "only one value on the stack"
 }
 
+@test addition_more_than_two_values_on_the_stack {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f forth.awk <<END
+1 2 3 +
+END
+    assert_success
+    assert_output "1 5"
+}
+
 # subtraction
 @test subtraction_ok {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -76,6 +85,15 @@ END
     assert_output --partial "only one value on the stack"
 }
 
+@test subtraction_more_than_two_values_on_the_stack {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f forth.awk <<END
+1 12 3 -
+END
+    assert_success
+    assert_output "1 9"
+}
+
 # multiplication
 @test multiplication_ok {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -102,6 +120,15 @@ END
 END
     assert_failure
     assert_output --partial "only one value on the stack"
+}
+
+@test multiplication_more_than_two_values_on_the_stack {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f forth.awk <<END
+1 2 3 *
+END
+    assert_success
+    assert_output "1 6"
 }
 
 # division
@@ -150,8 +177,17 @@ END
     assert_output --partial "divide by zero"
 }
 
+@test division_more_than_two_values_on_the_stack {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f forth.awk <<END
+1 12 3 /
+END
+    assert_success
+    assert_output "1 4"
+}
+
 # combined arithmetic
-@test add_and_subtract {
+@test combined_add_and_subtract {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f forth.awk <<END
 1 2 + 4 -
@@ -159,13 +195,32 @@ END
     assert_success
     assert_output "-1"
 }
-@test multiply_and_divide {
+
+@test combined_multiply_and_divide {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f forth.awk <<END
 2 4 * 3 /
 END
     assert_success
     assert_output "2"
+}
+
+@test combined_multiplication_and_addition {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f forth.awk <<END
+1 3 4 * +
+END
+    assert_success
+    assert_output "13"
+}
+
+@test combined_addition_and_multiplication {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f forth.awk <<END
+1 3 4 + *
+END
+    assert_success
+    assert_output "7"
 }
 
 # dup
