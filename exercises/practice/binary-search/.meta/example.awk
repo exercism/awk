@@ -1,7 +1,13 @@
 # These variables are initialized on the command line (using '-v'):
-# - value
+# - target
 
-BEGIN {FS = ","}
+BEGIN {
+    if (target == "") {
+        print "Error: 'target' variable not set." > "/dev/stderr"
+        exit 1
+    }
+    FS = ","
+}
 
 {
     left = 1
@@ -9,11 +15,11 @@ BEGIN {FS = ","}
     idx = -1
     while (left <= right) {
         mid = int((left + right) / 2)
-        if (value == $mid) {
+        if (target == $mid) {
             idx = mid
             break
         }
-        else if (value < $mid) {
+        else if (target < $mid) {
             right = mid - 1
         }
         else {

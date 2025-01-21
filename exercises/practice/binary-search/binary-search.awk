@@ -1,5 +1,5 @@
 # These variables are initialized on the command line (using '-v'):
-# - value
+# - target
 
 BEGIN {
     print "Implement this solution" > "/dev/stderr"
