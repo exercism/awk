@@ -105,4 +105,4 @@ More details can be found in the manual: [Pattern Elements][pattern-elements]
 
 [builtins]: https://www.gnu.org/software/gawk/manual/html_node/Built_002din.html
 [user-defined]: https://www.gnu.org/software/gawk/manual/html_node/User_002ddefined.html
-[pattern-elements]: https://www.gnu.org/software/gawk/manual/html_node/Pattern-Overview.html)
+[pattern-elements]: https://www.gnu.org/software/gawk/manual/html_node/Pattern-Overview.html
