@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "house.awk"
+    ],
+    "test": [
+      "test-house.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Output the nursery rhyme 'This is the House that Jack Built'.",
+  "source": "British nursery rhyme",
+  "source_url": "https://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built"
+}
