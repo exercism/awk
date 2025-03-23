@@ -2,14 +2,12 @@
   "authors": [
     "rabestro"
   ],
-  "contributors": [
-  ],
   "files": {
     "solution": [
       "house.awk"
     ],
     "test": [
-      "house.bats"
+      "test-house.bats"
     ],
     "example": [
       ".meta/example.awk"
