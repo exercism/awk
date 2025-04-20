@@ -69,17 +69,16 @@ load bats-extra
 }
 
 # This test is very time-consuming for a brute force solution.
-# Uncomment and run only for extra credit (or punishment).
 
-#@test "triplets for large number" {
-#    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-#    run gawk -f pythagorean-triplet.awk -v sum=30000
-#    assert_success
-#    actual=$( sort -t, -n -k1,1 <<< "$output" )
-#    expected="1200,14375,14425
-#1875,14000,14125
-#5000,12000,13000
-#6000,11250,12750
-#7500,10000,12500"
-#    assert_equal "$actual" "$expected"
-#}
+@test "triplets for large number" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f pythagorean-triplet.awk -v sum=30000
+    assert_success
+    actual=$( sort -t, -n -k1,1 <<< "$output" )
+    expected="1200,14375,14425
+1875,14000,14125
+5000,12000,13000
+6000,11250,12750
+7500,10000,12500"
+    assert_equal "$actual" "$expected"
+}
