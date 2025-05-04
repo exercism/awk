@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "simple_cipher.awk"
+    ],
+    "test": [
+      "test-simple_cipher.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher.",
+  "source": "Substitution Cipher at Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Substitution_cipher"
+}
