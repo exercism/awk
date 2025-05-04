@@ -2,13 +2,12 @@
   "authors": [
     "rabestro"
   ],
-  "contributors": [],
   "files": {
     "solution": [
-      "simple_cipher.awk"
+      "simple-cipher.awk"
     ],
     "test": [
-      "test-simple_cipher.bats"
+      "test-simple-cipher.bats"
     ],
     "example": [
       ".meta/example.awk"
