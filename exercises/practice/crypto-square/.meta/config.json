@@ -2,14 +2,12 @@
   "authors": [
     "rabestro"
   ],
-  "contributors": [
-  ],
   "files": {
     "solution": [
       "crypto-square.awk"
     ],
     "test": [
-      "crypto-square.bats"
+      "test-crypto-square.bats"
     ],
     "example": [
       ".meta/example.awk"
