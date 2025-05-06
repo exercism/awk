@@ -1,6 +1,3 @@
-BEGIN {
-    OFS = " "
-}
 {
     plainText = tolower(gensub(/[^[:alnum:]]/, "", "g"))
 
