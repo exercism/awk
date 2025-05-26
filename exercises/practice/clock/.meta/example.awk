@@ -2,17 +2,17 @@ BEGIN {
     MinutesInHour = 60
     MinutesInDay = MinutesInHour * 24
 }
-NF == 2 {
-    printClock(clock($1, $2))
+$1 == "create" {
+    printClock(clock($2, $3))
 }
-$3 == "add" {
-    printClock(clock($1, $2 + $4))
+$1 == "add" {
+    printClock(clock($2, $3 + $4))
 }
-$3 == "subtract" {
-    printClock(clock($1, $2 - $4))
+$1 == "subtract" {
+    printClock(clock($2, $3 - $4))
 }
-$3 == "equal" {
-    print clock($1, $2) == clock($4, $5) ? "true" : "false"
+$1 == "equal" {
+    print clock($2, $3) == clock($4, $5) ? "true" : "false"
 }
 function clock(hours, minutes) {
     return ((hours * MinutesInHour + minutes) % MinutesInDay + MinutesInDay) % MinutesInDay
