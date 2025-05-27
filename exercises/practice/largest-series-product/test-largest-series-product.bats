@@ -70,14 +70,14 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f largest-series-product.awk <<< "123,4"
     assert_failure
-    assert_output --partial "span must be smaller than string length"
+    assert_output --partial "span must not exceed string length"
 }
 
 @test "rejects empty string and nonzero span" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f largest-series-product.awk <<< ",1"
     assert_failure
-    assert_output --partial "span must be smaller than string length"
+    assert_output --partial "span must not exceed string length"
 }
 
 @test "rejects invalid character in digits" {
