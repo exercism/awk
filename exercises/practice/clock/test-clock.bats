@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# The AWK test program will be fed data in the following formats,
+# The AWK program will be given data in the following formats,
 # where the first field is the command, followed by parameters.
 #
 # create hh mm
