@@ -730,7 +730,7 @@
         "prerequisites": [],
         "difficulty": 3
       },
-      }
+      {
         "slug": "saddle-points",
         "name": "Saddle Points",
         "uuid": "2ffec6c9-0daa-4248-ad2a-e9642254a9cf",
