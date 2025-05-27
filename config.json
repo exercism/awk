@@ -723,6 +723,14 @@
         "difficulty": 5
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "c72bc542-c425-4922-887b-3ff8bbbfbf11",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "saddle-points",
         "name": "Saddle Points",
         "uuid": "2ffec6c9-0daa-4248-ad2a-e9642254a9cf",
