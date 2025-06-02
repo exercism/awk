@@ -475,6 +475,14 @@
         "difficulty": 4
       },
       {
+        "slug": "killer-sudoku-helper",
+        "name": "Killer Sudoku Helper",
+        "uuid": "dcb58258-8510-4980-8e6f-6d8ff136eb83",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "a556b380-1535-49e3-8299-b3a1ba31a2c7",
