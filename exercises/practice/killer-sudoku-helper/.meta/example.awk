@@ -11,7 +11,7 @@ BEGIN {
     generate_recursive(1, cageSum, cageSize)
 }
 
-function generate_recursive(currentStartDigit, remainingSum, remainingSize,   maxPossibleFirstDigit,digit) {
+function generate_recursive(currentStartDigit, remainingSum, remainingSize,   maxPossibleFirstDigit, digit) {
     NF++
     if (remainingSize == 1) {
         if (currentStartDigit <= remainingSum && remainingSum <= MaxDigit && !(remainingSum in ExcludedDigits)) {
@@ -19,7 +19,7 @@ function generate_recursive(currentStartDigit, remainingSum, remainingSize,   ma
             print
         }
     } else {
-        maxPossibleFirstDigit =  MaxDigit - remainingSize + 1
+        maxPossibleFirstDigit = MaxDigit - remainingSize + 1
         for (digit = currentStartDigit; digit <= maxPossibleFirstDigit; ++digit) {
             if (digit in ExcludedDigits)
                 continue
