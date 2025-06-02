@@ -2,15 +2,17 @@ BEGIN {
     MaxDigit = 9
 }
 {
+    cageSum = $1
+    cageSize = $2
     for (i = 3; i <= NF; ++i) {
         ExcludedDigits[$i] = 1
     }
     NF = 0
-    generate_recursive(1, $1, $2)
+    generate_recursive(1, cageSum, cageSize)
 }
 
 function generate_recursive(currentStartDigit, remainingSum, remainingSize,   maxPossibleFirstDigit,digit) {
-    ++NF
+    NF++
     if (remainingSize == 1) {
         if (currentStartDigit <= remainingSum && remainingSum <= MaxDigit && !(remainingSum in ExcludedDigits)) {
             $NF = remainingSum
@@ -25,5 +27,5 @@ function generate_recursive(currentStartDigit, remainingSum, remainingSize,   ma
             generate_recursive(digit + 1, remainingSum - digit, remainingSize - 1)
         }
     }
-    --NF
+    NF--
 }
