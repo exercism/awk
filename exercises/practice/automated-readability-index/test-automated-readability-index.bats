@@ -96,8 +96,8 @@ teardown() {
     assert_line --partial --index 3 "If his mother says, \"Brush your teeth,\" Billy brus..."
     assert_line --index 4 "..."
     assert_line --index 5 "Words: 108"
-    assert_line --index 6 "Sentences: 13"
+    assert_line --index 6 "Sentences: 14"
     assert_line --index 7 "Characters: 442"
-    assert_line --index 8 "Score: 2.00"
+    assert_line --index 8 "Score: 1.70"
     assert_line --index 9 "This text should be understood by 6-7 year-olds."
 }
