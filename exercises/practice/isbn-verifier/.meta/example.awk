@@ -1,7 +1,7 @@
 BEGIN {
     FPAT = "[0-9]|X$"
 }
-NF != 10 {
+!/^[-0-9]*X?$/ || NF != 10 {
     print "false"
     next
 }
