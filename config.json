@@ -475,6 +475,14 @@
         "difficulty": 4
       },
       {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "737bdd7e-1e69-442a-b85b-8c7580a1139e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "killer-sudoku-helper",
         "name": "Killer Sudoku Helper",
         "uuid": "dcb58258-8510-4980-8e6f-6d8ff136eb83",
