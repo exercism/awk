@@ -323,6 +323,14 @@
         "difficulty": 3
       },
       {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "737bdd7e-1e69-442a-b85b-8c7580a1139e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "5daaa0c2-92c1-4f45-946d-a4dcdf199ed6",
