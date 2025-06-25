@@ -483,6 +483,14 @@
         "difficulty": 4
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "a7aaada0-6c1f-47c7-abfe-6e64140764ff",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "killer-sudoku-helper",
         "name": "Killer Sudoku Helper",
         "uuid": "dcb58258-8510-4980-8e6f-6d8ff136eb83",
@@ -512,7 +520,8 @@
         "uuid": "0a2e7c25-5dec-4f80-9b4c-7256019d9ad0",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 4,
+	"status": "deprecated"
       },
       {
         "slug": "pig-latin",
