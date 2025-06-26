@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "glennj",
+    "IsaacG"
+  ],
+  "files": {
+    "solution": [
+      "flower-field.awk"
+    ],
+    "test": [
+      "test-flower-field.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
