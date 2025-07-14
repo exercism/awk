@@ -110,7 +110,7 @@ Anna,1
 Barb,1
 Zoe,2
 Alex,2
-Jim,3
+Jim,10
 Charlie,1
 END_INPUT
 
