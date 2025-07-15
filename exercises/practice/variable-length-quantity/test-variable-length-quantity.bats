@@ -21,6 +21,13 @@ load bats-extra
     assert_output "40"
 }
 
+@test "encode asymmetric single byte" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f variable-length-quantity.awk -v action=encode <<< "53"
+    assert_success
+    assert_output "53"
+}
+
 @test "encode largest single byte" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f variable-length-quantity.awk -v action=encode <<< "7F"
@@ -40,6 +47,13 @@ load bats-extra
     run gawk -f variable-length-quantity.awk -v action=encode <<< "2000"
     assert_success
     assert_output "C0 00"
+}
+
+@test "encode asymmetric double byte" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f variable-length-quantity.awk -v action=encode <<< "AD"
+    assert_success
+    assert_output "81 2D"
 }
 
 @test "encode largest double byte" {
@@ -63,6 +77,13 @@ load bats-extra
     assert_output "C0 80 00"
 }
 
+@test "encode asymmetric triple byte" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f variable-length-quantity.awk -v action=encode <<< "1D59C"
+    assert_success
+    assert_output "87 AB 1C"
+}
+
 @test "encode largest triple byte" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f variable-length-quantity.awk -v action=encode <<< "1FFFFF"
@@ -84,6 +105,13 @@ load bats-extra
     assert_output "C0 80 80 00"
 }
 
+@test "encode asymmetric quadruple byte" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f variable-length-quantity.awk -v action=encode <<< "357704"
+    assert_success
+    assert_output "81 D5 EE 04"
+}
+
 @test "encode largest quadruple byte" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f variable-length-quantity.awk -v action=encode <<< "FFFFFFF"
@@ -103,6 +131,13 @@ load bats-extra
     run gawk -f variable-length-quantity.awk -v action=encode <<< "FF000000"
     assert_success
     assert_output "8F F8 80 80 00"
+}
+
+@test "encode asymmetric quintuple byte" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f variable-length-quantity.awk -v action=encode <<< "86656105"
+    assert_success
+    assert_output "88 B3 95 C2 05"
 }
 
 @test "encode maximum 32-bit integer input" {
