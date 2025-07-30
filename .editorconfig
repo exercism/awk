@@ -1,0 +1,81 @@
+# .editorconfig for the Exercism AWK track repository
+# https://spec.editorconfig.org/
+
+# Top-most EditorConfig file
+# A best practice to prevent settings from parent directories from interfering.
+root = true
+
+# Universal settings for all files. These are the baseline rules.
+[*]
+
+# Sets the character set to UTF-8, the universal standard for text files.
+charset = utf-8
+
+# Enforces Unix-style line endings (LF)
+end_of_line = lf
+
+# Ensures files are POSIX-compliant and prevents issues with some command-line tools.
+insert_final_newline = true
+
+# Keeps the codebase clean and avoids noise in diffs.
+trim_trailing_whitespace = true
+
+# Specifies the language for the IDE's spell checker.
+spelling_language = en-US
+
+
+# Settings for files we edit, overriding universal settings where needed.
+
+# AWK solution/example files use 4-space indentation.
+# max_line_length is unset here because some files contain very long
+# lines with embedded data, making a fixed line length impractical.
+[*.awk]
+indent_style = space
+indent_size = 4
+max_line_length = unset
+
+# BATS test files use 4-space indentation.
+# max_line_length is unset here because some test files contain very long
+# lines with embedded data, making a fixed line length impractical.
+[*.bats]
+indent_style = space
+indent_size = 4
+max_line_length = unset
+
+# For Markdown files, specific settings are needed to preserve formatting.
+[*.md]
+# Disable trimming trailing whitespace, as two spaces can create a hard line break.
+trim_trailing_whitespace = false
+max_line_length = unset
+
+# Override for common data and config formats to use 2-space indentation
+# and disable line length checks, as they often contain long strings.
+[*.{json,yml,yaml,xml}]
+indent_size = 2
+indent_style = space
+max_line_length = unset
+
+# This is an auto-generated file.
+[tests.toml]
+indent_size = unset
+indent_style = unset
+
+# Shell scripts in the bin directory are hand-written, so a line length
+# limit improves readability.
+[bin/*]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# This file is a copy of the
+# https://github.com/exercism/configlet/blob/main/scripts/fetch-configlet file.
+[bin/fetch-configlet*]
+indent_size = unset
+indent_style = unset
+
+# The formatting of a LICENSE file is often fixed and should not be altered.
+# Unsetting these rules prevents the editor from modifying it.
+[LICENSE]
+indent_size = unset
+indent_style = unset
+
