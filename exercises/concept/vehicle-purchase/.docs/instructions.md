@@ -29,7 +29,8 @@ For a rough estimate, assume if the vehicle is less than 3 years old, it costs 8
 If it is more than 10 years old, it costs 50%.
 If the vehicle is at least 3 years old but not older than 10 years, it costs 70% of the original price.
 
-Implement "pattern {action}" pairs that read "resell_price" in the first field, the original proce of the vehicle in the second field, and the age in the third field.
+Implement a `pattern {action}` pair that matches when the first field is `resell_price`.
+It should get the original price of the vehicle from the second field, and the age from the third field.
 The action should print the estimated price.
 
 ```sh
