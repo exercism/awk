@@ -60,8 +60,13 @@
         "slug": "vehicle-purchase",
         "name": "vehicle-purchase",
         "uuid": "9e4e4ec3-ee4e-4f66-8fe2-fd10ede24df7",
-        "concepts": [],
-        "prerequisites": []
+        "concepts": [
+          "patterns"
+        ],
+        "prerequisites": [
+          "fundamentals"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
