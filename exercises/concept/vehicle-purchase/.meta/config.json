@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "vehicle-purchase.awk"
+    ],
+    "test": [
+      "test-vehicle-purchase.bats"
+    ],
+    "exemplar": [
+      ".meta/exemplar.awk"
+    ]
+  },
+  "forked_from": [
+    "javascript/vehicle-purchase"
+  ],
+  "blurb": "Learn about AWK patterns while preparing for your next vehicle purchase"
+}
