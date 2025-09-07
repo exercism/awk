@@ -2,7 +2,7 @@
 
 In this exercise, you will write a program to help you prepare to buy a vehicle.
 
-You have three tasks: determine if you will need to get a license; choose between two vehicles; and estimate the acceptable price for a used vehicle.
+You have two tasks: determine if you will need to get a license, and estimate the acceptable price for a used vehicle.
 
 ## 1. Determine if you will need a drivers license
 
