@@ -9,7 +9,8 @@ You have three tasks: determine if you will need to get a license; choose betwee
 Some kinds of vehicles require a drivers license to operate them.
 Assume only vehicles containing `car` or `truck` require a license; everything else can be operated without a license.
 
-Implement a "pattern {action}" pair that reads `needs_license` in the first field and the kind of vehicle in the second field, and prints "true" indicating whether you need a license for that kind of vehicle.
+Implement a `pattern {action}` pair that matches when the first field is `needs_license`.
+It should get the kind of vehicle from the second field, and print "true" if you need a license for that kind of vehicle.
 If you don't need a license, you don't need to print anything.
 
 ```sh
