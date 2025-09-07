@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise, you will write some code to help you prepare to buy a vehicle.
+In this exercise, you will write a program to help you prepare to buy a vehicle.
 
 You have three tasks: determine if you will need to get a license; choose between two vehicles; and estimate the acceptable price for a used vehicle.
 
