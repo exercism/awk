@@ -1,3 +1,7 @@
+BEGIN {
+    FS = ","    # comma is the field separator
+}
+
 # Task 1: When the first field is "needs_license",
 #         print "true" if the second field contains "car" or "truck".
 
