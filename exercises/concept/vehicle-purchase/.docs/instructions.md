@@ -34,12 +34,12 @@ It should get the original price of the vehicle from the second field, and the a
 The action should print the estimated price.
 
 ```sh
-echo "resell_price,1000,1" | gawk -F, -f vehicle-purchase.awk
+echo "resell_price,1000,1" | gawk -f vehicle-purchase.awk
 # => 800
 
-echo "resell_price,1000,5" | gawk -F, -f vehicle-purchase.awk
+echo "resell_price,1000,5" | gawk -f vehicle-purchase.awk
 # => 700
 
-echo "resell_price,1000,15" | gawk -F, -f vehicle-purchase.awk
+echo "resell_price,1000,15" | gawk -f vehicle-purchase.awk
 # => 500
 ```
