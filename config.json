@@ -3,7 +3,7 @@
   "slug": "awk",
   "active": true,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
     "representer": false,
     "analyzer": false
@@ -41,8 +41,7 @@
         "concepts": [
           "fundamentals"
         ],
-        "prerequisites": [],
-        "status": "wip"
+        "prerequisites": []
       },
       {
         "slug": "simple-report",
@@ -53,8 +52,7 @@
         ],
         "prerequisites": [
           "fundamentals"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "vehicle-purchase",
@@ -65,8 +63,7 @@
         ],
         "prerequisites": [
           "fundamentals"
-        ],
-        "status": "wip"
+        ]
       }
     ],
     "practice": [
