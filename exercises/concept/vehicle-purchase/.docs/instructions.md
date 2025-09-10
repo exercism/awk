@@ -14,10 +14,10 @@ It should get the kind of vehicle from the second field, and print "true" if you
 If you don't need a license, you don't need to print anything.
 
 ```sh
-echo "needs_license,dumptruck" | gawk -F, -f vehicle-purchase.awk
+echo "needs_license,dumptruck" | gawk -f vehicle-purchase.awk
 # => true
 
-echo "needs_license,bike" | gawk -F, -f vehicle-purchase.awk
+echo "needs_license,bike" | gawk -f vehicle-purchase.awk
 # => (empty output)
 ```
 
