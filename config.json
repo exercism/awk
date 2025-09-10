@@ -55,6 +55,18 @@
           "fundamentals"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "vehicle-purchase",
+        "name": "vehicle-purchase",
+        "uuid": "9e4e4ec3-ee4e-4f66-8fe2-fd10ede24df7",
+        "concepts": [
+          "patterns"
+        ],
+        "prerequisites": [
+          "fundamentals"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
@@ -521,7 +533,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
-	"status": "deprecated"
+        "status": "deprecated"
       },
       {
         "slug": "pig-latin",
