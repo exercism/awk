@@ -2,6 +2,10 @@
   "authors": [
     "glennj"
   ],
+  "contributors": [
+    "IsaacG",
+    "kotp"
+  ],
   "files": {
     "solution": [
       "vehicle-purchase.awk"

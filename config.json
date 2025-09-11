@@ -3,7 +3,7 @@
   "slug": "awk",
   "active": true,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
     "representer": false,
     "analyzer": false
@@ -41,8 +41,7 @@
         "concepts": [
           "fundamentals"
         ],
-        "prerequisites": [],
-        "status": "wip"
+        "prerequisites": []
       },
       {
         "slug": "simple-report",
@@ -53,20 +52,18 @@
         ],
         "prerequisites": [
           "fundamentals"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "vehicle-purchase",
-        "name": "vehicle-purchase",
+        "name": "Vehicle Purchase",
         "uuid": "9e4e4ec3-ee4e-4f66-8fe2-fd10ede24df7",
         "concepts": [
           "patterns"
         ],
         "prerequisites": [
           "fundamentals"
-        ],
-        "status": "wip"
+        ]
       }
     ],
     "practice": [
