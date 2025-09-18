@@ -46,6 +46,20 @@ load bats-extra
     assert_output '2,two,2'
 }
 
+@test "Measure using bucket one much bigger than bucket two" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f two-bucket.awk <<< '5,1,2,one'
+    assert_success
+    assert_output '6,one,1'
+}
+
+@test "Measure using bucket one much smaller than bucket two" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f two-bucket.awk <<< '3,15,9,one'
+    assert_success
+    assert_output '6,two,0'
+}
+
 @test "Not possible to reach the goal" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f two-bucket.awk <<< '6,15,5,one'
