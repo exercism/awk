@@ -57,6 +57,59 @@ Then run tests with just:
 bats
 ```
 
+## Debugging output
+
+```exercism/caution
+This works locally with `bats`, but **not** in the Exercism online editor.
+```
+
+When running tests, `bats` captures both stdout and stderr for comparison with the expected output.
+If you print debug messages to stdout or stderr, they will be included in the captured output and may cause the test to fail.
+
+To print debug information without affecting the test results, `bats` provides file descriptor **3** for this purpose.
+Anything printed to the file `/dev/fd/3` will be shown during the test run but will not be included in the captured output used for assertions.
+
+Example:
+
+```awk
+BEGIN {
+    # This debug message will not interfere with test output comparison
+    print "a debug message" > "/dev/fd/3"
+
+    # Normal program output (this is what your tests will see and compare)
+    print "Hello, World!"
+}
+```
+
+Example run:
+
+```none
+$ bats test-hello-world.bats
+test-hello-world.bats
+ ✓ Say Hi!
+a debug message
+
+1 test, 0 failures
+```
+
+This allows you to see helpful debug output without affecting the tests.
+
+Hiding the details in a function may improve readability if you use it in several places in your code:
+
+```awk
+BEGIN {
+    debug("starting ...")
+}
+
+# do stuff here ...
+
+END {
+    debug("... finished")
+}
+
+function debug(msg) {print msg > "/dev/fd/3"}
+```
+
 [bash]: https://exercism.org/docs/tracks/bash/tests
 [bats-assert]: https://github.com/bats-core/bats-assert
 [here-string]: https://www.gnu.org/software/bash/manual/bash.html#Here-Strings
