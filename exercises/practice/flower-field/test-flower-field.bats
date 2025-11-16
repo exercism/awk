@@ -188,3 +188,10 @@ END_EXPECTED
     assert_success
     assert_output "$expected"
 }
+
+@test "multiple adjacent flowers" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f flower-field.awk <<< " ** "
+    assert_success
+    assert_output "1**1"
+}
