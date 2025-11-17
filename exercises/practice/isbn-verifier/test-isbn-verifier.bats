@@ -50,6 +50,20 @@ load bats-extra
   assert_output "false"
 }
 
+@test 'only one check digit is allowed' {
+  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  run gawk -f isbn-verifier.awk <<< "3-598-21508-96"
+  assert_success
+  assert_output "false"
+}
+
+@test 'X is not substituted by the value 10' {
+  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  run gawk -f isbn-verifier.awk <<< "3-598-2X507-5"
+  assert_success
+  assert_output "false"
+}
+
 @test "valid isbn without separating dashes" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f isbn-verifier.awk <<< "3598215088"
