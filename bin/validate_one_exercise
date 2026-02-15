@@ -11,7 +11,6 @@ die() { echo "$*" >&2; exit 1; }
 # check prerequisites
 command -v jq    >/dev/null      || die "This script requires jq: please install it."
 command -v bats  >/dev/null      || die "This script requires bats-core: please install it."
-grep -P 1 <<< 1  >/dev/null 2>&1 || die "This script requires GNU grep: please install it."
 
 cd "$1" || die "Cannot cd to $1"
 
@@ -36,10 +35,8 @@ readarray -t editor_files < <(jq -r '.files.editor[]?' "$config")
 # hello-world has no skips
 # neither do concept exercises
 if [[ ${exercise} != "hello-world" ]] && [[ $PWD != */exercises/concept/* ]]; then
-    # a PCRE: the `\Q...\E` defines a literal segment
-    # shellcheck disable=SC2016 
-    skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
-    num_skip_comments=$(grep -cP "${skip_re}" "${tests}") || :
+    # shellcheck disable=SC2016
+    num_skip_comments=$(grep -cE '^ *#+ *\[\[ \$BATS_RUN_SKIPPED == "true" \]\] \|\| skip' "${tests}")
     (( num_skip_comments == 1 )) || die "There should be exactly one commented skip directive in ${tests}"
 fi
 

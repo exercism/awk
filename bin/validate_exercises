@@ -9,12 +9,14 @@ set -o nounset
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
 declare -A exercises
-while read -r exercise; do exercises["$exercise"]=1; done < <(
+while read -r exercise; do
+    exercises["$exercise"]=1
+done < <(
     jq -r '
-        .exercises  as $exs 
-        | ["concept","practice"][] 
-        | . as $type 
-        | $exs[$type][] 
+        .exercises  as $exs
+        | ["concept","practice"][]
+        | . as $type
+        | $exs[$type][]
         | "exercises/\($type)/\(.slug)"
     ' config.json
 )
@@ -23,25 +25,34 @@ warnings=0
 errors=0
 shopt -s nullglob
 
+warnings=()
+errors=()
 for exercise in exercises/{concept,practice}/*; do
     if [[ -v exercises[$exercise] ]]; then
         unset "exercises[$exercise]"
     else
-        echo "*** WARNING: $exercise does not appear in config.json!" >&2
-        ((++warnings))
+        warnings+=("$exercise does not appear in config.json!")
     fi
 
-    bin/validate_one_exercise "$exercise" || ((++errors))
+    bin/validate_one_exercise "$exercise" || errors+=("$exercise")
     echo
 done
 
 for exercise in "${!exercises[@]}"; do
-    echo "*** WARNING: $exercise is in config.json but does not exist in the repo!" >&2
-    ((++warnings))
+    warnings+=("$exercise is in config.json but does not exist in the repo!")
 done
 
 echo "Testing finished"
-if (( warnings + errors > 0 )); then
-    printf "\t%d warnings\n\t%d errors\n" "$warnings" "$errors"
-    exit 1
+
+status=0
+if (( ${#warnings[@]} > 0 )); then
+    echo 'Warnings:' >&2
+    printf '\t%s\n' "${warnings[@]}" >&2
+    ((++status))
 fi
+if (( ${#errors[@]} > 0 )); then
+    echo 'Errors:' >&2
+    printf '\t%s\n' "${errors[@]}" >&2
+    ((++status))
+fi
+exit "$status"
