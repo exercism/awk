@@ -2,7 +2,7 @@
 load bats-extra
 
 @test "zero prisms" {
-    #[[ $BATS_RUN_SKIPPED == true ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 EOF
@@ -11,7 +11,7 @@ EOF
 }
 
 @test "one prism one hit" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 10 0 0 1
@@ -21,7 +21,7 @@ EOF
 }
 
 @test "one prism zero hits" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 -10 0 0 1
@@ -31,7 +31,7 @@ EOF
 }
 
 @test "going up zero hits" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 90
 0 -10 0 3
@@ -43,7 +43,7 @@ EOF
 }
 
 @test "going down zero hits" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 -90
 10 0 0 1
@@ -55,7 +55,7 @@ EOF
 }
 
 @test "going left zero hits" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 180
 0 10 0 2
@@ -67,7 +67,7 @@ EOF
 }
 
 @test "negative angle" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 -180
 0 -10 0 1
@@ -79,7 +79,7 @@ EOF
 }
 
 @test "large angle" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 2340
 10 0 0 1
@@ -89,7 +89,7 @@ EOF
 }
 
 @test "upward refraction two hits" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 10 10 0 1
@@ -100,7 +100,7 @@ EOF
 }
 
 @test "downward refraction two hits" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 10 0 -90 1
@@ -111,7 +111,7 @@ EOF
 }
 
 @test "same prism twice" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 10 0 0 2
@@ -122,7 +122,7 @@ EOF
 }
 
 @test "simple path" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 30 10 45 3
@@ -135,7 +135,7 @@ EOF
 }
 
 @test "multiple prisms floating point precision" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 -6.429
 5.8 73.4 6.555 26
@@ -182,7 +182,7 @@ EOF
 }
 
 @test "complex path with multiple prisms floating point precision" {
-    [[ $BATS_RUN_SKIPPED == true ]] || skip
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0.0
 37.4 20.6 -88.332 46
