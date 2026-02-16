@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+if (( BASH_VERSINFO[0] < 4 )); then
+    echo "[Failure] This script requires bash version 4+" >&2
+    exit 1
+fi
+
+if (( $# != 1 )) || [[ ${1##*/} != canonical-data.json ]]; then
+    echo "Usage: $0 <canonical-data.json for prism>"
+    exit 1
+fi
+
+printf '%s\n' '#!/usr/bin/env bats' 'load bats-extra'
+
+jq -r '
+    .cases |
+    # Add an index to each case, similar to Python enumerate()
+    [foreach .[] as $case ({"index": 0, "case": ""}; {"index": .index + 1, "case": $case})] |
+    map(
+        [
+            "",
+            "@test \"\(.case.description)\" {",
+            # Do not skip the first test
+            if .index == 1 then
+            "    # [[ $BATS_RUN_SKIPPED == true ]] || skip"
+            else
+            "    [[ $BATS_RUN_SKIPPED == true ]] || skip"
+            end,
+            "    run gawk -f prism.awk <<EOF",
+            # Start position
+            (.case.input.start | "\(.x) \(.y) \(.angle)"),
+            # Prism list
+            if (.case.input.prisms | length > 0) then
+                (.case.input.prisms | map("\(.x) \(.y) \(.angle) \(.id)") | join("\n"))
+            else
+                empty
+            end,
+            "EOF",
+            "    assert_success",
+            "    assert_output \"" + (.case.expected.sequence | join(" ")) + "\"",
+            "}"
+        ] |
+        join("\n")
+    )
+    | join("\n")' "$1"
