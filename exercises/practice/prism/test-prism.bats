@@ -2,7 +2,7 @@
 load bats-extra
 
 @test "zero prisms" {
-    # [[ $BATS_RUN_SKIPPED == true ]] || skip
+    #[[ $BATS_RUN_SKIPPED == true ]] || skip
     run gawk -f prism.awk <<EOF
 0 0 0
 EOF

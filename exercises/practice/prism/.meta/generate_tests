@@ -22,7 +22,7 @@ jq -r '
             "@test \"\(.case.description)\" {",
             # Do not skip the first test
             if .index == 1 then
-            "    # [[ $BATS_RUN_SKIPPED == true ]] || skip"
+            "    #[[ $BATS_RUN_SKIPPED == true ]] || skip"
             else
             "    [[ $BATS_RUN_SKIPPED == true ]] || skip"
             end,
