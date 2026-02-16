@@ -1,21 +1,19 @@
 # HOWTO: Port a practice exercises from another track
 
 The AWK track is a close sibling to the bash track. 
-It's sensible to use bash as a template for creating new AWK practice
-exercises.
+It's sensible to use bash as a template for creating new AWK practice exercises.
 
-I'm going to assume you know how to do the git stuff.  If you need help with
-it, post in the Slack [#maintaining-awk][slack] channel.  You'll need to
-fork the `exercism/awk` and `exercism/bash` repos.
+I'm going to assume you know how to do the git stuff.
+If you need help with it, post on [the Discord #programming][discord-programming] channel.
+You'll need to fork the `exercism/awk` and `exercism/bash` repos.
 
 Here's a step-by-step procedure to port the **_foo-bar_** exercise:
 
-1. create an issue in [exercism/awk][github] claiming this exercise for
-   yourself.
-    - add the labels: `x:action/create`, `x:module/practice-exercise`,
-      `x:status/claimed`, `x:type/content`
-    - assign it to yourself.
-1. follow along with these steps to create the exercise:
+1. Create an issue in [exercism/awk][github] claiming this exercise for yourself.
+    - Add the labels: `x:action/create`, `x:module/practice-exercise`,
+      `x:status/claimed`, `x:type/content`.
+    - Assign it to yourself.
+1. Follow along with these steps to create the exercise:
     ```sh
     # set the exercise you are working on:
     exercise=foo-bar
@@ -67,15 +65,14 @@ Here's a step-by-step procedure to port the **_foo-bar_** exercise:
     # validate the exercise, making sure it passes:
     bin/validate_one_exercise exercises/practice/$exercise
     ```
-1. If your tests use `gawk -v var=value`, then add some comments to the stub
-   file listing the variable names. Check other exercises that do this.
-1. push your branch and create a pull request in [exercism/awk][github]
-    - add "Closes #1234" to the PR description (where 1234 is the issue
-      number from the first step: this links the PR and the issue)
-    - request a review from `exercism/awk` team
-    - ensure the Github Action checks succeed!
+1. If your tests use `gawk -v var=value`, then add some comments to the stub file listing the variable names.
+   Check other exercises that do this.
+1. Push your branch and create a pull request in [exercism/awk][github].
+    - Add "Closes #1234" to the PR description (where 1234 is the issue number from the first step: this links the PR and the issue).
+    - Request a review from `exercism/awk` team.
+    - Ensure the Github Action checks succeed!
 
 Thanks for your interest!
 
-[slack]: https://exercism-team.slack.com/archives/C03HT01H7N3 
+[discord-programming]: https://discord.gg/6JwWmr5Bsd
 [github]: https://github.com/exercism/awk 
