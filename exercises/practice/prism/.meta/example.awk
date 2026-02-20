@@ -10,7 +10,7 @@ function abs(n) {
 NR == 1 { x = $1; y = $2; a = $3; }
 
 # Prism positions
-NR > 1 { prisms[$4]["x"] = $1; prisms[$4]["y"] = $2; prisms[$4]["a"] = $3; }
+NR > 1 { prisms[$1]["x"] = $2; prisms[$1]["y"] = $3; prisms[$1]["a"] = $4; }
 
 # Compute the path
 END {
