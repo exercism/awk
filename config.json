@@ -541,6 +541,14 @@
         "difficulty": 4
       },
       {
+        "slug": "prism",
+        "name": "Prism",
+        "uuid": "865a0901-4bdf-44c5-a0e9-5b87c104cb9d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "209264a6-b655-42f1-9fa0-7931bf96357c",
