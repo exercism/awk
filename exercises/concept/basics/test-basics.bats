@@ -8,8 +8,8 @@ load bats-extra
     assert_success
     assert_line --index 0 "root"
     assert_line --index 1 "john"
-    assert_line --index 2 "jane"
-    assert_line --index 3 "mark"
+    assert_line --index 2 "mark"
+    assert_line --index 3 "jane"
     assert_line --index 4 "susan"
     assert_line --index 5 "peter"
     assert_line --index 6 "bill"
@@ -45,5 +45,6 @@ load bats-extra
     assert_success
     assert_line --index 16 "root:x:0:0:root:/root:/bin/bash"
     assert_line --index 17 "john:x:1001:1001:John Doe:/home/john:/bin/bash"
-    assert_line --index 18 "jane:x:1002:1002:Jane Doe:/home/jane:/bin/bash"
+    assert_line --index 18 "jane:x:1003:1003:Jane Doe:/home/jane:/bin/bash"
+    assert_equal "${#lines[@]}" 19 # the whole script should output exactly 19 lines.
 }
