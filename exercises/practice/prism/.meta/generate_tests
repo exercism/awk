@@ -31,7 +31,7 @@ jq -r '
             (.case.input.start | "\(.x) \(.y) \(.angle)"),
             # Prism list
             if (.case.input.prisms | length > 0) then
-                (.case.input.prisms | map("\(.id) \(.x) \(.y) \(.angle)") | join("\n"))
+                (.case.input.prisms | sort_by(.id) | map("\(.id) \(.x) \(.y) \(.angle)") | join("\n"))
             else
                 empty
             end,
