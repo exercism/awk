@@ -156,14 +156,6 @@
         "difficulty": 2
       },
       {
-        "slug": "line-up",
-        "name": "Line Up",
-        "uuid": "adc92073-8f68-4a10-9009-9ffded05e10a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "1d9bd927-83c8-483d-aa4c-2070e17368b6",
@@ -175,6 +167,14 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "5652e06f-bc63-412e-b766-91fa22a5dcd5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "adc92073-8f68-4a10-9009-9ffded05e10a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
