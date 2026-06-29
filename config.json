@@ -257,7 +257,8 @@
         "uuid": "32a4d03b-ff55-4802-85a5-556b9eb0799f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 3,
+        "status": "deprecated"
       },
       {
         "slug": "binary-search",
