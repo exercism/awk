@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# encode
+# generated on 2026-06-29T23:44:12+00:00
 
 @test "encode yes" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f affine-cipher.awk <<< "encode|5|7|yes"
     assert_success
     assert_output "xbt"
@@ -65,8 +65,6 @@ load bats-extra
     assert_failure
     assert_output --partial "a and m must be coprime."
 }
-
-# decode
 
 @test "decode exercism" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
