@@ -1,9 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# Square the sum of the numbers up to the given number
+# generated on 2026-06-30T21:20:57+00:00
+
 @test "square of sum 1" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f difference-of-squares.awk <<< "square_of_sum,1"
   assert_success
   assert_output "1"
@@ -22,7 +23,7 @@ load bats-extra
   assert_success
   assert_output "25502500"
 }
-# Sum the squares of the numbers up to the given number
+
 @test "sum of squares 1" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f difference-of-squares.awk <<< "sum_of_squares,1"
@@ -43,7 +44,7 @@ load bats-extra
   assert_success
   assert_output "338350"
 }
-# Subtract sum of squares from square of sums
+
 @test "difference of squares 1" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f difference-of-squares.awk <<< "difference,1"
