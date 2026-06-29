@@ -1,0 +1,18 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} -v key={{ case["input"]["subject"] }} <<WORD_LIST
+{{ case["input"]["candidates"] | join("\n") }}
+WORD_LIST
+    assert_success
+    {%- if case["expected"] %}
+        {%- for word in case["expected"] %}
+    assert_line "{{ word }}"
+        {%- endfor %}
+    assert_equal ${{ "{" }}#lines[@]} {{ case["expected"] | length }}
+    {%- else %}
+    refute_output
+    {%- endif %}
+}
+{% endfor %}
