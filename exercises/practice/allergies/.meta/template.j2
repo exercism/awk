@@ -1,0 +1,15 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["descriptions"] | join(": ") }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- if case["property"] == "allergicTo" %}
+    run gawk -f {{ solution }} <<< '{{ [case["input"]["score"], case["property"] | camel_to_snake, case["input"]["item"]] | join(",") }}'
+    assert_success
+    assert_output "{{ case["expected"] | lower }}"
+{%- else %}
+    run gawk -f {{ solution }} <<< '{{ [case["input"]["score"], case["property"]] | join(",") }}'
+    assert_success
+    assert_output "{{ case["expected"] | join(",") }}"
+{%- endif %}
+}
+{% endfor %}
