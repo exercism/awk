@@ -1,46 +1,48 @@
 #!/usr/bin/env bats
 load bats-extra
 
-@test 'basic' {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< 'Portable Network Graphics'
+# generated on 2026-06-29T23:39:19+00:00
+
+@test "basic" {
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  run gawk -f acronym.awk <<< "Portable Network Graphics"
   assert_success
-  assert_output 'PNG'
+  assert_output "PNG"
 }
 
-@test 'lowercase words' {
+@test "lowercase words" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< 'Ruby on Rails'
+  run gawk -f acronym.awk <<< "Ruby on Rails"
   assert_success
-  assert_output 'ROR'
+  assert_output "ROR"
 }
 
-@test 'punctuation' {
+@test "punctuation" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< 'First In, First Out'
+  run gawk -f acronym.awk <<< "First In, First Out"
   assert_success
-  assert_output 'FIFO'
+  assert_output "FIFO"
 }
 
-@test 'all caps word' {
+@test "all caps word" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< 'GNU Image Manipulation Program'
+  run gawk -f acronym.awk <<< "GNU Image Manipulation Program"
   assert_success
-  assert_output 'GIMP'
+  assert_output "GIMP"
 }
 
-@test 'punctuation without whitespace' {
+@test "punctuation without whitespace" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< 'Complementary metal-oxide semiconductor'
+  run gawk -f acronym.awk <<< "Complementary metal-oxide semiconductor"
   assert_success
-  assert_output 'CMOS'
+  assert_output "CMOS"
 }
 
-@test 'very long abbreviation' {
+@test "very long abbreviation" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< 'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me'
+  run gawk -f acronym.awk <<< "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
   assert_success
-  assert_output 'ROTFLSHTMDCOALM'
+  assert_output "ROTFLSHTMDCOALM"
 }
 
 @test "consecutive delimiters" {
@@ -59,7 +61,7 @@ load bats-extra
 
 @test "underscore emphasis" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f acronym.awk <<< "The Road __Not__ Taken"
+  run gawk -f acronym.awk <<< "The Road _Not_ Taken"
   assert_success
   assert_output "TRNT"
 }
