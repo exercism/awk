@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.2.0.0
+# generated on 2026-06-30T04:43:57+00:00
 
 @test "age on Earth" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f space-age.awk <<< "Earth 1000000000"
     assert_success
     assert_output 31.69
@@ -59,7 +59,7 @@ load bats-extra
     assert_output 0.35
 }
 
-@test "not a planet" {
+@test "invalid planet causes error" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f space-age.awk <<< "Sun 680804807"
     assert_failure
