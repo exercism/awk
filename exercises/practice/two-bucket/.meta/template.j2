@@ -1,0 +1,22 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<< '{{
+        [
+            case["input"]["bucketOne"],
+            case["input"]["bucketTwo"],
+            case["input"]["goal"],
+            case["input"]["startBucket"]
+        ] | join(",")
+    }}'
+{%- if case["expect_error"] %}
+    assert_failure
+    {#- Error message from canonical data is not used. #}
+    assert_output --partial 'invalid goal'
+{%- else %}
+    assert_success
+    assert_output '{{ [case["expected"]["moves"], case["expected"]["goalBucket"], case["expected"]["otherBucket"]] | join(",") }}'
+{%- endif %}
+}
+{% endfor %}
