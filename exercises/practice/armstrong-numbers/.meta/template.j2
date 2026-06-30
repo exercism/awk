@@ -1,0 +1,17 @@
+{{ header }}
+
+# The two large tests require the -M option to handle big numbers.
+# Refer to the instructions of the Grains exercise:
+#   https://exercism.org/tracks/awk/exercises/grains
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+  {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  {%- set flags="" %}
+  {%- if case["input"]["number"] > 10000000 %}
+    {%- set flags="-M " %}
+  {%- endif %}
+  run gawk {{ flags}}-f {{ solution }} -v num={{ case["input"]["number"] }}
+  assert_success
+  assert_output "{{ case["expected"] | lower }}"
+}
+{% endfor %}
