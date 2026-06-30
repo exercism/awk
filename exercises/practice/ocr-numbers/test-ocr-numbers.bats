@@ -1,16 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-
-@test "No input" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f ocr-numbers.awk /dev/null
-    assert_success
-    assert_output ""
-}
+# generated on 2026-06-30T15:57:43+00:00
 
 @test "Recognizes 0" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f ocr-numbers.awk << INPUT
  _ 
 | |
@@ -218,4 +212,11 @@ INPUT
 INPUT
     assert_success
     assert_output "123,456,789"
+}
+
+@test "No input" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f ocr-numbers.awk /dev/null
+    assert_success
+    assert_output ""
 }
