@@ -1,0 +1,24 @@
+{{ header }}
+
+# The awk program will receive two lines of input
+# 1. the list of denominations
+# 2. the amount to provide change
+#
+# The output is expected to be a space separated list
+# of coins, sorted in ascending order
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<END_INPUT
+{{ case["input"]["coins"] | join(" ") }}
+{{ case["input"]["target"] }}
+END_INPUT
+{%- if case["expect_error"] %}
+    assert_failure
+    assert_output "{{ case["expect_error_msg"] }}"
+{%- else %}
+    assert_success
+    assert_output "{{ case["expected"] | join(" ") }}"
+{%- endif %}
+}
+{% endfor %}
