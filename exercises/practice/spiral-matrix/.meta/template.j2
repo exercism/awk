@@ -1,0 +1,15 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected=$(cat <<EOF
+{%- if case["expected"] %}
+{{ case["expected"] | map("join", " ") | join("\n") }}
+{%- endif %}
+EOF
+)
+    run gawk -f {{ solution }} -v size={{ case["input"]["size"] }} < /dev/null
+    assert_success
+    assert_output "$expected"
+}
+{% endfor %}
