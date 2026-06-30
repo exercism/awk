@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.1.0.0
+# generated on 2026-06-30T15:57:58+00:00
 
 @test "no factors" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prime-factors.awk <<< 1
     assert_success
     assert_output ""
@@ -59,7 +59,7 @@ load bats-extra
     assert_output "5 5 5 5"
 }
 
-@test "product of first and second primes" {
+@test "product of first and second prime" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prime-factors.awk <<< 6
     assert_success
