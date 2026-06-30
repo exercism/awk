@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:59:17+00:00
+
 @test 'fly' {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     expected=$(cat << END_EXPECTED
 I know an old lady who swallowed a fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
@@ -206,3 +208,4 @@ END_EXPECTED
     assert_success
     assert_output "$expected"
 }
+
