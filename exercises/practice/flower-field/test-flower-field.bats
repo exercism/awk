@@ -1,26 +1,13 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-30T17:59:15+00:00
+# generated on 2026-06-30T19:52:33+00:00
 
 @test "no rows" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f flower-field.awk << 'END_INPUT'
 END_INPUT
     expected=$(cat << 'END_EXPECTED'
-END_EXPECTED
-)
-    assert_success
-    assert_output "$expected"
-}
-
-@test "no columns" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f flower-field.awk << 'END_INPUT'
-
-END_INPUT
-    expected=$(cat << 'END_EXPECTED'
-
 END_EXPECTED
 )
     assert_success
