@@ -1,0 +1,20 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["property"] }} {{ case["description"] }} {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{% if case["property"] in ["encode", "decode" ] %}
+    run gawk -f {{ solution }} -v type={{ case["property"] }} <<< "{{ case["input"]["string"] }}"
+    assert_success
+    assert_output "{{ case["expected"] }}"
+{%- else %}
+    plaintext="{{ case["input"]["string"] }}"
+    run gawk -f {{ solution }} -v type=encode <<< "$plaintext"
+    assert_success
+    encoded=$output
+
+    run gawk -f {{ solution }} -v type=decode <<< "$encoded"
+    assert_success
+    assert_output "$plaintext"
+{%- endif %}
+}
+{% endfor %}
