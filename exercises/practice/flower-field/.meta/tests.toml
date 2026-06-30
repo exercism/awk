@@ -14,6 +14,8 @@ description = "no rows"
 
 [4b4134ec-e20f-439c-a295-664c38950ba1]
 description = "no columns"
+include = false
+comment = "Command substitutions cannot be used to capture trailing newlines"
 
 [d774d054-bbad-4867-88ae-069cbd1c4f92]
 description = "no flowers"

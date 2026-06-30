@@ -1,20 +1,17 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# Check if the given string is an isogram
+# generated on 2026-06-30T19:52:33+00:00
 
 @test "no rows" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f flower-field.awk < /dev/null
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f flower-field.awk << 'END_INPUT'
+END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+END_EXPECTED
+)
     assert_success
-    assert_output ""
-}
-
-@test "no columns" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f flower-field.awk <<< ""
-    assert_success
-    assert_output ""
+    assert_output "$expected"
 }
 
 @test "no flowers" {
@@ -90,8 +87,12 @@ END_EXPECTED
     run gawk -f flower-field.awk << 'END_INPUT'
 .*.*.
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+1*2*1
+END_EXPECTED
+)
     assert_success
-    assert_output "1*2*1"
+    assert_output "$expected"
 }
 
 @test "horizontal line, flowers at edges" {
@@ -99,8 +100,12 @@ END_INPUT
     run gawk -f flower-field.awk << 'END_INPUT'
 *...*
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+*1.1*
+END_EXPECTED
+)
     assert_success
-    assert_output "*1.1*"
+    assert_output "$expected"
 }
 
 @test "vertical line" {
@@ -191,7 +196,14 @@ END_EXPECTED
 
 @test "multiple adjacent flowers" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f flower-field.awk <<< " ** "
+    run gawk -f flower-field.awk << 'END_INPUT'
+.**.
+END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+1**1
+END_EXPECTED
+)
     assert_success
-    assert_output "1**1"
+    assert_output "$expected"
 }
+
