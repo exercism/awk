@@ -1,6 +1,8 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:59:01+00:00
+
 # The awk program will receive two lines of input
 # 1. the list of denominations
 # 2. the amount to provide change
@@ -9,7 +11,7 @@ load bats-extra
 # of coins, sorted in ascending order
 
 @test "change for 1 cent" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f change.awk <<END_INPUT
 1 5 10 25
 1
@@ -137,3 +139,4 @@ END_INPUT
     assert_failure
     assert_output "target can't be negative"
 }
+
