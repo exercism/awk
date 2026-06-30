@@ -1,0 +1,15 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<< "{{ case["input"]["colors"] | join(" ") }}"
+    assert_success
+    assert_output "{{ case["expected"] }}"
+}
+{% endfor %}
+@test "invalid color" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<< "foo"
+    assert_failure
+    assert_output --partial "invalid color"
+}
