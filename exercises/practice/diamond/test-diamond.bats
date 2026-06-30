@@ -1,13 +1,13 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-30T17:59:12+00:00
+# generated on 2026-06-30T19:45:53+00:00
 
 @test "Degenerate case with a single 'A' row" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< A
     assert_success
-    assert_line --index 0 -- "A"
+    assert_line --index  0 -- "A"
     assert_equal "${#lines[@]}" 1
 }
 
@@ -15,9 +15,9 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< B
     assert_success
-    assert_line --index 0 -- " A "
-    assert_line --index 1 -- "B B"
-    assert_line --index 2 -- " A "
+    assert_line --index  0 -- " A "
+    assert_line --index  1 -- "B B"
+    assert_line --index  2 -- " A "
     assert_equal "${#lines[@]}" 3
 }
 
@@ -25,11 +25,11 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< C
     assert_success
-    assert_line --index 0 -- "  A  "
-    assert_line --index 1 -- " B B "
-    assert_line --index 2 -- "C   C"
-    assert_line --index 3 -- " B B "
-    assert_line --index 4 -- "  A  "
+    assert_line --index  0 -- "  A  "
+    assert_line --index  1 -- " B B "
+    assert_line --index  2 -- "C   C"
+    assert_line --index  3 -- " B B "
+    assert_line --index  4 -- "  A  "
     assert_equal "${#lines[@]}" 5
 }
 
@@ -37,13 +37,13 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< D
     assert_success
-    assert_line --index 0 -- "   A   "
-    assert_line --index 1 -- "  B B  "
-    assert_line --index 2 -- " C   C "
-    assert_line --index 3 -- "D     D"
-    assert_line --index 4 -- " C   C "
-    assert_line --index 5 -- "  B B  "
-    assert_line --index 6 -- "   A   "
+    assert_line --index  0 -- "   A   "
+    assert_line --index  1 -- "  B B  "
+    assert_line --index  2 -- " C   C "
+    assert_line --index  3 -- "D     D"
+    assert_line --index  4 -- " C   C "
+    assert_line --index  5 -- "  B B  "
+    assert_line --index  6 -- "   A   "
     assert_equal "${#lines[@]}" 7
 }
 
@@ -51,16 +51,16 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< Z
     assert_success
-    assert_line --index 0 -- "                         A                         "
-    assert_line --index 1 -- "                        B B                        "
-    assert_line --index 2 -- "                       C   C                       "
-    assert_line --index 3 -- "                      D     D                      "
-    assert_line --index 4 -- "                     E       E                     "
-    assert_line --index 5 -- "                    F         F                    "
-    assert_line --index 6 -- "                   G           G                   "
-    assert_line --index 7 -- "                  H             H                  "
-    assert_line --index 8 -- "                 I               I                 "
-    assert_line --index 9 -- "                J                 J                "
+    assert_line --index  0 -- "                         A                         "
+    assert_line --index  1 -- "                        B B                        "
+    assert_line --index  2 -- "                       C   C                       "
+    assert_line --index  3 -- "                      D     D                      "
+    assert_line --index  4 -- "                     E       E                     "
+    assert_line --index  5 -- "                    F         F                    "
+    assert_line --index  6 -- "                   G           G                   "
+    assert_line --index  7 -- "                  H             H                  "
+    assert_line --index  8 -- "                 I               I                 "
+    assert_line --index  9 -- "                J                 J                "
     assert_line --index 10 -- "               K                   K               "
     assert_line --index 11 -- "              L                     L              "
     assert_line --index 12 -- "             M                       M             "
