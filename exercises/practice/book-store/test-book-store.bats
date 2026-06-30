@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:58:55+00:00
+
 @test "Only a single book" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f book-store.awk <<END_INPUT
 1
 END_INPUT
@@ -283,3 +285,4 @@ END_INPUT
     assert_success
     assert_output "10000"
 }
+
