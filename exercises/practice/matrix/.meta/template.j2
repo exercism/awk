@@ -1,0 +1,54 @@
+{{ header }}
+teardown() {
+    rm input.txt
+}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    printf "%s\n" ${{ case["input"]["string"] | repr }} > input.txt
+
+    run gawk '
+        @include "matrix"
+        BEGIN {
+            matrix::read("input.txt", mtx)
+            print matrix::{{ case["property"] }}(mtx, {{ case["input"]["index"] }})
+        }
+    '
+    assert_success
+    assert_output "{{ case["expected"] | join(" ") }}"
+}
+{% endfor %}
+@test "can extract row from non-square matrix" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+
+    printf "%s\n" $'1 2 3\n4 5 6\n7 8 9\n8 7 6' > input.txt
+
+    run gawk '
+        @include "matrix"
+        BEGIN {
+            matrix::read("input.txt", mtx)
+            print matrix::row(mtx, 3)
+        }
+    '
+
+    assert_success
+    assert_output "7 8 9"
+}
+
+@test "can extract column from non-square matrix" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+
+    printf "%s\n" $'1 2 3\n4 5 6\n7 8 9\n8 7 6' > input.txt
+
+    run gawk '
+        @include "matrix"
+        BEGIN {
+            matrix::read("input.txt", mtx)
+            print matrix::column(mtx, 3)
+        }
+    '
+
+    assert_success
+    assert_output "3 6 9 6"
+}
+
