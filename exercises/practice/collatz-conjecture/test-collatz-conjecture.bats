@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.2.1.0
+# generated on 2026-06-30T17:59:07+00:00
 
 @test "zero steps for one" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f collatz-conjecture.awk <<< "1"
   assert_success
   assert_output "0"
@@ -35,12 +35,13 @@ load bats-extra
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f collatz-conjecture.awk <<< "0"
   assert_failure
-  assert_output "Error: Only positive numbers are allowed"
+  assert_output "Error: Only positive integers are allowed"
 }
 
 @test "negative value is an error" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f collatz-conjecture.awk <<< "-15"
   assert_failure
-  assert_output "Error: Only positive numbers are allowed"
+  assert_output "Error: Only positive integers are allowed"
 }
+
