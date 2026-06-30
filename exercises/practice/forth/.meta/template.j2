@@ -1,0 +1,50 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["descriptions"] | join(": ") }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<END
+{{ case["input"]["instructions"] | join("\n")}}
+END
+{%- if case["expect_error"] %}
+    assert_failure
+    assert_output --partial "{{ case["expect_error_msg"] }}"
+{%- else %}
+    assert_success
+    assert_output "{{ case["expected"] | join(" ") }}"
+{%- endif %}
+}
+{% endfor %}
+
+@test "new word with empty definition" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<END
+: foo ;
+END
+    assert_failure
+    assert_output --partial "empty macro definition"
+}
+
+@test "new word definition missing the required semicolon" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<END
+: foo 1
+foo
+END
+    assert_failure
+    assert_output --partial "macro not terminated with semicolon"
+}
+
+# each file gets it's own forth evaluator:
+# a stack and macros, and prints the stack at the end of the file
+@test "each input file has its own evaluator" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    echo ': + - ;' >  first.txt
+    echo '1 1 +'   >> first.txt
+    echo '1 1 +'   >  second.txt
+    run gawk -f {{ solution }} first.txt second.txt
+    assert_success
+    assert_line --index 0 "0"
+    assert_line --index 1 "2"
+    rm -f first.txt second.txt
+}
+

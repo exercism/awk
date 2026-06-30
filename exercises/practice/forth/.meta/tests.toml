@@ -155,6 +155,7 @@ description = "user-defined words -> errors if executing a non-existent word"
 
 [3c8bfef3-edbb-49c1-9993-21d4030043cb]
 description = "user-defined words -> only defines locally"
+include = false
 
 [7b83bb2e-b0e8-461f-ad3b-96ee2e111ed6]
 description = "case-insensitivity -> DUP is case-insensitive"
