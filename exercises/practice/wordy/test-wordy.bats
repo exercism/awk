@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T18:00:10+00:00
+
 @test "just a number" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f wordy.awk <<< "What is 5?"
     assert_success
     assert_output "5"
@@ -134,14 +136,6 @@ load bats-extra
     assert_output "2"
 }
 
-@test "strict left to right, ignores typical order of operations" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f wordy.awk <<< "What is 2 plus 3 multiplied by 4?"
-    assert_success
-    [[ $output != "14" ]]
-    assert_output "20"
-}
-
 @test "unknown operation" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f wordy.awk <<< "What is 52 cubed?"
@@ -154,13 +148,6 @@ load bats-extra
     run gawk -f wordy.awk <<< "Who is the President of the United States?"
     assert_failure
     assert_output "unknown operation"
-}
-
-@test "reject problem with no operands" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f wordy.awk <<< "What is plus?"
-    assert_failure
-    assert_output "syntax error"
 }
 
 @test "reject problem missing an operand" {
@@ -201,6 +188,21 @@ load bats-extra
 @test "reject prefix notation" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f wordy.awk <<< "What is plus 1 2?"
+    assert_failure
+    assert_output "syntax error"
+}
+
+@test "strict left to right, ignores typical order of operations" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f wordy.awk <<< "What is 2 plus 3 multiplied by 4?"
+    assert_success
+    [[ $output != "14" ]]
+    assert_output "20"
+}
+
+@test "reject problem with no operands" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f wordy.awk <<< "What is plus?"
     assert_failure
     assert_output "syntax error"
 }
