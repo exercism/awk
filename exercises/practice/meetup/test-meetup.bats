@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:57:33+00:00
+
 @test "when teenth Monday is the 13th, the first day of the teenth week" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f meetup.awk <<< "2013,5,teenth,Monday"
     assert_success
     assert_output "2013-05-13"
