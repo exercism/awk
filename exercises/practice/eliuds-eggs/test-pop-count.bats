@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:59:14+00:00
+
 @test "0 eggs" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f pop-count.awk <<< "0"
     assert_success
     assert_output "0"
@@ -28,3 +30,4 @@ load bats-extra
     assert_success
     assert_output "13"
 }
+
