@@ -1,0 +1,12 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} <<< {{ case["input"]["letter"] }}
+    assert_success
+    {%- for line in case["expected"] %}
+    assert_line --index {{ "%2d"|format(loop.index0) }} -- "{{ line }}"
+    {%- endfor %}
+    assert_equal "${{ "{" }}#lines[@]}" {{ case["expected"] | length }}
+}
+{% endfor %}

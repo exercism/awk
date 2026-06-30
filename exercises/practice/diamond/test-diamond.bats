@@ -1,20 +1,23 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T19:45:53+00:00
+
 @test "Degenerate case with a single 'A' row" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< A
     assert_success
-    assert_output "A"
+    assert_line --index  0 -- "A"
+    assert_equal "${#lines[@]}" 1
 }
 
 @test "Degenerate case with no row containing 3 distinct groups of spaces" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< B
     assert_success
-    assert_line --index 0 -- " A "
-    assert_line --index 1 -- "B B"
-    assert_line --index 2 -- " A "
+    assert_line --index  0 -- " A "
+    assert_line --index  1 -- "B B"
+    assert_line --index  2 -- " A "
     assert_equal "${#lines[@]}" 3
 }
 
@@ -22,11 +25,11 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< C
     assert_success
-    assert_line --index 0 -- "  A  "
-    assert_line --index 1 -- " B B "
-    assert_line --index 2 -- "C   C"
-    assert_line --index 3 -- " B B "
-    assert_line --index 4 -- "  A  "
+    assert_line --index  0 -- "  A  "
+    assert_line --index  1 -- " B B "
+    assert_line --index  2 -- "C   C"
+    assert_line --index  3 -- " B B "
+    assert_line --index  4 -- "  A  "
     assert_equal "${#lines[@]}" 5
 }
 
@@ -34,13 +37,13 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f diamond.awk <<< D
     assert_success
-    assert_line --index 0 -- "   A   "
-    assert_line --index 1 -- "  B B  "
-    assert_line --index 2 -- " C   C "
-    assert_line --index 3 -- "D     D"
-    assert_line --index 4 -- " C   C "
-    assert_line --index 5 -- "  B B  "
-    assert_line --index 6 -- "   A   "
+    assert_line --index  0 -- "   A   "
+    assert_line --index  1 -- "  B B  "
+    assert_line --index  2 -- " C   C "
+    assert_line --index  3 -- "D     D"
+    assert_line --index  4 -- " C   C "
+    assert_line --index  5 -- "  B B  "
+    assert_line --index  6 -- "   A   "
     assert_equal "${#lines[@]}" 7
 }
 
