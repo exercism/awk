@@ -1,0 +1,17 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- if case["property"] == "roster" %}
+    run gawk -f {{ solution }} -v action={{ case["property"] }} << END_INPUT
+{%- else %}
+    run gawk -f {{ solution }} -v action={{ case["property"] }} -v grade={{ case["input"]["desiredGrade"] }} << END_INPUT
+{%- endif %}
+{%- if case["input"]["students"] %}
+{{ case["input"]["students"] | map("join", ",") | join("\n") }}
+{%- endif %}
+END_INPUT
+    assert_success
+    assert_output "{{ case["expected"] | join(",") }}"
+}
+{% endfor %}
