@@ -12,7 +12,7 @@ $2 == 0 {
     span = $2
 
     assert(span <= len, "span must not exceed string length")
-    assert($1 ~ /^[[:digit:]]+$/, "input must only contain digits")
+    assert($1 ~ /^[[:digit:]]+$/, "digits input must only contain digits")
     assert(span > 0, "span must not be negative")
 
     mx = 0

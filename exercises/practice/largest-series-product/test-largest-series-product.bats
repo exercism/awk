@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:57:17+00:00
+
 @test "finds the largest product if span equals length" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f largest-series-product.awk <<< "29,2"
     assert_success
     assert_output "18"
@@ -64,8 +66,6 @@ load bats-extra
     assert_output "0"
 }
 
-# error cases
-
 @test "rejects span longer than string length" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f largest-series-product.awk <<< "123,4"
@@ -84,7 +84,7 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f largest-series-product.awk <<< "1234a5,2"
     assert_failure
-    assert_output --partial "input must only contain digits"
+    assert_output --partial "digits input must only contain digits"
 }
 
 @test "rejects negative span" {
