@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.5.0.0
+# generated on 2026-06-30T04:46:59+00:00
 
 @test "no multiples within limit" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f sum-of-multiples.awk -v limit=1 <<< "3 5"
     assert_success
     assert_output "0"
