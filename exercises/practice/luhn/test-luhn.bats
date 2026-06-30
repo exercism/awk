@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:59:44+00:00
+
 @test "single digit strings can not be valid" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f luhn.awk <<< "1"
   assert_success
   assert_output "false"
@@ -50,14 +52,14 @@ load bats-extra
   assert_output "false"
 }
 
-@test  "invalid long number with an even remainder" {
+@test "invalid long number with an even remainder" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f luhn.awk <<< "1 2345 6789 1234 5678 9012"
   assert_success
   assert_output "false"
 }
 
-@test  "invalid long number with a remainder divisible by 5" {
+@test "invalid long number with a remainder divisible by 5" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f luhn.awk <<< "1 2345 6789 1234 5678 9013"
   assert_success
@@ -78,9 +80,9 @@ load bats-extra
   assert_output "true"
 }
 
-@test "valid strings with a non-digit included become invalid" {
+@test "valid strings with a non-digit added at the end become invalid" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f luhn.awk <<< "055a 444 285"
+  run gawk -f luhn.awk <<< "059a"
   assert_success
   assert_output "false"
 }
@@ -94,7 +96,7 @@ load bats-extra
 
 @test "valid strings with symbols included become invalid" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f luhn.awk <<< "055£ 444$ 285"
+  run gawk -f luhn.awk <<< "055# 444$ 285"
   assert_success
   assert_output "false"
 }
@@ -154,3 +156,4 @@ load bats-extra
   assert_success
   assert_output "false"
 }
+
