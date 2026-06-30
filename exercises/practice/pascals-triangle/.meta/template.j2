@@ -1,0 +1,34 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected=$( cat << END
+{%- if case["expected"] %}
+{{ case["expected"] | map("join", " ") | join("\n") }}
+{%- endif %}
+END
+)
+    run gawk -f {{ solution }} <<< "{{ case["input"]["count"] }}"
+    assert_success
+    assert_output "$expected"
+}
+{% endfor %}
+@test "two triangles" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected=$( cat << END
+1
+1 1
+1 2 1
+1 3 3 1
+1
+1 1
+1 2 1
+END
+)
+    run gawk -f {{ solution }} << END_INPUT
+4
+3
+END_INPUT
+    assert_success
+    assert_output "$expected"
+}
