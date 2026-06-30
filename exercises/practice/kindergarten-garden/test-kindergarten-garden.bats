@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# partial garden
+# generated on 2026-06-30T15:57:13+00:00
 
 @test "garden with single student" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f kindergarten-garden.awk -v name="Alice" << END_GARDEN
 RC
 GG
@@ -33,7 +33,7 @@ END_GARDEN
     assert_output "clover grass radishes clover"
 }
 
-@test "three students, second student's garden" {
+@test "second student's garden" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f kindergarten-garden.awk -v name="Bob" << END_GARDEN
 VVCCGG
@@ -42,8 +42,8 @@ END_GARDEN
     assert_success
     assert_output "clover clover clover clover"
 }
-            
-@test "three students, third student's garden" {
+
+@test "third student's garden" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f kindergarten-garden.awk -v name="Charlie" << END_GARDEN
 VVCCGG
@@ -52,8 +52,6 @@ END_GARDEN
     assert_success
     assert_output "grass grass grass grass"
 }
-
-# full garden
 
 @test "for Alice, first student's garden" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
