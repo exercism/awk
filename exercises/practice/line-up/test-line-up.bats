@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:57:21+00:00
+
 @test "format smallest non-exceptional ordinal numeral 4" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f line-up.awk <<< "Gianna 4"
   assert_success
   assert_output "Gianna, you are the 4th customer we serve today. Thank you!"
