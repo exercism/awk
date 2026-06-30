@@ -1,28 +1,30 @@
 #!/usr/bin/env bats
 load bats-extra
 
-@test zero {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+# generated on 2026-06-30T04:36:06+00:00
+
+@test "zero" {
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f say.awk <<< 0
     assert_success
     assert_output "zero"
 }
 
-@test one {
+@test "one" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f say.awk <<< 1
     assert_success
     assert_output "one"
 }
 
-@test fourteen {
+@test "fourteen" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f say.awk <<< 14
     assert_success
     assert_output "fourteen"
 }
 
-@test twenty {
+@test "twenty" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f say.awk <<< 20
     assert_success
@@ -36,7 +38,7 @@ load bats-extra
     assert_output "twenty-two"
 }
 
-@test thirty {
+@test "thirty" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f say.awk <<< 30
     assert_success
@@ -115,7 +117,7 @@ load bats-extra
 
 @test "a big number" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f say.awk <<<  987654321123
+    run gawk -f say.awk <<< 987654321123
     assert_success
     assert_output "nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three"
 }
