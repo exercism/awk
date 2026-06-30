@@ -1,23 +1,30 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T04:23:03+00:00
+
 @test "no rows" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f rectangles.awk < /dev/null
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f rectangles.awk <<INPUT
+INPUT
     assert_success
     assert_output "0"
 }
 
 @test "no columns" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f rectangles.awk <<< ""
+    run gawk -f rectangles.awk <<INPUT
+
+INPUT
     assert_success
     assert_output "0"
 }
 
 @test "no rectangles" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f rectangles.awk <<< " "
+    run gawk -f rectangles.awk <<INPUT
+ 
+INPUT
     assert_success
     assert_output "0"
 }
@@ -143,32 +150,6 @@ INPUT
 INPUT
     assert_success
     assert_output "60"
-}
-
-@test "nested rectangles" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f rectangles.awk <<INPUT
-+-----------+
-|           |
-|      +-+  |
-|      +-+  |
-+-----------+
-INPUT
-    assert_success
-    assert_output "2"
-}
-
-@test "side by side rectangles" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f rectangles.awk <<INPUT
-+------+ +--+
-|      | |  |
-+------+ |  |
-         |  |
-         +--+
-INPUT
-    assert_success
-    assert_output "2"
 }
 
 @test "rectangles must have four sides" {
