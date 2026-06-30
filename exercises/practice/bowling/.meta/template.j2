@@ -1,0 +1,18 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    {%- set rolls = case["input"]["previousRolls"] %}
+    {%- if case["property"] == "roll" %}
+        {%- set rolls = rolls + [case["input"]["roll"]] %}
+    {%- endif %}
+    run gawk -f {{ solution }} <<< "{{ rolls | join(" ") }}"
+{% if case["expect_error"] %}
+    assert_failure
+    assert_output "{{ case["expect_error_msg"] }}"
+{%- else %}
+    assert_success
+    assert_output "{{ case["expected"] }}"
+{%- endif %}
+}
+{% endfor %}
