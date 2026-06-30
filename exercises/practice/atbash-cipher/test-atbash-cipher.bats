@@ -1,12 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.2.0.0
-
-# encode
+# generated on 2026-06-30T17:58:49+00:00
 
 @test "encode yes" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f atbash-cipher.awk -v direction=encode <<< "yes"
   assert_success
   assert_output "bvh"
@@ -60,8 +58,6 @@ load bats-extra
   assert_success
   assert_output "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
 }
-
-# decode
 
 @test "decode exercism" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
