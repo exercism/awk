@@ -1,6 +1,8 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:59:03+00:00
+
 # The AWK program will be given data in the following formats,
 # where the first field is the command, followed by parameters.
 #
@@ -9,12 +11,9 @@ load bats-extra
 # subtract hh mm delta
 # equal hh mm hh mm
 
-#
-# Create a new clock with an initial time
-#
 
 @test "on the hour" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f clock.awk <<< "create 8 0"
   assert_success
   assert_output "08:00"
@@ -153,10 +152,6 @@ load bats-extra
   assert_output "22:10"
 }
 
-#
-# Add minutes
-#
-
 @test "add minutes" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f clock.awk <<< "add 10 0 3"
@@ -213,10 +208,6 @@ load bats-extra
   assert_output "11:21"
 }
 
-#
-# Subtract minutes
-#
-
 @test "subtract minutes" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f clock.awk <<< "subtract 10 3 3"
@@ -272,10 +263,6 @@ load bats-extra
   assert_success
   assert_output "00:20"
 }
-
-#
-# Compare two clocks for equality
-#
 
 @test "clocks with same time" {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -388,3 +375,4 @@ load bats-extra
   assert_success
   assert_output "true"
 }
+

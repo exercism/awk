@@ -1,0 +1,33 @@
+{{ header }}
+
+# The AWK program will be given data in the following formats,
+# where the first field is the command, followed by parameters.
+#
+# create hh mm
+# add hh mm delta
+# subtract hh mm delta
+# equal hh mm hh mm
+
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+  {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  {%- if case["property"] == "equal" %}
+    {%- set args = [
+          case["property"],
+          case["input"]["clock1"]["hour"],
+          case["input"]["clock1"]["minute"],
+          case["input"]["clock2"]["hour"],
+          case["input"]["clock2"]["minute"]
+        ]
+  %}
+  {%- else %}
+    {%- set args = [case["property"], case["input"]["hour"], case["input"]["minute"]] %}
+    {%- if case["property"] in ["add", "subtract"] %}
+      {%- set args = args + [case["input"]["value"]] %}
+    {%- endif %}
+  {%- endif %}
+  run gawk -f {{ solution }} <<< "{{ args | join(" ") }}"
+  assert_success
+  assert_output "{{ case["expected"] | lower }}"
+}
+{% endfor %}
