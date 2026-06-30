@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:57:49+00:00
+
 @test "cleans the number" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f phone-number.awk <<< "(223) 456-7890"
     assert_success
     assert_output "2234567890"
