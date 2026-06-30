@@ -1,20 +1,21 @@
 #!/usr/bin/env bats
 load bats-extra
 
-@test 'first_generic_verse' {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+# generated on 2026-06-30T17:58:57+00:00
+
+@test 'first generic verse' {
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=10 -v takeDown=1
 
     expected="Ten green bottles hanging on the wall,
 Ten green bottles hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be nine green bottles hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
 
-@test 'last_generic_verse' {
+@test 'last generic verse' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=3 -v takeDown=1
 
@@ -22,12 +23,11 @@ There'll be nine green bottles hanging on the wall."
 Three green bottles hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be two green bottles hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
 
-@test 'verse_with_2_bottles' {
+@test 'verse with 2 bottles' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=2 -v takeDown=1
 
@@ -35,12 +35,11 @@ There'll be two green bottles hanging on the wall."
 Two green bottles hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be one green bottle hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
 
-@test 'verse_with_1_bottle' {
+@test 'verse with 1 bottle' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=1 -v takeDown=1
 
@@ -48,12 +47,11 @@ There'll be one green bottle hanging on the wall."
 One green bottle hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be no green bottles hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
 
-@test 'first_two_verses' {
+@test 'first two verses' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=10 -v takeDown=2
 
@@ -66,12 +64,11 @@ Nine green bottles hanging on the wall,
 Nine green bottles hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be eight green bottles hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
 
-@test 'last_three_verses' {
+@test 'last three verses' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=3 -v takeDown=3
 
@@ -89,12 +86,11 @@ One green bottle hanging on the wall,
 One green bottle hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be no green bottles hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
 
-@test 'all_verses' {
+@test 'all verses' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bottle-song.awk -v startBottles=10 -v takeDown=10
 
@@ -147,7 +143,7 @@ One green bottle hanging on the wall,
 One green bottle hanging on the wall,
 And if one green bottle should accidentally fall,
 There'll be no green bottles hanging on the wall."
-
     assert_success
     assert_output "$expected"
 }
+
