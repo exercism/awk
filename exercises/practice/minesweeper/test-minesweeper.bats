@@ -1,20 +1,30 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# Check if the given string is an isogram
+# generated on 2026-06-30T15:57:40+00:00
 
 @test "no rows" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk < /dev/null
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f minesweeper.awk << 'END_INPUT'
+END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+END_EXPECTED
+)
     assert_success
-    assert_output ""
+    assert_output "$expected"
 }
 
 @test "no columns" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f minesweeper.awk <<< ""
+    run gawk -f minesweeper.awk << 'END_INPUT'
+
+END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+
+END_EXPECTED
+)
     assert_success
-    assert_output ""
+    assert_output "$expected"
 }
 
 @test "no mines" {
@@ -90,8 +100,12 @@ END_EXPECTED
     run gawk -f minesweeper.awk << 'END_INPUT'
 .*.*.
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+1*2*1
+END_EXPECTED
+)
     assert_success
-    assert_output "1*2*1"
+    assert_output "$expected"
 }
 
 @test "horizontal line, mines at edges" {
@@ -99,8 +113,12 @@ END_INPUT
     run gawk -f minesweeper.awk << 'END_INPUT'
 *...*
 END_INPUT
+    expected=$(cat << 'END_EXPECTED'
+*1.1*
+END_EXPECTED
+)
     assert_success
-    assert_output "*1.1*"
+    assert_output "$expected"
 }
 
 @test "vertical line" {
