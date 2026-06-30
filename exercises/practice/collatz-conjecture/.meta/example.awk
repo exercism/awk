@@ -1,5 +1,5 @@
 $1 < 1 {
-    print "Error: Only positive numbers are allowed" > "/dev/stderr"
+    print "Error: Only positive integers are allowed" > "/dev/stderr"
     exit 1
 }
 
