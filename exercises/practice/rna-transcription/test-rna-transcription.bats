@@ -1,13 +1,13 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.3.0.0
+# generated on 2026-06-30T17:59:59+00:00
 
 @test "Empty RNA sequence" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f rna-transcription.awk <<< ""
   assert_success
-  [[ -z $output ]]
+  assert_output ""
 }
 
 @test "RNA complement of cytosine is guanine" {
