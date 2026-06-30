@@ -1,6 +1,8 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:57:01+00:00
+
 populate_test_file() {
     echo "$1" > input.txt
     echo "$2" >> input.txt
@@ -11,7 +13,7 @@ teardown() {
 }
 
 @test 'empty strands' {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   populate_test_file '' ''
   run gawk -f hamming.awk input.txt
   assert_success

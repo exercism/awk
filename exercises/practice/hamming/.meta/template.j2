@@ -1,0 +1,24 @@
+{{ header }}
+
+populate_test_file() {
+    echo "$1" > input.txt
+    echo "$2" >> input.txt
+}
+
+teardown() {
+    rm -f input.txt
+}
+{% for idx, case in cases %}
+@test '{{ case["description"] }}' {
+  {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  populate_test_file '{{ case["input"]["strand1"] }}' '{{ case["input"]["strand2"] }}'
+  run gawk -f {{ solution }} input.txt
+{%- if case["expect_error"] %}
+  assert_failure
+  assert_output --partial "{{ case["expect_error_msg"] }}"
+{%- else %}
+  assert_success
+  assert_output "{{ case["expected"] }}"
+{%- endif %}
+}
+{% endfor %}
