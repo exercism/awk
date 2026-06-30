@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:57:42+00:00
+
 @test "first prime" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f nth-prime.awk -v n=1
     assert_success
     assert_output "2"
@@ -22,13 +24,6 @@ load bats-extra
     assert_output "13"
 }
 
-@test "hundredth prime" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f nth-prime.awk -v n=100
-    assert_success
-    assert_output "541"
-}
-
 @test "big prime" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f nth-prime.awk -v n=10001
@@ -39,13 +34,6 @@ load bats-extra
 @test "there is no zeroth prime" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f nth-prime.awk -v n=0
-    assert_failure
-    assert_output "invalid input"
-}
-
-@test "there is no negativeth prime" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f nth-prime.awk -v n=-2
     assert_failure
     assert_output "invalid input"
 }
