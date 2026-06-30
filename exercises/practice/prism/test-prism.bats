@@ -1,6 +1,8 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T15:58:01+00:00
+
 @test "zero prisms" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f prism.awk <<EOF
