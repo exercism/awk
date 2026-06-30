@@ -1,11 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# input: bucket 1 size, bucket 2 size, goal, start name
-# output: moves, "winner" bucket name, "other" bucket amount
+# generated on 2026-06-30T04:59:50+00:00
 
 @test "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket one" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f two-bucket.awk <<< '3,5,1,one'
     assert_success
     assert_output '4,one,5'
