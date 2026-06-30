@@ -92,7 +92,7 @@ def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
 
 
 def bool_to_str(obj):
-    """Convert boolean values to strings."""
+    """Recursively convert boolean values to strings in collections."""
     if isinstance(obj, dict):
         return {key: bool_to_str(val) for key, val in obj.items()}
     if isinstance(obj, list):
