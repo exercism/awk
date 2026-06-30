@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-@test 'year not divisible by 4: common year' {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+# generated on 2026-06-30T17:59:42+00:00
+
+@test 'year not divisible by 4 in common year' {
+  # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f leap.awk <<< "2015"
 
   assert_success
@@ -17,7 +19,7 @@ load bats-extra
   assert_output "false"
 }
 
-@test 'year divisible by 4, not divisible by 100: leap year' {
+@test 'year divisible by 4, not divisible by 100 in leap year' {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f leap.awk <<< "1996"
 
@@ -33,7 +35,7 @@ load bats-extra
   assert_output "true"
 }
 
-@test 'year divisible by 100, not divisible by 400: common year' {
+@test 'year divisible by 100, not divisible by 400 in common year' {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f leap.awk <<< "2100"
 
@@ -49,7 +51,7 @@ load bats-extra
   assert_output "false"
 }
 
-@test 'year divisible by 400: leap year' {
+@test 'year divisible by 400 is leap year' {
   [[ $BATS_RUN_SKIPPED == "true" ]] || skip
   run gawk -f leap.awk <<< "2000"
 
@@ -72,3 +74,4 @@ load bats-extra
   assert_success
   assert_output "false"
 }
+
