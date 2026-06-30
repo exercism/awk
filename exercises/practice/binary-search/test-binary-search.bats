@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:58:51+00:00
+
 @test "finds a value in an array with one element" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f binary-search.awk -v value=6 <<< "6"
     assert_success
     assert_output 1
@@ -77,3 +79,4 @@ load bats-extra
     assert_success
     assert_output -1
 }
+
