@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T04:29:07+00:00
+
 @test "rotate a by 0, same output as input" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f rotational-cipher.awk -v distance=0 <<< "a"
     assert_success
     assert_output "a"
