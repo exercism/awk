@@ -1,6 +1,8 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T17:59:39+00:00
+
 # Usage: knapsack.awk << END_INPUT
 # limit:max_wt
 # weight:wt value:val
@@ -8,7 +10,7 @@ load bats-extra
 # END_INPUT
 
 @test "no items" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f knapsack.awk << END_INPUT
 limit:100
 END_INPUT
@@ -16,7 +18,7 @@ END_INPUT
     assert_output "0"
 }
 
-@test "one item: too heavy" {
+@test "one item, too heavy" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f knapsack.awk << END_INPUT
 limit:10
@@ -107,3 +109,4 @@ END_INPUT
     assert_success
     assert_output "1458"
 }
+

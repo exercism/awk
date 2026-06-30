@@ -1,0 +1,20 @@
+{{ header }}
+
+# Usage: knapsack.awk << END_INPUT
+# limit:max_wt
+# weight:wt value:val
+# ...
+# END_INPUT
+{% for idx, case in cases %}
+@test "{{ case["description"] }}" {
+    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f {{ solution }} << END_INPUT
+limit:{{ case["input"]["maximumWeight"] }}
+{%- for item in case["input"]["items"] %}
+weight:{{ item["weight"] }},value:{{ item["value"] }}
+{%- endfor %}
+END_INPUT
+    assert_success
+    assert_output "{{ case["expected"] }}"
+}
+{% endfor %}
