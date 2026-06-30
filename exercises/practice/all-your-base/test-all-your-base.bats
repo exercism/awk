@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 2.3.0.1
+# generated on 2026-06-30T18:22:05+00:00
 
-@test 'single bit to one decimal' {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+@test 'single bit one to decimal' {
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=2 -v obase=10 <<< "1"
     assert_success
     assert_output "1"
@@ -52,7 +52,7 @@ load bats-extra
     assert_output "1 1 2 0"
 }
 
-@test '15 bit integer' {
+@test '15-bit integer' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=97 -v obase=73 <<< "3 46 60"
     assert_success
@@ -63,7 +63,7 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=2 -v obase=10 <<< ""
     assert_success
-    assert_output ""
+    assert_output "0"
 }
 
 @test 'single zero' {
@@ -73,7 +73,7 @@ load bats-extra
     assert_output "0"
 }
 
-@test 'multiple zeroes' {
+@test 'multiple zeros' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=10 -v obase=2 <<< "0 0 0"
     assert_success
@@ -91,61 +91,62 @@ load bats-extra
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=1 -v obase=10 <<< "0"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "input base must be >= 2"
 }
 
 @test 'input base is zero' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=0 -v obase=10 <<< ""
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "input base must be >= 2"
 }
 
 @test 'input base is negative' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=-2 -v obase=10 <<< "1"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "input base must be >= 2"
 }
 
 @test 'negative digit' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=2 -v obase=10 <<< "1 -1 1 0 1 0"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "all digits must satisfy 0 <= d < input base"
 }
 
 @test 'invalid positive digit' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=2 -v obase=10 <<< "1 2 1 0 1 0"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "all digits must satisfy 0 <= d < input base"
 }
 
 @test 'output base is one' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=2 -v obase=1 <<< "1 0 1 0 1 0"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "output base must be >= 2"
 }
 
 @test 'output base is zero' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f all-your-base.awk -v ibase=10 -v obase 0 <<<="7"
+    run gawk -f all-your-base.awk -v ibase=10 -v obase=0 <<< "7"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "output base must be >= 2"
 }
 
 @test 'output base is negative' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=2 -v obase=-7 <<< "1"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "output base must be >= 2"
 }
 
 @test 'both bases are negative' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f all-your-base.awk -v ibase=-2 -v obase=-7 <<< "1"
     assert_failure
-    assert_output    # there is _some_ output
+    assert_output "input base must be >= 2"
 }
+

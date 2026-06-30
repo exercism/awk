@@ -8,16 +8,16 @@ function die(msg) {
 }
 
 BEGIN {
-    if (ibase < 2) die("Input base much be larger than one.")
-    if (obase < 2) die("Output base much be larger than one.")
+    if (ibase < 2) die("input base must be >= 2")
+    if (obase < 2) die("output base must be >= 2")
 }
 
 {
     # Sum up the ibase words to form a decimal value.
     val = 0
     for (i = NF; i; i-- ) {
-        if ($i >= ibase) die("Input word is bigger than base.")
-        if ($i < 0) die("Input word is negative.")
+        if ($i >= ibase) die("all digits must satisfy 0 <= d < input base")
+        if ($i < 0) die("all digits must satisfy 0 <= d < input base")
         base = ibase ^ (NF - i)
         val += $i * base
     }
@@ -36,6 +36,8 @@ BEGIN {
     out = parts[0]
     for (j = 1; j < i; j++)
         out = parts[j] " " out
+    if (out == 0)
+        out = "0"
     print out
 }
 
