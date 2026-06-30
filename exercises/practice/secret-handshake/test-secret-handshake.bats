@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T04:39:19+00:00
+
 @test "wink for 1" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f secret-handshake.awk <<< 1
     assert_success
     assert_output "wink"
@@ -36,25 +38,11 @@ load bats-extra
     assert_output "wink,double blink"
 }
 
-@test "all possible actions" {
+@test "reverse two actions" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f secret-handshake.awk <<< 15
+    run gawk -f secret-handshake.awk <<< 19
     assert_success
-    assert_output "wink,double blink,close your eyes,jump"
-}
-
-@test "do nothing for zero" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f secret-handshake.awk <<< 0
-    assert_success
-    assert_output ""
-}
-
-@test "reversing no actions still gives no actions" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f secret-handshake.awk <<< 16
-    assert_success
-    assert_output ""
+    assert_output "double blink,wink"
 }
 
 @test "reversing one action gives the same action" {
@@ -64,11 +52,18 @@ load bats-extra
     assert_output "jump"
 }
 
-@test "reverse two actions" {
+@test "reversing no actions still gives no actions" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f secret-handshake.awk <<< 19
+    run gawk -f secret-handshake.awk <<< 16
     assert_success
-    assert_output "double blink,wink"
+    assert_output ""
+}
+
+@test "all possible actions" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f secret-handshake.awk <<< 15
+    assert_success
+    assert_output "wink,double blink,close your eyes,jump"
 }
 
 @test "reverse all possible actions" {
@@ -76,4 +71,11 @@ load bats-extra
     run gawk -f secret-handshake.awk <<< 31
     assert_success
     assert_output "jump,close your eyes,double blink,wink"
+}
+
+@test "do nothing for zero" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f secret-handshake.awk <<< 0
+    assert_success
+    assert_output ""
 }
