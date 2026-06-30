@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# Check if the given string is an isogram
+# generated on 2026-06-30T17:59:38+00:00
 
 @test "empty string" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f isogram.awk <<< ""
     assert_success
     assert_output "true"
@@ -100,3 +100,4 @@ load bats-extra
     assert_success
     assert_output "false"
 }
+
