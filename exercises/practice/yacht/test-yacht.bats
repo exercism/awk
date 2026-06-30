@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T04:55:48+00:00
+
 @test "Yacht" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f yacht.awk <<< "5,5,5,5,5,yacht"
     assert_success
     assert_output 50
