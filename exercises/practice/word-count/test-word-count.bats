@@ -1,11 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# The `assert_line` test does not care about _order_, just that the line
-# exists in the output.
+# generated on 2026-06-30T20:54:02+00:00
 
 @test "count one word" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f word-count.awk <<< "word"
     assert_success
     assert_line "word: 1"
@@ -46,11 +45,9 @@ load bats-extra
 
 @test "handles expanded lists" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f word-count.awk << END_INPUT
-one,
+    run gawk -f word-count.awk <<< "one,
 two,
-three
-END_INPUT
+three"
     assert_success
     assert_line "one: 1"
     assert_line "two: 1"
@@ -119,13 +116,14 @@ END_INPUT
 
 @test "substrings from the beginning" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f word-count.awk <<< "Joe can't tell between apple, app and a."
+    run gawk -f word-count.awk <<< "Joe can't tell between app, apple and a."
     assert_success
     assert_line "joe: 1"
     assert_line "can't: 1"
     assert_line "tell: 1"
-    assert_line "apple: 1"
+    assert_line "between: 1"
     assert_line "app: 1"
+    assert_line "apple: 1"
     assert_line "and: 1"
     assert_line "a: 1"
     assert_equal "${#lines[@]}" 8
@@ -140,9 +138,12 @@ END_INPUT
     assert_equal "${#lines[@]}" 2
 }
 
-@test "alternating word separators are not detected as a word" {
+@test "alternating word separators not detected as a word" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f word-count.awk <<< $',\n,one,\n ,two \n \'three\''
+    run gawk -f word-count.awk <<< ",
+,one,
+ ,two 
+ 'three'"
     assert_success
     assert_line "one: 1"
     assert_line "two: 1"
@@ -158,3 +159,4 @@ END_INPUT
     assert_line "can't: 2"
     assert_equal "${#lines[@]}" 2
 }
+
