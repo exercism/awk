@@ -12,7 +12,7 @@ isGameOver() {
     Frame[++Round] = Throw
     Pins = 10
 }
-Roll < 0 {
+Roll + 0 < 0 {
     die("Negative roll is invalid")
 }
 Roll > Pins {

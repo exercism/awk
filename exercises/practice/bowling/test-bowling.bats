@@ -1,8 +1,10 @@
 #!/usr/bin/env bats
 load bats-extra
 
+# generated on 2026-06-30T21:14:38+00:00
+
 @test "should be able to score a game with all zeros" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
 
     assert_success
@@ -161,10 +163,34 @@ load bats-extra
     assert_output "Pin count exceeds pins on the lane"
 }
 
+@test "two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10 6"
+
+    assert_success
+    assert_output "26"
+}
+
+@test "the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 6 10"
+
+    assert_failure
+    assert_output "Pin count exceeds pins on the lane"
+}
+
+@test "second bonus roll after a strike in the last frame cannot score more than 10 points" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10 11"
+
+    assert_failure
+    assert_output "Pin count exceeds pins on the lane"
+}
+
 @test "an unstarted game cannot be scored" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f bowling.awk <<EOF
-EOF
+    run gawk -f bowling.awk <<< ""
+
     assert_failure
     assert_output "Score cannot be taken until the end of the game"
 }
@@ -204,6 +230,7 @@ EOF
 @test "bonus roll for a spare in the last frame must be rolled before score can be calculated" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3"
+
     assert_failure
     assert_output "Score cannot be taken until the end of the game"
 }
@@ -211,6 +238,7 @@ EOF
 @test "cannot roll after bonus roll for spare" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3 2 2"
+
     assert_failure
     assert_output "Cannot roll after game is over"
 }
@@ -218,6 +246,8 @@ EOF
 @test "cannot roll after bonus rolls for strike" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f bowling.awk <<< "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 3 2 2"
+
     assert_failure
     assert_output "Cannot roll after game is over"
 }
+
