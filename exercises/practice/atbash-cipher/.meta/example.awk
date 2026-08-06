@@ -28,5 +28,5 @@ BEGIN {
         }
         out = out substr($0, i, 5)
     }
-    print(out)
+    print out
 }

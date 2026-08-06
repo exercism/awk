@@ -7,7 +7,7 @@ function value(color) {
     for (i = 1; i <= length(colors); i++)
         if (colors[i] == color)
             return i - 1
-    print("invalid color")
+    print "invalid color"
     exit(1)
 }
 
@@ -19,6 +19,6 @@ function value(color) {
         shifted++
         ohms /= 1000
     }
-    print(ohms " " units[shifted] "ohms")
+    print ohms " " units[shifted] "ohms"
 }
 

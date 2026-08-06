@@ -15,7 +15,7 @@ BEGIN {
     if (earth_ratio[$1]) {
         printf("%.2f\n", ($2 / seconds_per_earth_year) / earth_ratio[$1])
     } else {
-        print($1 " is not a planet")
+        print $1 " is not a planet"
         exit(1)
     }
 }

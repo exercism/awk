@@ -5,14 +5,14 @@
     # A triangle must have non-zero size.
     perimeter = $1 + $2 + $3
     if (perimeter == 0) {
-        print("false")
+        print "false"
         exit(0)
     }
 
     # Any one side cannot be larger than both other sides.
     for (i = 1; i <= 3; i++) {
         if (2 * $i > perimeter) {
-            print("false")
+            print "false"
             exit(0)
         }
     }
@@ -29,5 +29,5 @@
         break
     }
 
-    print(result ? "true" : "false")
+    print result ? "true" : "false"
 }
