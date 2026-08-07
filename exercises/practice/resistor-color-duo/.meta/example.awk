@@ -11,6 +11,6 @@ function value(color) {
 }
 
 {
-    print(value($1) * 10 +  value($2))
+    print value($1) * 10 +  value($2)
 }
 

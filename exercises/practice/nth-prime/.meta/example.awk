@@ -7,7 +7,7 @@ BEGIN {
         exit(1)
     }
     if (n == 1) {
-        print(2)
+        print 2
         exit(0)
     }
 

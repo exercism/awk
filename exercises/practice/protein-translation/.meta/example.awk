@@ -38,5 +38,5 @@ BEGIN {
         exit(1)
     }
 
-    print(out)
+    print out 
 }

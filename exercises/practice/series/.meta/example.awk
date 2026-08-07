@@ -18,5 +18,5 @@ len > NF { print "slice length cannot be greater than series length" > "/dev/std
         for (i = 0; i < len; i++)
             out = out $(start + i)
     }
-    print(out)
+    print out
 }

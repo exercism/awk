@@ -19,6 +19,6 @@ function value(color) {
         shifted++
         ohms /= 1000
     }
-    print(ohms " " units[shifted] "ohms")
+    print ohms " " units[shifted] "ohms"
 }
 
