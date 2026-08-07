@@ -5,11 +5,11 @@ function abs(val) {
 {
     for (i = 1; i <= NF; i++)
         if ($i < 0 || $i > 7) {
-            print "invalid position: row or column is not on the board"
+            print "invalid position: row or column is not on the board" > "/dev/stderr"
             exit 1
         }
     if ($1 == $3 && $2 == $4) {
-        print "invalid position: pieces are on the same tile"
+        print "invalid position: pieces are on the same tile" > "/dev/stderr"
         exit 1
     }
     # Same row or same column.

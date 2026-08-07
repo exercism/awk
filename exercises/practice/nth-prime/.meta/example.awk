@@ -3,7 +3,7 @@
 
 BEGIN {
     if (n < 1) {
-        print "invalid input"
+        print "invalid input" > "/dev/stderr"
         exit(1)
     }
     if (n == 1) {

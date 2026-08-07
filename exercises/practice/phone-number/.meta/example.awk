@@ -1,5 +1,5 @@
 function die(msg) {
-    print msg
+    print msg > "/dev/stderr"
     exit 1
 }
 
