@@ -24,7 +24,7 @@ BEGIN {
     out = ""
     for (i = 1; i <= NF; i++) {
         if (! translation[$i]) {
-            print("Invalid codon")
+            print "Invalid codon"
             exit(1)
         }
         if (translation[$i] == "STOP")
@@ -34,9 +34,9 @@ BEGIN {
         out = out translation[$i]
     }
     if (length % 3 && translation[$i] != "STOP") {
-        print("Invalid codon")
+        print "Invalid codon"
         exit(1)
     }
 
-    print(out)
+    print out 
 }

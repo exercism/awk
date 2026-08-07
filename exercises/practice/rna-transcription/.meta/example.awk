@@ -13,9 +13,9 @@ BEGIN {
         if ($i in translation) {
             out = out translation[$i]
         } else {
-            print("Invalid nucleotide detected.")
+            print "Invalid nucleotide detected." 
             exit(1)
         }
     }
-    print(out)
+    print out 
 }

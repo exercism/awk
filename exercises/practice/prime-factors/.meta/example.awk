@@ -12,5 +12,5 @@
             candidate++
         }
     }
-    print(out)
+    print out
 }

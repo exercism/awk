@@ -6,11 +6,11 @@ function value(color) {
     for (i = 1; i <= length(colors); i++)
         if (colors[i] == color)
             return i - 1
-    print("invalid color")
+    print "invalid color"
     exit(1)
 }
 
 {
-    print(value($1) * 10 +  value($2))
+    print value($1) * 10 +  value($2)
 }
 
