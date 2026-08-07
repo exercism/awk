@@ -5,10 +5,10 @@ BEGIN {
     FS = ""
 }
 
-!NF      { print "series cannot be empty"; exit(1) }
-len == 0 { print "slice length cannot be zero"; exit(1) }
-len < 0  { print "slice length cannot be negative"; exit(1) }
-len > NF { print "slice length cannot be greater than series length"; exit(1) }
+!NF      { print "series cannot be empty" > "/dev/stderr"; exit(1) }
+len == 0 { print "slice length cannot be zero" > "/dev/stderr"; exit(1) }
+len < 0  { print "slice length cannot be negative" > "/dev/stderr"; exit(1) }
+len > NF { print "slice length cannot be greater than series length" > "/dev/stderr"; exit(1) }
 
 {
     out = ""

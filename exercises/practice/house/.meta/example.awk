@@ -5,7 +5,7 @@
 
 BEGIN {
     if (start < 1 || end > 12 || start > end) {
-        print "Error: invalid range. Start must be >= 1, end <= 12, and start <= end."
+        print "Error: invalid range. Start must be >= 1, end <= 12, and start <= end." > "/dev/stderr"
         exit 1
     }
 
