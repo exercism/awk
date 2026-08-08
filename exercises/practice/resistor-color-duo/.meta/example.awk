@@ -7,7 +7,7 @@ function value(color) {
         if (colors[i] == color)
             return i - 1
     print "invalid color" > "/dev/stderr"
-    exit(1)
+    exit 1
 }
 
 {

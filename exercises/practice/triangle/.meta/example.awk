@@ -6,14 +6,14 @@
     perimeter = $1 + $2 + $3
     if (perimeter == 0) {
         print "false"
-        exit(0)
+        exit 0
     }
 
     # Any one side cannot be larger than both other sides.
     for (i = 1; i <= 3; i++) {
         if (2 * $i > perimeter) {
             print "false"
-            exit(0)
+            exit 0
         }
     }
 

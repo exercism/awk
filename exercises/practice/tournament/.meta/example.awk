@@ -54,7 +54,7 @@ length {
         draw($2)
         break
     default:
-        exit(1)
+        exit 1
     }
 }
 
