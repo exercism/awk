@@ -25,7 +25,7 @@ BEGIN {
     for (i = 1; i <= NF; i++) {
         if (! translation[$i]) {
             print "Invalid codon" > "/dev/stderr"
-            exit(1)
+            exit 1
         }
         if (translation[$i] == "STOP")
             break
@@ -35,7 +35,7 @@ BEGIN {
     }
     if (length % 3 && translation[$i] != "STOP") {
         print "Invalid codon" > "/dev/stderr"
-        exit(1)
+        exit 1
     }
 
     print out 

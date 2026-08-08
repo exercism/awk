@@ -14,7 +14,7 @@ BEGIN {
             out = out translation[$i]
         } else {
             print "Invalid nucleotide detected." > "/dev/stderr"
-            exit(1)
+            exit 1
         }
     }
     print out 

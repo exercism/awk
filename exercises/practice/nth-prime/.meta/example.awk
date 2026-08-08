@@ -4,11 +4,11 @@
 BEGIN {
     if (n < 1) {
         print "invalid input" > "/dev/stderr"
-        exit(1)
+        exit 1
     }
     if (n == 1) {
         print 2
-        exit(0)
+        exit 0
     }
 
     primes[1] = 2
