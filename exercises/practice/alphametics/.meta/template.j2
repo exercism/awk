@@ -1,0 +1,10 @@
+#!/usr/bin/env bats
+
+load bats-extra
+{% for case in cases %}
+@test "{{ case.description }}" {
+  run awk -f alphametics.awk <<< "{{ case.input.puzzle }}"
+  assert_success
+  assert_output "{% if case.expected %}{% for letter, digit in case.expected.items() | sort %}{{ letter }}={{ digit }}{% if not loop.last %} {% endif %}{% endfor %}{% endif %}"
+}
+{% endfor %}

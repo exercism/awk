@@ -1,0 +1,21 @@
+{
+  "blurb": "Given an alphametics puzzle, find the correct solution.",
+  "authors": [
+    "kirtisrivastava22"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "alphametics.awk"
+    ],
+    "test": [
+      "test-alphametics.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "icon": "crossword",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Alphametics"
+}
