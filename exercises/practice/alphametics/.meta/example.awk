@@ -83,18 +83,11 @@ function solve(col, carry,
 
 {
     line = $0
-    if (index(line, "==") > 0) {
-        split(line, parts, "==")
-    } else {
-        split(line, parts, "=")
-    }
+    split(line, parts, /\s*==\s*/)
     lhs = parts[1]
     result = parts[2]
-    gsub(/^[ \t]+|[ \t]+$/, "", lhs)
-    gsub(/^[ \t]+|[ \t]+$/, "", result)
 
-    nwords = split(lhs, addends, "+")
-    for (i = 1; i <= nwords; i++) gsub(/^[ \t]+|[ \t]+$/, "", addends[i])
+    nwords = split(lhs, addends, /\s*\+\s*/)
 
     maxlen = length(result)
     if (length(result) > 1) leading[substr(result, 1, 1)] = 1
