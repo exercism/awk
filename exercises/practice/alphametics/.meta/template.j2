@@ -1,6 +1,4 @@
-#!/usr/bin/env bats
-
-load bats-extra
+{{ header }}
 {% for case in cases %}
 @test "{{ case.description }}" {
   run awk -f alphametics.awk <<< "{{ case.input.puzzle }}"
