@@ -83,15 +83,9 @@ function solve(col, carry,
 
 {
     line = $0
-    if (index(line, "==") > 0) {
-        split(line, parts, "==")
-    } else {
-        split(line, parts, "=")
-    }
+    split(line, parts, /\s*==\s*/)
     lhs = parts[1]
     result = parts[2]
-    gsub(/^[ \t]+|[ \t]+$/, "", lhs)
-    gsub(/^[ \t]+|[ \t]+$/, "", result)
 
     nwords = split(lhs, addends, /\s*\+\s*/)
 
