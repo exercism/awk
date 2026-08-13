@@ -6,9 +6,9 @@
 #
 # The output is expected to be a space separated list
 # of coins, sorted in ascending order
-{% for idx, case in cases %}
+{% for case in cases %}
 @test "{{ case["description"] }}" {
-    {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f {{ solution }} <<END_INPUT
 {{ case["input"]["coins"] | join(" ") }}
 {{ case["input"]["target"] }}
