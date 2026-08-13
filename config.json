@@ -750,17 +750,17 @@
         "difficulty": 6
       },
       {
-        "slug": "poker",
-        "name": "Poker",
-        "uuid": "125bb9d4-66d4-4856-b34a-23925b0b738a",
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "uuid": "cc316db6-9007-40fe-af64-92f00d5f148e",
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
       },
       {
-        "slug": "alphametics",
-        "name": "Alphametics",
-        "uuid": "cc316db6-9007-40fe-af64-92f00d5f148e",
+        "slug": "poker",
+        "name": "Poker",
+        "uuid": "125bb9d4-66d4-4856-b34a-23925b0b738a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
