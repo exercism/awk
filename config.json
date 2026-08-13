@@ -758,6 +758,14 @@
         "difficulty": 7
       },
       {
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "uuid": "cc316db6-9007-40fe-af64-92f00d5f148e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "change",
         "name": "Change",
         "uuid": "77790996-7c28-4a57-8f9e-58f0fe80f682",
