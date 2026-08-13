@@ -7,8 +7,8 @@
 # (a single "=" is also accepted)
 #
 # Prints one line of space-separated LETTER=DIGIT pairs, sorted
-# alphabetically by letter, for a valid solution. Prints an empty
-# line if no solution exists.
+# alphabetically by letter, for a valid solution. Prints nothing
+# if no solution exists.
 #
 # Approach: process the puzzle column by column, from the rightmost
 # (units) digit to the leftmost, tracking the carry. Within each
@@ -16,13 +16,11 @@
 # assigned digits (via backtracking), then the column's arithmetic
 # is checked immediately. This prunes the search far more
 # aggressively than trying full permutations of every letter.
-
 function colchar(word, col,    L) {
     L = length(word)
     if (col < L) return substr(word, L - col, 1)
     return ""
 }
-
 # Try every valid digit for newl[idx..m], then verify/recurse.
 function assign(idx, m, colletters, ncol, hasres, rch, newl, col, carr,
                  d, letter, i, colsum, total, digit_needed, newcarry, required) {
@@ -36,7 +34,6 @@ function assign(idx, m, colletters, ncol, hasres, rch, newl, col, carr,
         if (digit_needed != required) return 0
         return solve(col + 1, newcarry)
     }
-
     letter = newl[idx]
     for (d = 0; d <= 9; d++) {
         if (used[d]) continue
@@ -49,20 +46,16 @@ function assign(idx, m, colletters, ncol, hasres, rch, newl, col, carr,
     }
     return 0
 }
-
 function solve(col, carry,
                 colletters, ncol, i, ch, hasres, rch, newl, m, j, exists) {
     if (col == maxlen) return (carry == 0)
-
     ncol = 0
     for (i = 1; i <= nwords; i++) {
         ch = colchar(addends[i], col)
         if (ch != "") colletters[++ncol] = ch
     }
-
     hasres = (col < length(result))
     rch = hasres ? colchar(result, col) : ""
-
     m = 0
     for (i = 1; i <= ncol; i++) {
         ch = colletters[i]
@@ -77,18 +70,14 @@ function solve(col, carry,
         for (j = 1; j <= m; j++) if (newl[j] == rch) { exists = 1; break }
         if (!exists) newl[++m] = rch
     }
-
     return assign(1, m, colletters, ncol, hasres, rch, newl, col, carry)
 }
-
 {
     line = $0
     split(line, parts, /\s*==\s*/)
     lhs = parts[1]
     result = parts[2]
-
     nwords = split(lhs, addends, /\s*\+\s*/)
-
     maxlen = length(result)
     if (length(result) > 1) leading[substr(result, 1, 1)] = 1
     for (i = 1; i <= nwords; i++) {
@@ -96,7 +85,6 @@ function solve(col, carry,
         if (L > maxlen) maxlen = L
         if (L > 1) leading[substr(addends[i], 1, 1)] = 1
     }
-
     if (solve(0, 0)) {
         n = 0
         for (l in assigned) letters[++n] = l
@@ -111,7 +99,5 @@ function solve(col, carry,
             out = out letters[i] "=" assigned[letters[i]]
         }
         print out
-    } else {
-        print ""
     }
 }
