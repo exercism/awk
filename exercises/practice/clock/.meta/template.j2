@@ -10,24 +10,24 @@
 
 {% for case in cases %}
 @test "{{ case["description"] }}" {
-  {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  {%- if case["property"] == "equal" %}
-    {%- set args = [
-          case["property"],
-          case["input"]["clock1"]["hour"],
-          case["input"]["clock1"]["minute"],
-          case["input"]["clock2"]["hour"],
-          case["input"]["clock2"]["minute"]
-        ]
-  %}
-  {%- else %}
-    {%- set args = [case["property"], case["input"]["hour"], case["input"]["minute"]] %}
-    {%- if case["property"] in ["add", "subtract"] %}
-      {%- set args = args + [case["input"]["value"]] %}
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    {%- if case["property"] == "equal" %}
+        {%- set args = [
+              case["property"],
+              case["input"]["clock1"]["hour"],
+              case["input"]["clock1"]["minute"],
+              case["input"]["clock2"]["hour"],
+              case["input"]["clock2"]["minute"]
+            ]
+        %}
+    {%- else %}
+        {%- set args = [case["property"], case["input"]["hour"], case["input"]["minute"]] %}
+        {%- if case["property"] in ["add", "subtract"] %}
+            {%- set args = args + [case["input"]["value"]] %}
+        {%- endif %}
     {%- endif %}
-  {%- endif %}
-  run gawk -f {{ solution }} <<< "{{ args | join(" ") }}"
-  assert_success
-  assert_output "{{ case["expected"] | lower }}"
+    run gawk -f {{ solution }} <<< "{{ args | join(" ") }}"
+    assert_success
+    assert_output "{{ case["expected"] | lower }}"
 }
 {% endfor %}

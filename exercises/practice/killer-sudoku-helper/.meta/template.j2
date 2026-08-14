@@ -1,13 +1,13 @@
 {{ header }}
 {% for case in cases %}
 @test "{{ case["description"] }}" {
-  {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  expected=$(cat << END
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected=$(cat << END
 {{ case["expected"] | map("join", " ") | join("\n") }}
 END
 )
-  run gawk -f {{ solution }} <<< "{{ ([case["input"]["cage"]["sum"], case["input"]["cage"]["size"]] + case["input"]["cage"]["exclude"]) | join(" ") }}"
-  assert_success
-  assert_output "$expected"
+    run gawk -f {{ solution }} <<< "{{ ([case["input"]["cage"]["sum"], case["input"]["cage"]["size"]] + case["input"]["cage"]["exclude"]) | join(" ") }}"
+    assert_success
+    assert_output "$expected"
 }
 {% endfor %}

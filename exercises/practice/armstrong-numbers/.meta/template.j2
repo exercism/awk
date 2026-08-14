@@ -5,13 +5,13 @@
 #   https://exercism.org/tracks/awk/exercises/grains
 {% for case in cases %}
 @test "{{ case["description"] }}" {
-  {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  {%- set flags="" %}
-  {%- if case["input"]["number"] > 10000000 %}
-    {%- set flags="-M " %}
-  {%- endif %}
-  run gawk {{ flags}}-f {{ solution }} -v num={{ case["input"]["number"] }}
-  assert_success
-  assert_output "{{ case["expected"] | lower }}"
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    {%- set flags="" %}
+    {%- if case["input"]["number"] > 10000000 %}
+        {%- set flags="-M " %}
+    {%- endif %}
+    run gawk {{ flags}}-f {{ solution }} -v num={{ case["input"]["number"] }}
+    assert_success
+    assert_output "{{ case["expected"] | lower }}"
 }
 {% endfor %}
