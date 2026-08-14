@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-30T17:59:19+00:00
+# generated on 2026-08-13T17:20:33+00:00
 
 @test "parsing and numbers: numbers just get pushed onto the stack" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -503,7 +503,7 @@ END
 }
 
 
-@test macro_empty_definition {
+@test "new word with empty definition" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f forth.awk <<END
 : foo ;
@@ -512,7 +512,7 @@ END
     assert_output --partial "empty macro definition"
 }
 
-@test macro_missing_semicolon {
+@test "new word definition missing the required semicolon" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk -f forth.awk <<END
 : foo 1
@@ -524,7 +524,7 @@ END
 
 # each file gets it's own forth evaluator:
 # a stack and macros, and prints the stack at the end of the file
-@test each_file_gets_its_own_forth {
+@test "each input file has its own evaluator" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     echo ': + - ;' >  first.txt
     echo '1 1 +'   >> first.txt
