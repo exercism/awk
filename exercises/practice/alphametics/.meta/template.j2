@@ -1,0 +1,13 @@
+{{ header }}
+{% for idx, case in cases %}
+@test "{{ case.description }}" {
+  {% if idx == 0 %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+  run awk -f alphametics.awk <<< "{{ case.input.puzzle }}"
+  assert_success
+  {% if case.expected %}
+  assert_output "{% for letter, digit in case.expected | dictsort %}{{ letter }}={{ digit }}{% if not loop.last %} {% endif %}{% endfor %}"
+  {% else %}
+  refute_output
+  {% endif %}
+}
+{% endfor %}
