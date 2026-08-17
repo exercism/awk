@@ -15,7 +15,5 @@
       ".meta/example.awk"
     ]
   },
-  "icon": "crossword",
-  "source": "Wikipedia",
-  "source_url": "https://en.wikipedia.org/wiki/Alphametics"
+  "icon": "crossword"
 }
