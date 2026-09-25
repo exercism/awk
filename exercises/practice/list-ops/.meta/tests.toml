@@ -29,8 +29,8 @@ description = "concatenate a list of lists -> list of lists"
 
 [d6ecd72c-197f-40c3-89a4-aa1f45827e09]
 description = "concatenate a list of lists -> list of nested lists"
-comment = "although gawk has arrays of arrays, you cannot write `a[1] = b` if b is an array"
 include = false
+comment = "although gawk has arrays of arrays, you cannot write `a[1] = b` if b is an array"
 
 [0524fba8-3e0f-4531-ad2b-f7a43da86a16]
 description = "filter list returning only values that satisfy the filter function -> empty list"
@@ -40,8 +40,8 @@ description = "filter list returning only values that satisfy the filter functio
 
 [1cf0b92d-8d96-41d5-9c21-7b3c37cb6aad]
 description = "returns the length of a list -> empty list"
-comment = "builtin length() function exists"
 include = false
+comment = "builtin length() function exists"
 
 [d7b8d2d9-2d16-44c4-9a19-6e5f237cb71e]
 description = "returns the length of a list -> non-empty list"
@@ -105,8 +105,12 @@ reimplements = "be396a53-c074-4db3-8dd6-f7ed003cce7c"
 description = "reverse the elements of the list -> empty list"
 
 [fcc03d1e-42e0-4712-b689-d54ad761f360]
-description = "reverse the elements of the list -> non-empty list"
+description = "reverse the elements of the list -> non-empty even-length list"
+
+[64d77184-5f74-4845-b158-545d2dd2df98]
+description = "reverse the elements of the list -> non-empty odd-length list"
 
 [40872990-b5b8-4cb8-9085-d91fc0d05d26]
 description = "reverse the elements of the list -> list of lists is not flattened"
 include = false
+comment = "skip tests with complex data structures like nested lists"

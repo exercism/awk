@@ -518,7 +518,7 @@ load bats-extra
     assert_output ""
 }
 
-@test "reverse non-empty list" {
+@test "reverse non-empty even-length list" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run gawk '
         @include "array-utils.awk"
@@ -540,4 +540,31 @@ load bats-extra
     assert_line --index 2 -- "[3] = 3"
     assert_line --index 3 -- "[4] = 1"
     assert_equal "${#lines[@]}" 4
+}
+
+@test "reverse non-empty odd-length list" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk '
+        @include "array-utils.awk"
+        @include "list-ops.awk"
+
+        BEGIN {
+            split("1 3 5 7 9 11 13", list)
+            array::init(result)
+
+            listops::reverse(list, result)
+
+            array::pprint(result)
+        }
+    '
+
+    assert_success
+    assert_line --index 0 -- "[1] = 13"
+    assert_line --index 1 -- "[2] = 11"
+    assert_line --index 2 -- "[3] = 9"
+    assert_line --index 3 -- "[4] = 7"
+    assert_line --index 4 -- "[5] = 5"
+    assert_line --index 5 -- "[6] = 3"
+    assert_line --index 6 -- "[7] = 1"
+    assert_equal "${#lines[@]}" 7
 }
