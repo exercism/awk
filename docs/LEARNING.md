@@ -7,6 +7,7 @@ Some other learning resources:
 * [Awk.Info](https://web.archive.org/web/20160505033644/http://awk.info/)
 * [Learn X in Y minutes: awk](https://learnxinyminutes.com/docs/awk/)
 * [Awk tutorial](https://www.grymoire.com/Unix/Awk.html)
-* [The GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/)
+* [The GNU Awk User's Guide][gawk]
 
 [so]: https://stackoverflow.com/tags/awk/info
+[gawk]: https://glennj.github.io/gnu/gawk/gawk.html
