@@ -70,8 +70,8 @@ Places to look for help for AWK questions:
     * see [Libera.chat][libera] if you're unfamiliar with IRC.
 
 
-[build]: https://www.gnu.org/software/gawk/manual/gawk.html#Installation
-[wsl]: https://docs.microsoft.com/en-us/windows/wsl/about
+[build]: https://glennj.github.io/gnu/gawk/gawk.html#Installation
+[wsl]: https://learn.microsoft.com/en-us/windows/wsl/about
 [brew]: https://brew.sh/
 [so]: https://stackoverflow.com/tags/awk
 [so-info]: https://stackoverflow.com/tags/awk/info

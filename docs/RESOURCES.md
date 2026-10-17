@@ -8,6 +8,6 @@ The [awk info page][so] at Stack Overflow.
 
 
 
-[book]: https://www.gnu.org/software/gawk/manual
+[book]: https://glennj.github.io/gnu/gawk/gawk.html
 [wiki-books]: https://en.wikipedia.org/wiki/AWK#Books
 [so]: https://stackoverflow.com/tags/awk/info
