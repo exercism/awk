@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-30T15:57:51+00:00
+# generated on 2026-11-04T19:33:58+00:00
 
 @test "word beginning with a" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -159,7 +159,8 @@ load bats-extra
 
 @test "a whole phrase" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-    run gawk -f pig-latin.awk <<< "quick fast run"
+    run gawk -f pig-latin.awk <<< "why do squids enjoy xrays"
     assert_success
-    assert_output "ickquay astfay unray"
+    assert_output "ywhay oday idssquay enjoyay xraysay"
 }
+
