@@ -1,0 +1,10 @@
+function most_common_word(text,    words, counts, n, i, best) {
+    n = split(tolower(text), words, " ")
+    best = ""
+    for (i = 1; i <= n; i++) {
+        counts[words[i]]++
+        if (counts[words[i]] > counts[best])
+            best = words[i]
+    }
+    return sprintf("\"%s\" appears %d times", best, counts[best])
+}
