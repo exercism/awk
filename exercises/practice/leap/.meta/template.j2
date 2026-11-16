@@ -5,6 +5,6 @@
     run gawk -f {{ solution }} <<< "{{ case["input"]["year"] }}"
 
     assert_success
-    assert_output "{{ case["expected"] }}"
+    assert_output {{ case["expected"] | quote }}
 }
 {% endfor %}
