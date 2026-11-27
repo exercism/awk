@@ -19,5 +19,6 @@
       "input.csv"
     ]
   },
+  "icon": "community-garden",
   "blurb": "Generate a simple report from an input CSV file."
 }
