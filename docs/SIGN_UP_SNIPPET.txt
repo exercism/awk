@@ -1,10 +1,15 @@
-function most_common_word(text,    words, counts, n, i, best) {
-    n = split(tolower(text), words, " ")
+BEGIN {
     best = ""
-    for (i = 1; i <= n; i++) {
-        counts[words[i]]++
-        if (counts[words[i]] > counts[best])
-            best = words[i]
+}
+{
+    for (i = 1; i <= NF; i++) {
+        word = tolower($i)
+        counts[word]++
+        if (counts[word] > counts[best]) {
+            best = word
+        }
     }
-    return sprintf("\"%s\" appears %d times", best, counts[best])
+}
+END {
+    printf "'%s' appears %d times\n", best, counts[best]
 }
