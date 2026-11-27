@@ -13,6 +13,7 @@
       ".meta/example.awk"
     ]
   },
+  "icon": "library-fees",
   "blurb": "Calculate the automated readability index for the text.",
   "source": "Automated readability index",
   "source_url": "https://en.wikipedia.org/wiki/Automated_readability_index"
